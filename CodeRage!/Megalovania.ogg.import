@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Megalovania.ogg-4b1c5e66dc8ef334efdb9474fcc65306.oggstr"
+
+[deps]
+
+source_file="res://Megalovania.ogg"
+dest_files=[ "res://.import/Megalovania.ogg-4b1c5e66dc8ef334efdb9474fcc65306.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

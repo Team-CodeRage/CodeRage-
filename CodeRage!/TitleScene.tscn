@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://selectedIcon.png" type="Texture" id=1]
 [ext_resource path="res://cour.ttf" type="DynamicFontData" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://cour75,3.tres" type="DynamicFont" id=9]
 [ext_resource path="res://gear2.PNG" type="Texture" id=10]
 [ext_resource path="res://Settings.gd" type="Script" id=11]
+[ext_resource path="res://Megalovania.ogg" type="AudioStream" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
@@ -333,5 +334,9 @@ size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+autoplay = true
 [connection signal="pressed" from="TitleVBoxContainer/Spacer/SettingsButton" to="SettingsVBoxContainer" method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="SettingsVBoxContainer/Spacer/BackButton" to="SettingsVBoxContainer" method="_on_BackButton_pressed"]
