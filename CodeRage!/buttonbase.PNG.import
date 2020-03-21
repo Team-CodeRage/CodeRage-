@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/gear2.png-3a920cfc565f38efa888dd5dd4dddeef.stex"
+path="res://.import/buttonbase.PNG-cc9191137f5029c89c337a2e4dbc0c73.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gear2.png"
-dest_files=[ "res://.import/gear2.png-3a920cfc565f38efa888dd5dd4dddeef.stex" ]
+source_file="res://buttonbase.PNG"
+dest_files=[ "res://.import/buttonbase.PNG-cc9191137f5029c89c337a2e4dbc0c73.stex" ]
 
 [params]
 
