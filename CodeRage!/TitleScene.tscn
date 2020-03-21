@@ -4,7 +4,7 @@
 [ext_resource path="res://cour.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://TitleScene.gd" type="Script" id=3]
 [ext_resource path="res://ChangeSceneButton.tscn" type="PackedScene" id=4]
-[ext_resource path="res://dots.PNG" type="Texture" id=5]
+[ext_resource path="res://star.png" type="Texture" id=5]
 [ext_resource path="res://icon.png" type="Texture" id=6]
 [ext_resource path="res://buttonbase.PNG" type="Texture" id=7]
 [ext_resource path="res://gear2.png" type="Texture" id=8]
@@ -80,42 +80,98 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="TitleVBoxContainer"]
-anchor_top = 0.0183333
-anchor_bottom = 0.0183333
 margin_top = 144.0
 margin_right = 1024.0
-margin_bottom = 245.0
+margin_bottom = 265.0
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 9 )
-custom_colors/font_color = Color( 1, 0.901961, 0.545098, 1 )
+custom_colors/font_color = Color( 0.101961, 0.898039, 0.803922, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "{Code Rage!}"
 align = 1
 valign = 1
 
-[node name="TitleTexture" type="TextureRect" parent="TitleVBoxContainer"]
-anchor_top = 0.015
-anchor_bottom = 0.015
-margin_top = 249.0
+[node name="Control" type="Control" parent="TitleVBoxContainer"]
+margin_top = 269.0
 margin_right = 1024.0
-margin_bottom = 350.0
+margin_bottom = 390.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TitleTexture" type="TextureRect" parent="TitleVBoxContainer/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 64.1779
+margin_top = -90.9321
+margin_right = 164.178
+margin_bottom = 9.06788
 grow_horizontal = 2
 grow_vertical = 2
-rect_min_size = Vector2( 0, 50 )
-size_flags_vertical = 3
+rect_min_size = Vector2( 50, 50 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
 texture = ExtResource( 5 )
-stretch_mode = 4
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleTexture2" type="TextureRect" parent="TitleVBoxContainer/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -157.573
+margin_top = -89.8241
+margin_right = -57.5733
+margin_bottom = 10.1759
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 50, 50 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleTexture3" type="TextureRect" parent="TitleVBoxContainer/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -46.2043
+margin_top = -74.3116
+margin_right = 53.7957
+margin_bottom = 25.6884
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 50, 50 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Buttons" type="HBoxContainer" parent="TitleVBoxContainer"]
-margin_top = 354.0
+margin_top = 394.0
 margin_right = 1024.0
-margin_bottom = 455.0
+margin_bottom = 515.0
 size_flags_vertical = 3
 custom_constants/separation = 100
 alignment = 1
 
 [node name="1PlayerButton1" parent="TitleVBoxContainer/Buttons" instance=ExtResource( 4 )]
-anchor_top = -0.0594059
-anchor_bottom = -0.0594059
+anchor_top = -0.305785
+anchor_bottom = -0.305785
 margin_left = 212.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 250, 100 )
@@ -145,8 +201,8 @@ __meta__ = {
 }
 
 [node name="2PlayerButton" parent="TitleVBoxContainer/Buttons" instance=ExtResource( 4 )]
-anchor_top = -0.049505
-anchor_bottom = -0.049505
+anchor_top = -0.297521
+anchor_bottom = -0.297521
 margin_left = 562.0
 margin_right = 812.0
 margin_bottom = 100.0
@@ -177,9 +233,9 @@ __meta__ = {
 }
 
 [node name="Spacer2" type="Control" parent="TitleVBoxContainer"]
-margin_top = 459.0
+margin_top = 519.0
 margin_right = 1024.0
-margin_bottom = 599.0
+margin_bottom = 659.0
 rect_min_size = Vector2( 0, 140 )
 size_flags_vertical = 3
 __meta__ = {
