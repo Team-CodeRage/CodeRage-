@@ -37,7 +37,7 @@
 #####
 extends Node
 
-const SAVE_PATH = "user://codeRageLocalStorage.cfg"
+const SAVE_PATH = "user://savegame.cfg"
 
 var _config_file = ConfigFile.new()
 var _settings = {
