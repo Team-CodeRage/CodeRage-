@@ -7,6 +7,7 @@ func _ready():
 
 func _on_SFXSlider_value_changed(value):
 	AudioServer.set_bus_volume_db(0, value)
+	LocalStorage.set_setting("volume", "number", value)
 	pass # Replace with function body.
 
 func _on_SettingsButton_pressed():
