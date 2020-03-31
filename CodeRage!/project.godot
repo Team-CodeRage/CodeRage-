@@ -23,6 +23,7 @@ config/version="0.1.0"
 [autoload]
 
 LocalStorage="*res://LocalStorage.gd"
+GameMusic="*res://GameMusic.tscn"
 
 [rendering]
 
