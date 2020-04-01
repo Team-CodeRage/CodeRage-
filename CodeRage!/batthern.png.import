@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/gear2.png-3a920cfc565f38efa888dd5dd4dddeef.stex"
+path="res://.import/batthern.png-934135d0a08f16b3e2548da5067f9c07.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gear2.png"
-dest_files=[ "res://.import/gear2.png-3a920cfc565f38efa888dd5dd4dddeef.stex" ]
+source_file="res://batthern.png"
+dest_files=[ "res://.import/batthern.png-934135d0a08f16b3e2548da5067f9c07.stex" ]
 
 [params]
 

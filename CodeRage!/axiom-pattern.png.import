@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/gear.png-f6667604f1a4cbb2c335db12d132f85e.stex"
+path="res://.import/axiom-pattern.png-6b8a0b3822999b373d71df5dfa377374.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gear.png"
-dest_files=[ "res://.import/gear.png-f6667604f1a4cbb2c335db12d132f85e.stex" ]
+source_file="res://axiom-pattern.png"
+dest_files=[ "res://.import/axiom-pattern.png-6b8a0b3822999b373d71df5dfa377374.stex" ]
 
 [params]
 
