@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/gear2.png-3a920cfc565f38efa888dd5dd4dddeef.stex"
+path="res://.import/whitecrbuttonhoverpressed.PNG-f4cba59edee4d933709e284689ec2a02.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gear2.png"
-dest_files=[ "res://.import/gear2.png-3a920cfc565f38efa888dd5dd4dddeef.stex" ]
+source_file="res://whitecrbuttonhoverpressed.PNG"
+dest_files=[ "res://.import/whitecrbuttonhoverpressed.PNG-f4cba59edee4d933709e284689ec2a02.stex" ]
 
 [params]
 

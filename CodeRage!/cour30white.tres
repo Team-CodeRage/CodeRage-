@@ -3,6 +3,6 @@
 [ext_resource path="res://cour.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 30
+size = 33
 outline_size = 1
 font_data = ExtResource( 1 )

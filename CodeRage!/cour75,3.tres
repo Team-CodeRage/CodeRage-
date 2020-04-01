@@ -3,7 +3,7 @@
 [ext_resource path="res://cour.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 75
+size = 80
 outline_size = 3
-outline_color = Color( 0.14902, 0.301961, 0.34902, 1 )
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
