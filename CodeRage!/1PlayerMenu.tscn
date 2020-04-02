@@ -1,11 +1,16 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://ChangeSceneButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://1PlayerMenu.gd" type="Script" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://crbuttonclicked.PNG" type="Texture" id=3]
 [ext_resource path="res://cour75,3.tres" type="DynamicFont" id=4]
+[ext_resource path="res://crsmallerbutton.PNG" type="Texture" id=5]
 [ext_resource path="res://cour30white.tres" type="DynamicFont" id=6]
 [ext_resource path="res://star.png" type="Texture" id=7]
+[ext_resource path="res://berlin32,1.tres" type="DynamicFont" id=8]
+[ext_resource path="res://whitecrbutton.PNG" type="Texture" id=9]
+[ext_resource path="res://whitecrbuttonhoverpressed.PNG" type="Texture" id=10]
+[ext_resource path="res://starempty.png" type="Texture" id=11]
 
 [node name="1PlayerMenu" type="Control"]
 anchor_right = 1.0
@@ -53,7 +58,7 @@ size_flags_vertical = 3
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = ExtResource( 4 )
-custom_colors/font_color = Color( 0.101961, 0.898039, 0.803922, 1 )
+custom_colors/font_color = Color( 0.317647, 0.615686, 0.85098, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Choose A Prompt"
 align = 1
@@ -71,23 +76,23 @@ mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_right = 80
-custom_constants/margin_top = 20
+custom_constants/margin_top = -35
 custom_constants/margin_left = 80
-custom_constants/margin_bottom = 50
+custom_constants/margin_bottom = 86
 
 [node name="ColorRect" type="ColorRect" parent="VBoxContainer/PromptMarginContainer"]
 margin_left = 80.0
-margin_top = 20.0
+margin_top = -35.0
 margin_right = 952.0
-margin_bottom = 350.0
+margin_bottom = 314.0
 mouse_filter = 1
-color = Color( 0.14902, 0.301961, 0.34902, 1 )
+color = Color( 0.976471, 0.878431, 0.498039, 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PromptMarginContainer"]
 margin_left = 80.0
-margin_top = 20.0
+margin_top = -35.0
 margin_right = 952.0
-margin_bottom = 350.0
+margin_bottom = 314.0
 mouse_filter = 1
 custom_constants/margin_right = 20
 custom_constants/margin_top = 20
@@ -98,13 +103,14 @@ custom_constants/margin_bottom = 20
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 852.0
-margin_bottom = 310.0
+margin_bottom = 329.0
+color = Color( 0.976471, 0.878431, 0.498039, 1 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/PromptMarginContainer/MarginContainer"]
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 852.0
-margin_bottom = 310.0
+margin_bottom = 329.0
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -134,7 +140,6 @@ anchor_bottom = 1.0
 margin_bottom = -88.0
 rect_min_size = Vector2( 820, 100 )
 size_flags_horizontal = 3
-color = Color( 0.976471, 0.878431, 0.498039, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -154,17 +159,35 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item/HBoxContainer"]
-margin_right = 168.0
+self_modulate = Color( 0.396078, 0.870588, 0.423529, 1 )
+margin_right = 132.0
 margin_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 3 )
+texture = ExtResource( 5 )
 expand = true
 
+[node name="Label" type="Label" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item/HBoxContainer/TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -37.5
+margin_top = -19.5
+margin_right = 37.5
+margin_bottom = 19.5
+custom_fonts/font = ExtResource( 8 )
+text = "Easy"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Label" type="Label" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item/HBoxContainer"]
-margin_left = 178.0
+margin_left = 142.0
 margin_right = 502.0
 margin_bottom = 100.0
 grow_horizontal = 2
@@ -195,7 +218,7 @@ rect_min_size = Vector2( 100, 100 )
 [node name="Icon" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item/HBoxContainer/Stars/StarIcon"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 7 )
+texture = ExtResource( 11 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -210,7 +233,7 @@ rect_min_size = Vector2( 100, 100 )
 [node name="Icon" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item/HBoxContainer/Stars/StarIcon2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 7 )
+texture = ExtResource( 11 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -225,7 +248,7 @@ rect_min_size = Vector2( 100, 100 )
 [node name="Icon" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item/HBoxContainer/Stars/StarIcon3"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 7 )
+texture = ExtResource( 11 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -248,7 +271,6 @@ anchor_bottom = 1.0
 margin_bottom = -88.0
 rect_min_size = Vector2( 820, 100 )
 size_flags_horizontal = 3
-color = Color( 0.976471, 0.878431, 0.498039, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -268,17 +290,35 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item2/HBoxContainer"]
-margin_right = 168.0
+self_modulate = Color( 0.396078, 0.870588, 0.423529, 1 )
+margin_right = 132.0
 margin_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 3 )
+texture = ExtResource( 5 )
 expand = true
 
+[node name="Label2" type="Label" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item2/HBoxContainer/TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -37.5
+margin_top = -19.5
+margin_right = 37.5
+margin_bottom = 19.5
+custom_fonts/font = ExtResource( 8 )
+text = "Easy"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Label" type="Label" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item2/HBoxContainer"]
-margin_left = 178.0
+margin_left = 142.0
 margin_right = 502.0
 margin_bottom = 100.0
 grow_horizontal = 2
@@ -324,7 +364,7 @@ rect_min_size = Vector2( 100, 100 )
 [node name="Icon" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item2/HBoxContainer/Stars/StarIcon2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 7 )
+texture = ExtResource( 11 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -339,7 +379,7 @@ rect_min_size = Vector2( 100, 100 )
 [node name="Icon" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item2/HBoxContainer/Stars/StarIcon3"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 7 )
+texture = ExtResource( 11 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -362,7 +402,6 @@ anchor_bottom = 1.0
 margin_bottom = -88.0
 rect_min_size = Vector2( 820, 100 )
 size_flags_horizontal = 3
-color = Color( 0.976471, 0.878431, 0.498039, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -382,17 +421,35 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item3/HBoxContainer"]
-margin_right = 168.0
+self_modulate = Color( 0.976471, 0.65098, 0.423529, 1 )
+margin_right = 132.0
 margin_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 3 )
+texture = ExtResource( 5 )
 expand = true
 
+[node name="Label3" type="Label" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item3/HBoxContainer/TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -37.5
+margin_top = -19.5
+margin_right = 37.5
+margin_bottom = 19.5
+custom_fonts/font = ExtResource( 8 )
+text = "Med"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Label" type="Label" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item3/HBoxContainer"]
-margin_left = 178.0
+margin_left = 142.0
 margin_right = 502.0
 margin_bottom = 100.0
 grow_horizontal = 2
@@ -423,7 +480,7 @@ rect_min_size = Vector2( 100, 100 )
 [node name="Icon" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item3/HBoxContainer/Stars/StarIcon"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 7 )
+texture = ExtResource( 11 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -438,7 +495,7 @@ rect_min_size = Vector2( 100, 100 )
 [node name="Icon" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item3/HBoxContainer/Stars/StarIcon2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 7 )
+texture = ExtResource( 11 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -453,7 +510,7 @@ rect_min_size = Vector2( 100, 100 )
 [node name="Icon" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item3/HBoxContainer/Stars/StarIcon3"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 7 )
+texture = ExtResource( 11 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -476,7 +533,6 @@ anchor_bottom = 1.0
 margin_bottom = -88.0
 rect_min_size = Vector2( 820, 100 )
 size_flags_horizontal = 3
-color = Color( 0.976471, 0.878431, 0.498039, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -496,17 +552,35 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item4/HBoxContainer"]
-margin_right = 168.0
+self_modulate = Color( 0.976471, 0.65098, 0.423529, 1 )
+margin_right = 132.0
 margin_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 3 )
+texture = ExtResource( 5 )
 expand = true
 
+[node name="Label4" type="Label" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item4/HBoxContainer/TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -37.5
+margin_top = -19.5
+margin_right = 37.5
+margin_bottom = 19.5
+custom_fonts/font = ExtResource( 8 )
+text = "Med"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Label" type="Label" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item4/HBoxContainer"]
-margin_left = 178.0
+margin_left = 142.0
 margin_right = 502.0
 margin_bottom = 100.0
 grow_horizontal = 2
@@ -590,7 +664,6 @@ anchor_bottom = 1.0
 margin_bottom = -88.0
 rect_min_size = Vector2( 820, 100 )
 size_flags_horizontal = 3
-color = Color( 0.976471, 0.878431, 0.498039, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -610,17 +683,35 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item5/HBoxContainer"]
-margin_right = 168.0
+self_modulate = Color( 0.976471, 0.65098, 0.423529, 1 )
+margin_right = 132.0
 margin_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 3 )
+texture = ExtResource( 5 )
 expand = true
 
+[node name="Label5" type="Label" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item5/HBoxContainer/TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -37.5
+margin_top = -19.5
+margin_right = 37.5
+margin_bottom = 19.5
+custom_fonts/font = ExtResource( 8 )
+text = "Med"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Label" type="Label" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item5/HBoxContainer"]
-margin_left = 178.0
+margin_left = 142.0
 margin_right = 502.0
 margin_bottom = 100.0
 grow_horizontal = 2
@@ -704,7 +795,6 @@ anchor_bottom = 1.0
 margin_bottom = -88.0
 rect_min_size = Vector2( 820, 100 )
 size_flags_horizontal = 3
-color = Color( 0.976471, 0.878431, 0.498039, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -724,17 +814,35 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item6/HBoxContainer"]
-margin_right = 168.0
+self_modulate = Color( 0.858824, 0, 0.219608, 1 )
+margin_right = 132.0
 margin_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 3 )
+texture = ExtResource( 5 )
 expand = true
 
+[node name="Label6" type="Label" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item6/HBoxContainer/TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -37.5
+margin_top = -19.5
+margin_right = 37.5
+margin_bottom = 19.5
+custom_fonts/font = ExtResource( 8 )
+text = "Hard"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Label" type="Label" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item6/HBoxContainer"]
-margin_left = 178.0
+margin_left = 142.0
 margin_right = 502.0
 margin_bottom = 100.0
 grow_horizontal = 2
@@ -818,7 +926,6 @@ anchor_bottom = 1.0
 margin_bottom = -88.0
 rect_min_size = Vector2( 820, 100 )
 size_flags_horizontal = 3
-color = Color( 0.976471, 0.878431, 0.498039, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -838,17 +945,35 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item7/HBoxContainer"]
-margin_right = 168.0
+self_modulate = Color( 0.858824, 0, 0.219608, 1 )
+margin_right = 132.0
 margin_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 3 )
+texture = ExtResource( 5 )
 expand = true
 
+[node name="Label7" type="Label" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item7/HBoxContainer/TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -37.5
+margin_top = -19.5
+margin_right = 37.5
+margin_bottom = 19.5
+custom_fonts/font = ExtResource( 8 )
+text = "Hard"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Label" type="Label" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item7/HBoxContainer"]
-margin_left = 178.0
+margin_left = 142.0
 margin_right = 502.0
 margin_bottom = 100.0
 grow_horizontal = 2
@@ -927,20 +1052,63 @@ __meta__ = {
 }
 
 [node name="BackButton" parent="Buttons" instance=ExtResource( 1 )]
-margin_left = 0.0
-margin_right = 81.0
-margin_bottom = 72.0
+self_modulate = Color( 0.858824, 0, 0.219608, 1 )
+anchor_left = 0.687
+anchor_top = 0.925
+anchor_right = 0.687
+anchor_bottom = 0.925
+margin_left = -79.488
+margin_top = -34.0001
+margin_right = 80.512
+margin_bottom = 37.9999
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 10 )
 expand = true
 scene_to_load = "res://TitleScene.tscn"
 
+[node name="Label" type="Label" parent="Buttons/BackButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -38.5
+margin_top = -19.5
+margin_right = 38.5
+margin_bottom = 19.5
+custom_fonts/font = ExtResource( 8 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="PlayButton" parent="Buttons" instance=ExtResource( 1 )]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -77.9999
-margin_top = -71.0
-margin_right = 0.0
-margin_bottom = 0.0
+self_modulate = Color( 0.858824, 0, 0.219608, 1 )
+anchor_left = 0.839
+anchor_top = 0.924
+anchor_right = 0.839
+anchor_bottom = 0.924
+margin_left = -76.1194
+margin_top = -34.5081
+margin_right = 75.8806
+margin_bottom = 36.4919
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 10 )
 expand = true
 scene_to_load = "res://OnePlayerGame.tscn"
+
+[node name="Label2" type="Label" parent="Buttons/PlayButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -47.0
+margin_top = -19.5
+margin_right = 47.0
+margin_bottom = 19.5
+custom_fonts/font = ExtResource( 8 )
+text = "Select"
+__meta__ = {
+"_edit_use_anchors_": false
+}
