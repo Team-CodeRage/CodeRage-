@@ -170,7 +170,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="VBoxContainer" type="VBoxContainer" parent="PopUpsContainer"]
+margin_right = 628.0
+margin_bottom = 600.0
+
 [node name="Sprite" type="Sprite" parent="PopUpsContainer"]
-position = Vector2( 278.671, 298.061 )
-scale = Vector2( 0.916897, 1 )
+position = Vector2( 306.386, 293.629 )
+scale = Vector2( 0.885937, 1 )
 texture = ExtResource( 8 )
