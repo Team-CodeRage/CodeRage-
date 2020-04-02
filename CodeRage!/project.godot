@@ -25,6 +25,10 @@ config/version="0.1.0"
 LocalStorage="*res://LocalStorage.gd"
 GameMusic="*res://GameMusic.tscn"
 
+[display]
+
+window/size/resizable=false
+
 [rendering]
 
 environment/default_clear_color=Color( 0.32549, 0.729412, 0.756863, 1 )
