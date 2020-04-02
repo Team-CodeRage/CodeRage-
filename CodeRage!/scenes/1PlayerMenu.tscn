@@ -1,0 +1,1114 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scenes/ChangeSceneButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/1PlayerMenu.gd" type="Script" id=2]
+[ext_resource path="res://assets/crbuttonclicked.PNG" type="Texture" id=3]
+[ext_resource path="res://fonts/cour75,3.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/crsmallerbutton.PNG" type="Texture" id=5]
+[ext_resource path="res://fonts/cour30white.tres" type="DynamicFont" id=6]
+[ext_resource path="res://assets/star.png" type="Texture" id=7]
+[ext_resource path="res://fonts/berlin32,1.tres" type="DynamicFont" id=8]
+[ext_resource path="res://assets/whitecrbutton.PNG" type="Texture" id=9]
+[ext_resource path="res://assets/whitecrbuttonhoverpressed.PNG" type="Texture" id=10]
+[ext_resource path="res://assets/starempty.png" type="Texture" id=11]
+
+[node name="1PlayerMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleMarginContainer" type="MarginContainer" parent="VBoxContainer"]
+margin_right = 1032.0
+margin_bottom = 196.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 80
+custom_constants/margin_top = 50
+custom_constants/margin_left = 80
+custom_constants/margin_bottom = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/TitleMarginContainer"]
+margin_left = 80.0
+margin_top = 50.0
+margin_right = 952.0
+margin_bottom = 146.0
+
+[node name="Control" type="Control" parent="VBoxContainer/TitleMarginContainer"]
+margin_left = 80.0
+margin_top = 50.0
+margin_right = 952.0
+margin_bottom = 146.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/TitleMarginContainer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.317647, 0.615686, 0.85098, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Choose A Prompt"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PromptMarginContainer" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 200.0
+margin_right = 1032.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 0, 400 )
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 80
+custom_constants/margin_top = -35
+custom_constants/margin_left = 80
+custom_constants/margin_bottom = 86
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/PromptMarginContainer"]
+margin_left = 80.0
+margin_top = -35.0
+margin_right = 952.0
+margin_bottom = 314.0
+mouse_filter = 1
+color = Color( 0.976471, 0.878431, 0.498039, 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PromptMarginContainer"]
+margin_left = 80.0
+margin_top = -35.0
+margin_right = 952.0
+margin_bottom = 314.0
+mouse_filter = 1
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 852.0
+margin_bottom = 329.0
+color = Color( 0.976471, 0.878431, 0.498039, 1 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/PromptMarginContainer/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 852.0
+margin_bottom = 329.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer"]
+margin_right = 820.0
+margin_bottom = 790.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_constants/separation = 15
+alignment = 1
+
+[node name="Item" type="Control" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+margin_right = 820.0
+margin_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 820, 100 )
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -88.0
+rect_min_size = Vector2( 820, 100 )
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item"]
+margin_right = 820.0
+margin_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 820, 100 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item/HBoxContainer"]
+self_modulate = Color( 0.396078, 0.870588, 0.423529, 1 )
+margin_right = 132.0
+margin_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Label" type="Label" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item/HBoxContainer/TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -37.5
+margin_top = -19.5
+margin_right = 37.5
+margin_bottom = 19.5
+custom_fonts/font = ExtResource( 8 )
+text = "Easy"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item/HBoxContainer"]
+margin_left = 142.0
+margin_right = 502.0
+margin_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 250, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Prompt description"
+align = 1
+valign = 1
+
+[node name="Stars" type="GridContainer" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item/HBoxContainer"]
+margin_left = 512.0
+margin_right = 820.0
+margin_bottom = 100.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 7
+columns = 3
+
+[node name="StarIcon" type="Control" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item/HBoxContainer/Stars"]
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item/HBoxContainer/Stars/StarIcon"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StarIcon2" type="Control" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item/HBoxContainer/Stars"]
+margin_left = 104.0
+margin_right = 204.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item/HBoxContainer/Stars/StarIcon2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StarIcon3" type="Control" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item/HBoxContainer/Stars"]
+margin_left = 208.0
+margin_right = 308.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item/HBoxContainer/Stars/StarIcon3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item2" type="Control" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 115.0
+margin_right = 820.0
+margin_bottom = 215.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 820, 100 )
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -88.0
+rect_min_size = Vector2( 820, 100 )
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item2"]
+margin_right = 820.0
+margin_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 820, 100 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item2/HBoxContainer"]
+self_modulate = Color( 0.396078, 0.870588, 0.423529, 1 )
+margin_right = 132.0
+margin_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Label2" type="Label" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item2/HBoxContainer/TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -37.5
+margin_top = -19.5
+margin_right = 37.5
+margin_bottom = 19.5
+custom_fonts/font = ExtResource( 8 )
+text = "Easy"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item2/HBoxContainer"]
+margin_left = 142.0
+margin_right = 502.0
+margin_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 250, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Prompt description"
+align = 1
+valign = 1
+
+[node name="Stars" type="GridContainer" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item2/HBoxContainer"]
+margin_left = 512.0
+margin_right = 820.0
+margin_bottom = 100.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 7
+columns = 3
+
+[node name="StarIcon" type="Control" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item2/HBoxContainer/Stars"]
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item2/HBoxContainer/Stars/StarIcon"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StarIcon2" type="Control" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item2/HBoxContainer/Stars"]
+margin_left = 104.0
+margin_right = 204.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item2/HBoxContainer/Stars/StarIcon2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StarIcon3" type="Control" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item2/HBoxContainer/Stars"]
+margin_left = 208.0
+margin_right = 308.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item2/HBoxContainer/Stars/StarIcon3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item3" type="Control" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 230.0
+margin_right = 820.0
+margin_bottom = 330.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 820, 100 )
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -88.0
+rect_min_size = Vector2( 820, 100 )
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item3"]
+margin_right = 820.0
+margin_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 820, 100 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item3/HBoxContainer"]
+self_modulate = Color( 0.976471, 0.65098, 0.423529, 1 )
+margin_right = 132.0
+margin_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Label3" type="Label" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item3/HBoxContainer/TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -37.5
+margin_top = -19.5
+margin_right = 37.5
+margin_bottom = 19.5
+custom_fonts/font = ExtResource( 8 )
+text = "Med"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item3/HBoxContainer"]
+margin_left = 142.0
+margin_right = 502.0
+margin_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 250, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Prompt description"
+align = 1
+valign = 1
+
+[node name="Stars" type="GridContainer" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item3/HBoxContainer"]
+margin_left = 512.0
+margin_right = 820.0
+margin_bottom = 100.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 7
+columns = 3
+
+[node name="StarIcon" type="Control" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item3/HBoxContainer/Stars"]
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item3/HBoxContainer/Stars/StarIcon"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StarIcon2" type="Control" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item3/HBoxContainer/Stars"]
+margin_left = 104.0
+margin_right = 204.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item3/HBoxContainer/Stars/StarIcon2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StarIcon3" type="Control" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item3/HBoxContainer/Stars"]
+margin_left = 208.0
+margin_right = 308.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item3/HBoxContainer/Stars/StarIcon3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item4" type="Control" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 345.0
+margin_right = 820.0
+margin_bottom = 445.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 820, 100 )
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -88.0
+rect_min_size = Vector2( 820, 100 )
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item4"]
+margin_right = 820.0
+margin_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 820, 100 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item4/HBoxContainer"]
+self_modulate = Color( 0.976471, 0.65098, 0.423529, 1 )
+margin_right = 132.0
+margin_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Label4" type="Label" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item4/HBoxContainer/TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -37.5
+margin_top = -19.5
+margin_right = 37.5
+margin_bottom = 19.5
+custom_fonts/font = ExtResource( 8 )
+text = "Med"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item4/HBoxContainer"]
+margin_left = 142.0
+margin_right = 502.0
+margin_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 250, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Prompt description"
+align = 1
+valign = 1
+
+[node name="Stars" type="GridContainer" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item4/HBoxContainer"]
+margin_left = 512.0
+margin_right = 820.0
+margin_bottom = 100.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 7
+columns = 3
+
+[node name="StarIcon" type="Control" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item4/HBoxContainer/Stars"]
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item4/HBoxContainer/Stars/StarIcon"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StarIcon2" type="Control" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item4/HBoxContainer/Stars"]
+margin_left = 104.0
+margin_right = 204.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item4/HBoxContainer/Stars/StarIcon2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StarIcon3" type="Control" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item4/HBoxContainer/Stars"]
+margin_left = 208.0
+margin_right = 308.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item4/HBoxContainer/Stars/StarIcon3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item5" type="Control" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 460.0
+margin_right = 820.0
+margin_bottom = 560.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 820, 100 )
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item5"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -88.0
+rect_min_size = Vector2( 820, 100 )
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item5"]
+margin_right = 820.0
+margin_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 820, 100 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item5/HBoxContainer"]
+self_modulate = Color( 0.976471, 0.65098, 0.423529, 1 )
+margin_right = 132.0
+margin_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Label5" type="Label" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item5/HBoxContainer/TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -37.5
+margin_top = -19.5
+margin_right = 37.5
+margin_bottom = 19.5
+custom_fonts/font = ExtResource( 8 )
+text = "Med"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item5/HBoxContainer"]
+margin_left = 142.0
+margin_right = 502.0
+margin_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 250, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Prompt description"
+align = 1
+valign = 1
+
+[node name="Stars" type="GridContainer" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item5/HBoxContainer"]
+margin_left = 512.0
+margin_right = 820.0
+margin_bottom = 100.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 7
+columns = 3
+
+[node name="StarIcon" type="Control" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item5/HBoxContainer/Stars"]
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item5/HBoxContainer/Stars/StarIcon"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StarIcon2" type="Control" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item5/HBoxContainer/Stars"]
+margin_left = 104.0
+margin_right = 204.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item5/HBoxContainer/Stars/StarIcon2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StarIcon3" type="Control" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item5/HBoxContainer/Stars"]
+margin_left = 208.0
+margin_right = 308.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item5/HBoxContainer/Stars/StarIcon3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item6" type="Control" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 575.0
+margin_right = 820.0
+margin_bottom = 675.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 820, 100 )
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item6"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -88.0
+rect_min_size = Vector2( 820, 100 )
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item6"]
+margin_right = 820.0
+margin_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 820, 100 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item6/HBoxContainer"]
+self_modulate = Color( 0.858824, 0, 0.219608, 1 )
+margin_right = 132.0
+margin_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Label6" type="Label" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item6/HBoxContainer/TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -37.5
+margin_top = -19.5
+margin_right = 37.5
+margin_bottom = 19.5
+custom_fonts/font = ExtResource( 8 )
+text = "Hard"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item6/HBoxContainer"]
+margin_left = 142.0
+margin_right = 502.0
+margin_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 250, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Prompt description"
+align = 1
+valign = 1
+
+[node name="Stars" type="GridContainer" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item6/HBoxContainer"]
+margin_left = 512.0
+margin_right = 820.0
+margin_bottom = 100.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 7
+columns = 3
+
+[node name="StarIcon" type="Control" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item6/HBoxContainer/Stars"]
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item6/HBoxContainer/Stars/StarIcon"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StarIcon2" type="Control" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item6/HBoxContainer/Stars"]
+margin_left = 104.0
+margin_right = 204.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item6/HBoxContainer/Stars/StarIcon2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StarIcon3" type="Control" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item6/HBoxContainer/Stars"]
+margin_left = 208.0
+margin_right = 308.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item6/HBoxContainer/Stars/StarIcon3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item7" type="Control" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 690.0
+margin_right = 820.0
+margin_bottom = 790.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 820, 100 )
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item7"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -88.0
+rect_min_size = Vector2( 820, 100 )
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item7"]
+margin_right = 820.0
+margin_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 820, 100 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item7/HBoxContainer"]
+self_modulate = Color( 0.858824, 0, 0.219608, 1 )
+margin_right = 132.0
+margin_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Label7" type="Label" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item7/HBoxContainer/TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -37.5
+margin_top = -19.5
+margin_right = 37.5
+margin_bottom = 19.5
+custom_fonts/font = ExtResource( 8 )
+text = "Hard"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item7/HBoxContainer"]
+margin_left = 142.0
+margin_right = 502.0
+margin_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 250, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Prompt description"
+align = 1
+valign = 1
+
+[node name="Stars" type="GridContainer" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item7/HBoxContainer"]
+margin_left = 512.0
+margin_right = 820.0
+margin_bottom = 100.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 7
+columns = 3
+
+[node name="StarIcon" type="Control" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item7/HBoxContainer/Stars"]
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item7/HBoxContainer/Stars/StarIcon"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StarIcon2" type="Control" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item7/HBoxContainer/Stars"]
+margin_left = 104.0
+margin_right = 204.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item7/HBoxContainer/Stars/StarIcon2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StarIcon3" type="Control" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item7/HBoxContainer/Stars"]
+margin_left = 208.0
+margin_right = 308.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/PromptMarginContainer/MarginContainer/ScrollContainer/VBoxContainer/Item7/HBoxContainer/Stars/StarIcon3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="Control" parent="."]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.681122
+margin_right = 0.681152
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" parent="Buttons" instance=ExtResource( 1 )]
+self_modulate = Color( 0.858824, 0, 0.219608, 1 )
+anchor_left = 0.687
+anchor_top = 0.925
+anchor_right = 0.687
+anchor_bottom = 0.925
+margin_left = -79.488
+margin_top = -34.0001
+margin_right = 80.512
+margin_bottom = 37.9999
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 10 )
+expand = true
+scene_to_load = "res://scenes/TitleScene.tscn"
+
+[node name="Label" type="Label" parent="Buttons/BackButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -38.5
+margin_top = -19.5
+margin_right = 38.5
+margin_bottom = 19.5
+custom_fonts/font = ExtResource( 8 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" parent="Buttons" instance=ExtResource( 1 )]
+self_modulate = Color( 0.858824, 0, 0.219608, 1 )
+anchor_left = 0.839
+anchor_top = 0.924
+anchor_right = 0.839
+anchor_bottom = 0.924
+margin_left = -76.1194
+margin_top = -34.5081
+margin_right = 75.8806
+margin_bottom = 36.4919
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 10 )
+expand = true
+scene_to_load = "res://scenes/OnePlayerGame.tscn"
+
+[node name="Label2" type="Label" parent="Buttons/PlayButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -47.0
+margin_top = -19.5
+margin_right = 47.0
+margin_bottom = 19.5
+custom_fonts/font = ExtResource( 8 )
+text = "Select"
+__meta__ = {
+"_edit_use_anchors_": false
+}

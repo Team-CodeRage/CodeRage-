@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/whitesettingsiconbitmap.PNG-75a657483b94a07d124854a7928268a0.res"
+
+[deps]
+
+source_file="res://assets/whitesettingsiconbitmap.PNG"
+dest_files=[ "res://.import/whitesettingsiconbitmap.PNG-75a657483b94a07d124854a7928268a0.res" ]
+
+[params]
+
+create_from=0
+threshold=0.5

@@ -1,0 +1,2494 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://scripts/OnePlayerGame.gd" type="Script" id=2]
+[ext_resource path="res://assets/gearbitmap.png" type="BitMap" id=3]
+[ext_resource path="res://assets/whitesettingsicon.PNG" type="Texture" id=4]
+[ext_resource path="res://cour.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://assets/buttonbitmap.png" type="BitMap" id=6]
+[ext_resource path="res://assets/buttonbase.PNG" type="Texture" id=7]
+[ext_resource path="res://scripts/PromptGlobal.gd" type="Script" id=8]
+[ext_resource path="res://scripts/PopupDialog.gd" type="Script" id=9]
+[ext_resource path="res://scenes/PauseMenu.gd" type="Script" id=10]
+[ext_resource path="res://assets/whitecrbuttonhoverpressed.PNG" type="Texture" id=11]
+[ext_resource path="res://assets/whitecrbutton.PNG" type="Texture" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+size = 29
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 35
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 21
+outline_size = 1
+font_data = ExtResource( 5 )
+
+[node name="OnePlayerGame" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameMarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="GameMarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1004.0
+margin_bottom = 580.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameMarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1004.0
+margin_bottom = 580.0
+
+[node name="TopUI" type="Control" parent="GameMarginContainer/VBoxContainer"]
+margin_right = 984.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="PauseButton" type="TextureButton" parent="GameMarginContainer/VBoxContainer/TopUI"]
+anchor_bottom = 1.0
+margin_right = 50.0
+rect_min_size = Vector2( 50, 50 )
+texture_normal = ExtResource( 4 )
+texture_click_mask = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GameMarginContainer/VBoxContainer/TopUI"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -102.0
+margin_bottom = -3.8147e-06
+grow_horizontal = 0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0:00  "
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameMarginContainer/VBoxContainer"]
+margin_top = 54.0
+margin_right = 984.0
+margin_bottom = 560.0
+size_flags_vertical = 3
+
+[node name="StoreMarginContainer" type="MarginContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer"]
+margin_right = 190.0
+margin_bottom = 506.0
+custom_constants/margin_right = 5
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/StoreMarginContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 185.0
+margin_bottom = 496.0
+rect_min_size = Vector2( 175, 410 )
+color = Color( 0.14902, 0.301961, 0.34902, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer/StoreMarginContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 185.0
+margin_bottom = 496.0
+
+[node name="StoreLabel" type="MarginContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer/StoreMarginContainer/VBoxContainer"]
+margin_right = 175.0
+margin_bottom = 70.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/StoreMarginContainer/VBoxContainer/StoreLabel"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 165.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="GameMarginContainer/VBoxContainer/HBoxContainer/StoreMarginContainer/VBoxContainer/StoreLabel"]
+margin_left = 10.0
+margin_top = 14.0
+margin_right = 165.0
+margin_bottom = 55.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Store"
+align = 1
+valign = 1
+
+[node name="BuyArea" type="MarginContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer/StoreMarginContainer/VBoxContainer"]
+margin_top = 74.0
+margin_right = 175.0
+margin_bottom = 412.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 10
+custom_constants/margin_top = 0
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 0
+
+[node name="ColorRect" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/StoreMarginContainer/VBoxContainer/BuyArea"]
+margin_left = 10.0
+margin_right = 165.0
+margin_bottom = 338.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.2, 0.2, 0.2, 1 )
+
+[node name="CurrentMoney" type="MarginContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer/StoreMarginContainer/VBoxContainer"]
+margin_top = 416.0
+margin_right = 175.0
+margin_bottom = 486.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/StoreMarginContainer/VBoxContainer/CurrentMoney"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 165.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="GameMarginContainer/VBoxContainer/HBoxContainer/StoreMarginContainer/VBoxContainer/CurrentMoney"]
+margin_left = 10.0
+margin_top = 14.0
+margin_right = 165.0
+margin_bottom = 55.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "$300.00"
+align = 1
+valign = 1
+
+[node name="GridMarginContainer" type="MarginContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 194.0
+margin_right = 790.0
+margin_bottom = 506.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_top = 10
+custom_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer"]
+margin_top = 10.0
+margin_right = 596.0
+margin_bottom = 496.0
+color = Color( 0.14902, 0.301961, 0.34902, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer"]
+margin_top = 10.0
+margin_right = 596.0
+margin_bottom = 496.0
+
+[node name="GridLabelMarginConatiner" type="MarginContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer"]
+margin_right = 596.0
+margin_bottom = 70.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridLabelMarginConatiner"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 586.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridLabelMarginConatiner"]
+margin_left = 10.0
+margin_top = 14.0
+margin_right = 586.0
+margin_bottom = 55.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Code"
+align = 1
+valign = 1
+
+[node name="GridMarginContainer" type="MarginContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer"]
+margin_top = 74.0
+margin_right = 596.0
+margin_bottom = 486.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 10
+custom_constants/margin_top = 0
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer"]
+margin_left = 10.0
+margin_right = 586.0
+margin_bottom = 402.0
+color = Color( 0.2, 0.2, 0.2, 1 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer"]
+margin_left = 10.0
+margin_right = 586.0
+margin_bottom = 402.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer"]
+margin_right = 568.0
+margin_bottom = 644.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 2
+
+[node name="GridContainer" type="GridContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer"]
+margin_right = 568.0
+margin_bottom = 36.0
+custom_constants/hseparation = 2
+columns = 15
+
+[node name="Square" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer"]
+margin_right = 36.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square2" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer"]
+margin_left = 38.0
+margin_right = 74.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square3" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer"]
+margin_left = 76.0
+margin_right = 112.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square4" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer"]
+margin_left = 114.0
+margin_right = 150.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square5" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer"]
+margin_left = 152.0
+margin_right = 188.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square6" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer"]
+margin_left = 190.0
+margin_right = 226.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square7" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer"]
+margin_left = 228.0
+margin_right = 264.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square8" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer"]
+margin_left = 266.0
+margin_right = 302.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square9" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer"]
+margin_left = 304.0
+margin_right = 340.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square10" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer"]
+margin_left = 342.0
+margin_right = 378.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square11" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer"]
+margin_left = 380.0
+margin_right = 416.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square12" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer"]
+margin_left = 418.0
+margin_right = 454.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square13" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer"]
+margin_left = 456.0
+margin_right = 492.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square14" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer"]
+margin_left = 494.0
+margin_right = 530.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square15" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer"]
+margin_left = 532.0
+margin_right = 568.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="GridContainer2" type="GridContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 38.0
+margin_right = 568.0
+margin_bottom = 74.0
+custom_constants/hseparation = 2
+columns = 15
+
+[node name="Square" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer2"]
+margin_right = 36.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square2" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer2"]
+margin_left = 38.0
+margin_right = 74.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square3" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer2"]
+margin_left = 76.0
+margin_right = 112.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square4" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer2"]
+margin_left = 114.0
+margin_right = 150.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square5" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer2"]
+margin_left = 152.0
+margin_right = 188.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square6" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer2"]
+margin_left = 190.0
+margin_right = 226.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square7" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer2"]
+margin_left = 228.0
+margin_right = 264.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square8" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer2"]
+margin_left = 266.0
+margin_right = 302.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square9" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer2"]
+margin_left = 304.0
+margin_right = 340.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square10" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer2"]
+margin_left = 342.0
+margin_right = 378.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square11" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer2"]
+margin_left = 380.0
+margin_right = 416.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square12" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer2"]
+margin_left = 418.0
+margin_right = 454.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square13" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer2"]
+margin_left = 456.0
+margin_right = 492.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square14" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer2"]
+margin_left = 494.0
+margin_right = 530.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square15" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer2"]
+margin_left = 532.0
+margin_right = 568.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="GridContainer3" type="GridContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 76.0
+margin_right = 568.0
+margin_bottom = 112.0
+custom_constants/hseparation = 2
+columns = 15
+
+[node name="Square" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer3"]
+margin_right = 36.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square2" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer3"]
+margin_left = 38.0
+margin_right = 74.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square3" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer3"]
+margin_left = 76.0
+margin_right = 112.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square4" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer3"]
+margin_left = 114.0
+margin_right = 150.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square5" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer3"]
+margin_left = 152.0
+margin_right = 188.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square6" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer3"]
+margin_left = 190.0
+margin_right = 226.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square7" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer3"]
+margin_left = 228.0
+margin_right = 264.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square8" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer3"]
+margin_left = 266.0
+margin_right = 302.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square9" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer3"]
+margin_left = 304.0
+margin_right = 340.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square10" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer3"]
+margin_left = 342.0
+margin_right = 378.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square11" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer3"]
+margin_left = 380.0
+margin_right = 416.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square12" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer3"]
+margin_left = 418.0
+margin_right = 454.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square13" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer3"]
+margin_left = 456.0
+margin_right = 492.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square14" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer3"]
+margin_left = 494.0
+margin_right = 530.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square15" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer3"]
+margin_left = 532.0
+margin_right = 568.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="GridContainer4" type="GridContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 114.0
+margin_right = 568.0
+margin_bottom = 150.0
+custom_constants/hseparation = 2
+columns = 15
+
+[node name="Square" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer4"]
+margin_right = 36.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square2" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer4"]
+margin_left = 38.0
+margin_right = 74.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square3" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer4"]
+margin_left = 76.0
+margin_right = 112.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square4" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer4"]
+margin_left = 114.0
+margin_right = 150.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square5" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer4"]
+margin_left = 152.0
+margin_right = 188.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square6" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer4"]
+margin_left = 190.0
+margin_right = 226.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square7" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer4"]
+margin_left = 228.0
+margin_right = 264.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square8" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer4"]
+margin_left = 266.0
+margin_right = 302.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square9" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer4"]
+margin_left = 304.0
+margin_right = 340.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square10" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer4"]
+margin_left = 342.0
+margin_right = 378.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square11" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer4"]
+margin_left = 380.0
+margin_right = 416.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square12" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer4"]
+margin_left = 418.0
+margin_right = 454.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square13" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer4"]
+margin_left = 456.0
+margin_right = 492.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square14" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer4"]
+margin_left = 494.0
+margin_right = 530.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square15" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer4"]
+margin_left = 532.0
+margin_right = 568.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="GridContainer5" type="GridContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 152.0
+margin_right = 568.0
+margin_bottom = 188.0
+custom_constants/hseparation = 2
+columns = 15
+
+[node name="Square" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer5"]
+margin_right = 36.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square2" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer5"]
+margin_left = 38.0
+margin_right = 74.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square3" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer5"]
+margin_left = 76.0
+margin_right = 112.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square4" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer5"]
+margin_left = 114.0
+margin_right = 150.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square5" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer5"]
+margin_left = 152.0
+margin_right = 188.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square6" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer5"]
+margin_left = 190.0
+margin_right = 226.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square7" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer5"]
+margin_left = 228.0
+margin_right = 264.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square8" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer5"]
+margin_left = 266.0
+margin_right = 302.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square9" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer5"]
+margin_left = 304.0
+margin_right = 340.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square10" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer5"]
+margin_left = 342.0
+margin_right = 378.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square11" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer5"]
+margin_left = 380.0
+margin_right = 416.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square12" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer5"]
+margin_left = 418.0
+margin_right = 454.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square13" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer5"]
+margin_left = 456.0
+margin_right = 492.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square14" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer5"]
+margin_left = 494.0
+margin_right = 530.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square15" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer5"]
+margin_left = 532.0
+margin_right = 568.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="GridContainer6" type="GridContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 190.0
+margin_right = 568.0
+margin_bottom = 226.0
+custom_constants/hseparation = 2
+columns = 15
+
+[node name="Square" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer6"]
+margin_right = 36.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square2" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer6"]
+margin_left = 38.0
+margin_right = 74.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square3" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer6"]
+margin_left = 76.0
+margin_right = 112.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square4" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer6"]
+margin_left = 114.0
+margin_right = 150.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square5" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer6"]
+margin_left = 152.0
+margin_right = 188.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square6" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer6"]
+margin_left = 190.0
+margin_right = 226.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square7" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer6"]
+margin_left = 228.0
+margin_right = 264.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square8" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer6"]
+margin_left = 266.0
+margin_right = 302.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square9" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer6"]
+margin_left = 304.0
+margin_right = 340.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square10" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer6"]
+margin_left = 342.0
+margin_right = 378.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square11" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer6"]
+margin_left = 380.0
+margin_right = 416.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square12" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer6"]
+margin_left = 418.0
+margin_right = 454.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square13" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer6"]
+margin_left = 456.0
+margin_right = 492.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square14" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer6"]
+margin_left = 494.0
+margin_right = 530.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square15" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer6"]
+margin_left = 532.0
+margin_right = 568.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="GridContainer7" type="GridContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 228.0
+margin_right = 568.0
+margin_bottom = 264.0
+custom_constants/hseparation = 2
+columns = 15
+
+[node name="Square" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer7"]
+margin_right = 36.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square2" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer7"]
+margin_left = 38.0
+margin_right = 74.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square3" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer7"]
+margin_left = 76.0
+margin_right = 112.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square4" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer7"]
+margin_left = 114.0
+margin_right = 150.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square5" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer7"]
+margin_left = 152.0
+margin_right = 188.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square6" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer7"]
+margin_left = 190.0
+margin_right = 226.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square7" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer7"]
+margin_left = 228.0
+margin_right = 264.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square8" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer7"]
+margin_left = 266.0
+margin_right = 302.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square9" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer7"]
+margin_left = 304.0
+margin_right = 340.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square10" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer7"]
+margin_left = 342.0
+margin_right = 378.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square11" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer7"]
+margin_left = 380.0
+margin_right = 416.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square12" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer7"]
+margin_left = 418.0
+margin_right = 454.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square13" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer7"]
+margin_left = 456.0
+margin_right = 492.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square14" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer7"]
+margin_left = 494.0
+margin_right = 530.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square15" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer7"]
+margin_left = 532.0
+margin_right = 568.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="GridContainer8" type="GridContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 266.0
+margin_right = 568.0
+margin_bottom = 302.0
+custom_constants/hseparation = 2
+columns = 15
+
+[node name="Square" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer8"]
+margin_right = 36.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square2" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer8"]
+margin_left = 38.0
+margin_right = 74.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square3" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer8"]
+margin_left = 76.0
+margin_right = 112.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square4" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer8"]
+margin_left = 114.0
+margin_right = 150.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square5" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer8"]
+margin_left = 152.0
+margin_right = 188.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square6" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer8"]
+margin_left = 190.0
+margin_right = 226.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square7" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer8"]
+margin_left = 228.0
+margin_right = 264.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square8" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer8"]
+margin_left = 266.0
+margin_right = 302.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square9" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer8"]
+margin_left = 304.0
+margin_right = 340.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square10" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer8"]
+margin_left = 342.0
+margin_right = 378.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square11" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer8"]
+margin_left = 380.0
+margin_right = 416.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square12" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer8"]
+margin_left = 418.0
+margin_right = 454.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square13" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer8"]
+margin_left = 456.0
+margin_right = 492.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square14" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer8"]
+margin_left = 494.0
+margin_right = 530.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square15" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer8"]
+margin_left = 532.0
+margin_right = 568.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="GridContainer9" type="GridContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 304.0
+margin_right = 568.0
+margin_bottom = 340.0
+custom_constants/hseparation = 2
+columns = 15
+
+[node name="Square" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer9"]
+margin_right = 36.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square2" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer9"]
+margin_left = 38.0
+margin_right = 74.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square3" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer9"]
+margin_left = 76.0
+margin_right = 112.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square4" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer9"]
+margin_left = 114.0
+margin_right = 150.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square5" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer9"]
+margin_left = 152.0
+margin_right = 188.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square6" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer9"]
+margin_left = 190.0
+margin_right = 226.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square7" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer9"]
+margin_left = 228.0
+margin_right = 264.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square8" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer9"]
+margin_left = 266.0
+margin_right = 302.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square9" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer9"]
+margin_left = 304.0
+margin_right = 340.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square10" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer9"]
+margin_left = 342.0
+margin_right = 378.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square11" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer9"]
+margin_left = 380.0
+margin_right = 416.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square12" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer9"]
+margin_left = 418.0
+margin_right = 454.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square13" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer9"]
+margin_left = 456.0
+margin_right = 492.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square14" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer9"]
+margin_left = 494.0
+margin_right = 530.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square15" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer9"]
+margin_left = 532.0
+margin_right = 568.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="GridContainer10" type="GridContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 342.0
+margin_right = 568.0
+margin_bottom = 378.0
+custom_constants/hseparation = 2
+columns = 15
+
+[node name="Square" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_right = 36.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square2" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_left = 38.0
+margin_right = 74.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square3" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_left = 76.0
+margin_right = 112.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square4" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_left = 114.0
+margin_right = 150.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square5" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_left = 152.0
+margin_right = 188.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square6" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_left = 190.0
+margin_right = 226.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square7" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_left = 228.0
+margin_right = 264.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square8" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_left = 266.0
+margin_right = 302.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square9" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_left = 304.0
+margin_right = 340.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square10" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_left = 342.0
+margin_right = 378.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square11" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_left = 380.0
+margin_right = 416.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square12" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_left = 418.0
+margin_right = 454.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square13" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_left = 456.0
+margin_right = 492.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square14" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_left = 494.0
+margin_right = 530.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square15" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_left = 532.0
+margin_right = 568.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="GridContainer11" type="GridContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 380.0
+margin_right = 568.0
+margin_bottom = 416.0
+custom_constants/hseparation = 2
+columns = 15
+
+[node name="Square" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer11"]
+margin_right = 36.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square2" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer11"]
+margin_left = 38.0
+margin_right = 74.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square3" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer11"]
+margin_left = 76.0
+margin_right = 112.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square4" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer11"]
+margin_left = 114.0
+margin_right = 150.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square5" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer11"]
+margin_left = 152.0
+margin_right = 188.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square6" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer11"]
+margin_left = 190.0
+margin_right = 226.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square7" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer11"]
+margin_left = 228.0
+margin_right = 264.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square8" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer11"]
+margin_left = 266.0
+margin_right = 302.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square9" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer11"]
+margin_left = 304.0
+margin_right = 340.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square10" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer11"]
+margin_left = 342.0
+margin_right = 378.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square11" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer11"]
+margin_left = 380.0
+margin_right = 416.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square12" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer11"]
+margin_left = 418.0
+margin_right = 454.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square13" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer11"]
+margin_left = 456.0
+margin_right = 492.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square14" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer11"]
+margin_left = 494.0
+margin_right = 530.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square15" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer11"]
+margin_left = 532.0
+margin_right = 568.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="GridContainer12" type="GridContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 418.0
+margin_right = 568.0
+margin_bottom = 454.0
+custom_constants/hseparation = 2
+columns = 15
+
+[node name="Square" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer12"]
+margin_right = 36.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square2" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer12"]
+margin_left = 38.0
+margin_right = 74.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square3" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer12"]
+margin_left = 76.0
+margin_right = 112.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square4" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer12"]
+margin_left = 114.0
+margin_right = 150.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square5" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer12"]
+margin_left = 152.0
+margin_right = 188.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square6" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer12"]
+margin_left = 190.0
+margin_right = 226.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square7" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer12"]
+margin_left = 228.0
+margin_right = 264.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square8" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer12"]
+margin_left = 266.0
+margin_right = 302.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square9" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer12"]
+margin_left = 304.0
+margin_right = 340.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square10" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer12"]
+margin_left = 342.0
+margin_right = 378.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square11" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer12"]
+margin_left = 380.0
+margin_right = 416.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square12" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer12"]
+margin_left = 418.0
+margin_right = 454.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square13" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer12"]
+margin_left = 456.0
+margin_right = 492.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square14" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer12"]
+margin_left = 494.0
+margin_right = 530.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square15" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer12"]
+margin_left = 532.0
+margin_right = 568.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="GridContainer13" type="GridContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 456.0
+margin_right = 568.0
+margin_bottom = 492.0
+custom_constants/hseparation = 2
+columns = 15
+
+[node name="Square" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer13"]
+margin_right = 36.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square2" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer13"]
+margin_left = 38.0
+margin_right = 74.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square3" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer13"]
+margin_left = 76.0
+margin_right = 112.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square4" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer13"]
+margin_left = 114.0
+margin_right = 150.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square5" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer13"]
+margin_left = 152.0
+margin_right = 188.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square6" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer13"]
+margin_left = 190.0
+margin_right = 226.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square7" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer13"]
+margin_left = 228.0
+margin_right = 264.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square8" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer13"]
+margin_left = 266.0
+margin_right = 302.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square9" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer13"]
+margin_left = 304.0
+margin_right = 340.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square10" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer13"]
+margin_left = 342.0
+margin_right = 378.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square11" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer13"]
+margin_left = 380.0
+margin_right = 416.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square12" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer13"]
+margin_left = 418.0
+margin_right = 454.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square13" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer13"]
+margin_left = 456.0
+margin_right = 492.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square14" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer13"]
+margin_left = 494.0
+margin_right = 530.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square15" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer13"]
+margin_left = 532.0
+margin_right = 568.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="GridContainer14" type="GridContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 494.0
+margin_right = 568.0
+margin_bottom = 530.0
+custom_constants/hseparation = 2
+columns = 15
+
+[node name="Square" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer14"]
+margin_right = 36.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square2" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer14"]
+margin_left = 38.0
+margin_right = 74.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square3" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer14"]
+margin_left = 76.0
+margin_right = 112.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square4" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer14"]
+margin_left = 114.0
+margin_right = 150.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square5" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer14"]
+margin_left = 152.0
+margin_right = 188.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square6" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer14"]
+margin_left = 190.0
+margin_right = 226.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square7" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer14"]
+margin_left = 228.0
+margin_right = 264.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square8" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer14"]
+margin_left = 266.0
+margin_right = 302.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square9" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer14"]
+margin_left = 304.0
+margin_right = 340.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square10" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer14"]
+margin_left = 342.0
+margin_right = 378.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square11" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer14"]
+margin_left = 380.0
+margin_right = 416.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square12" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer14"]
+margin_left = 418.0
+margin_right = 454.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square13" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer14"]
+margin_left = 456.0
+margin_right = 492.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square14" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer14"]
+margin_left = 494.0
+margin_right = 530.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square15" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer14"]
+margin_left = 532.0
+margin_right = 568.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="GridContainer15" type="GridContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 532.0
+margin_right = 568.0
+margin_bottom = 568.0
+custom_constants/hseparation = 2
+columns = 15
+
+[node name="Square" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer15"]
+margin_right = 36.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square2" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer15"]
+margin_left = 38.0
+margin_right = 74.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square3" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer15"]
+margin_left = 76.0
+margin_right = 112.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square4" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer15"]
+margin_left = 114.0
+margin_right = 150.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square5" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer15"]
+margin_left = 152.0
+margin_right = 188.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square6" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer15"]
+margin_left = 190.0
+margin_right = 226.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square7" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer15"]
+margin_left = 228.0
+margin_right = 264.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square8" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer15"]
+margin_left = 266.0
+margin_right = 302.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square9" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer15"]
+margin_left = 304.0
+margin_right = 340.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square10" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer15"]
+margin_left = 342.0
+margin_right = 378.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square11" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer15"]
+margin_left = 380.0
+margin_right = 416.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square12" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer15"]
+margin_left = 418.0
+margin_right = 454.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square13" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer15"]
+margin_left = 456.0
+margin_right = 492.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square14" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer15"]
+margin_left = 494.0
+margin_right = 530.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square15" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer15"]
+margin_left = 532.0
+margin_right = 568.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="GridContainer16" type="GridContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 570.0
+margin_right = 568.0
+margin_bottom = 606.0
+custom_constants/hseparation = 2
+columns = 15
+
+[node name="Square" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer16"]
+margin_right = 36.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square2" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer16"]
+margin_left = 38.0
+margin_right = 74.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square3" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer16"]
+margin_left = 76.0
+margin_right = 112.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square4" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer16"]
+margin_left = 114.0
+margin_right = 150.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square5" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer16"]
+margin_left = 152.0
+margin_right = 188.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square6" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer16"]
+margin_left = 190.0
+margin_right = 226.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square7" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer16"]
+margin_left = 228.0
+margin_right = 264.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square8" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer16"]
+margin_left = 266.0
+margin_right = 302.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square9" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer16"]
+margin_left = 304.0
+margin_right = 340.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square10" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer16"]
+margin_left = 342.0
+margin_right = 378.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square11" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer16"]
+margin_left = 380.0
+margin_right = 416.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square12" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer16"]
+margin_left = 418.0
+margin_right = 454.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square13" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer16"]
+margin_left = 456.0
+margin_right = 492.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square14" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer16"]
+margin_left = 494.0
+margin_right = 530.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square15" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer16"]
+margin_left = 532.0
+margin_right = 568.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="GridContainer17" type="GridContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 608.0
+margin_right = 568.0
+margin_bottom = 644.0
+custom_constants/hseparation = 2
+columns = 15
+
+[node name="Square" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer17"]
+margin_right = 36.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square2" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer17"]
+margin_left = 38.0
+margin_right = 74.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square3" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer17"]
+margin_left = 76.0
+margin_right = 112.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square4" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer17"]
+margin_left = 114.0
+margin_right = 150.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square5" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer17"]
+margin_left = 152.0
+margin_right = 188.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square6" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer17"]
+margin_left = 190.0
+margin_right = 226.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square7" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer17"]
+margin_left = 228.0
+margin_right = 264.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square8" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer17"]
+margin_left = 266.0
+margin_right = 302.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square9" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer17"]
+margin_left = 304.0
+margin_right = 340.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square10" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer17"]
+margin_left = 342.0
+margin_right = 378.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square11" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer17"]
+margin_left = 380.0
+margin_right = 416.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square12" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer17"]
+margin_left = 418.0
+margin_right = 454.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square13" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer17"]
+margin_left = 456.0
+margin_right = 492.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square14" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer17"]
+margin_left = 494.0
+margin_right = 530.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Square15" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/GridMarginContainer/VBoxContainer/GridMarginContainer/ScrollContainer/VBoxContainer/GridContainer17"]
+margin_left = 532.0
+margin_right = 568.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="PromptMarginContainer" type="MarginContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 794.0
+margin_right = 984.0
+margin_bottom = 506.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 10
+
+[node name="ColorRect2" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/PromptMarginContainer"]
+margin_left = 5.0
+margin_top = 10.0
+margin_right = 180.0
+margin_bottom = 496.0
+rect_min_size = Vector2( 175, 410 )
+color = Color( 0.14902, 0.301961, 0.34902, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer/PromptMarginContainer"]
+margin_left = 5.0
+margin_top = 10.0
+margin_right = 180.0
+margin_bottom = 496.0
+
+[node name="PromptLabelMarginConatiner" type="MarginContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer/PromptMarginContainer/VBoxContainer"]
+margin_right = 175.0
+margin_bottom = 70.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="GameMarginContainer/VBoxContainer/HBoxContainer/PromptMarginContainer/VBoxContainer/PromptLabelMarginConatiner"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 165.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="GameMarginContainer/VBoxContainer/HBoxContainer/PromptMarginContainer/VBoxContainer/PromptLabelMarginConatiner"]
+margin_left = 10.0
+margin_top = 14.0
+margin_right = 165.0
+margin_bottom = 55.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Prompt"
+align = 1
+valign = 1
+
+[node name="PrompButtonsMarginConatiner" type="MarginContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer/PromptMarginContainer/VBoxContainer"]
+margin_top = 74.0
+margin_right = 175.0
+margin_bottom = 486.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameMarginContainer/VBoxContainer/HBoxContainer/PromptMarginContainer/VBoxContainer/PrompButtonsMarginConatiner"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 165.0
+margin_bottom = 402.0
+
+[node name="InstructionsButton" type="TextureButton" parent="GameMarginContainer/VBoxContainer/HBoxContainer/PromptMarginContainer/VBoxContainer/PrompButtonsMarginConatiner/VBoxContainer"]
+margin_right = 155.0
+margin_bottom = 128.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 7 )
+texture_click_mask = ExtResource( 6 )
+expand = true
+
+[node name="Label" type="Label" parent="GameMarginContainer/VBoxContainer/HBoxContainer/PromptMarginContainer/VBoxContainer/PrompButtonsMarginConatiner/VBoxContainer/InstructionsButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Instructions"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OutputButton" type="TextureButton" parent="GameMarginContainer/VBoxContainer/HBoxContainer/PromptMarginContainer/VBoxContainer/PrompButtonsMarginConatiner/VBoxContainer"]
+margin_top = 132.0
+margin_right = 155.0
+margin_bottom = 260.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 7 )
+texture_click_mask = ExtResource( 6 )
+expand = true
+
+[node name="Label" type="Label" parent="GameMarginContainer/VBoxContainer/HBoxContainer/PromptMarginContainer/VBoxContainer/PrompButtonsMarginConatiner/VBoxContainer/OutputButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Example
+Output"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SubmitButton" type="TextureButton" parent="GameMarginContainer/VBoxContainer/HBoxContainer/PromptMarginContainer/VBoxContainer/PrompButtonsMarginConatiner/VBoxContainer"]
+margin_top = 264.0
+margin_right = 155.0
+margin_bottom = 392.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 7 )
+texture_click_mask = ExtResource( 6 )
+expand = true
+
+[node name="Label" type="Label" parent="GameMarginContainer/VBoxContainer/HBoxContainer/PromptMarginContainer/VBoxContainer/PrompButtonsMarginConatiner/VBoxContainer/SubmitButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Submit"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Prompt" type="Control" parent="."]
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PopupDialog" type="PopupDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -256.0
+margin_top = -150.0
+margin_right = 256.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 512, 300 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="PopupDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupDialog/MarginContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 502.0
+margin_bottom = 290.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="PopupDialog/MarginContainer/VBoxContainer"]
+margin_right = 492.0
+margin_bottom = 14.0
+text = "Title"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="PopupDialog/MarginContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 492.0
+margin_bottom = 280.0
+size_flags_vertical = 7
+text = "Description"
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseMenu" type="Control" parent="."]
+pause_mode = 2
+visible = false
+self_modulate = Color( 0, 0, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.686275 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/MarginContainer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="Spacer" type="Control" parent="PauseMenu/MarginContainer/VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 116.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TitleMarginContainer" type="MarginContainer" parent="PauseMenu/MarginContainer/VBoxContainer"]
+margin_top = 120.0
+margin_right = 1024.0
+margin_bottom = 236.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 300
+custom_constants/margin_top = 80
+custom_constants/margin_left = 300
+custom_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="PauseMenu/MarginContainer/VBoxContainer/TitleMarginContainer"]
+margin_left = 300.0
+margin_top = 81.0
+margin_right = 724.0
+margin_bottom = 95.0
+text = "Paused"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="ResumeMarginContainer" type="MarginContainer" parent="PauseMenu/MarginContainer/VBoxContainer"]
+margin_top = 240.0
+margin_right = 1024.0
+margin_bottom = 356.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 350
+custom_constants/margin_top = 30
+custom_constants/margin_left = 350
+custom_constants/margin_bottom = 0
+
+[node name="ResumeButton" type="TextureButton" parent="PauseMenu/MarginContainer/VBoxContainer/ResumeMarginContainer"]
+self_modulate = Color( 0.133333, 0.321569, 0.301961, 1 )
+margin_left = 350.0
+margin_top = 30.0
+margin_right = 674.0
+margin_bottom = 116.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 11 )
+texture_hover = ExtResource( 11 )
+expand = true
+
+[node name="Label" type="Label" parent="PauseMenu/MarginContainer/VBoxContainer/ResumeMarginContainer/ResumeButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Resume"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackMarginContainer" type="MarginContainer" parent="PauseMenu/MarginContainer/VBoxContainer"]
+margin_top = 360.0
+margin_right = 1024.0
+margin_bottom = 476.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 350
+custom_constants/margin_top = 10
+custom_constants/margin_left = 350
+custom_constants/margin_bottom = 20
+
+[node name="BackButton" type="TextureButton" parent="PauseMenu/MarginContainer/VBoxContainer/BackMarginContainer"]
+self_modulate = Color( 0.133333, 0.321569, 0.301961, 1 )
+margin_left = 350.0
+margin_top = 10.0
+margin_right = 674.0
+margin_bottom = 96.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 11 )
+texture_hover = ExtResource( 11 )
+expand = true
+
+[node name="Label" type="Label" parent="PauseMenu/MarginContainer/VBoxContainer/BackMarginContainer/BackButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Back To Menu"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer2" type="Control" parent="PauseMenu/MarginContainer/VBoxContainer"]
+margin_top = 480.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+[connection signal="pressed" from="GameMarginContainer/VBoxContainer/TopUI/PauseButton" to="." method="_on_PauseButton_pressed"]
+[connection signal="pressed" from="GameMarginContainer/VBoxContainer/HBoxContainer/PromptMarginContainer/VBoxContainer/PrompButtonsMarginConatiner/VBoxContainer/InstructionsButton" to="." method="_on_InstructionsButton_pressed"]
+[connection signal="pressed" from="GameMarginContainer/VBoxContainer/HBoxContainer/PromptMarginContainer/VBoxContainer/PrompButtonsMarginConatiner/VBoxContainer/OutputButton" to="." method="_on_OutputButton_pressed"]
+[connection signal="pressed" from="GameMarginContainer/VBoxContainer/HBoxContainer/PromptMarginContainer/VBoxContainer/PrompButtonsMarginConatiner/VBoxContainer/SubmitButton" to="." method="_on_SubmitButton_pressed"]
+[connection signal="pressed" from="PauseMenu/MarginContainer/VBoxContainer/ResumeMarginContainer/ResumeButton" to="PauseMenu" method="_on_ResumeButton_pressed"]
+[connection signal="pressed" from="PauseMenu/MarginContainer/VBoxContainer/BackMarginContainer/BackButton" to="." method="_on_BackButton_pressed"]

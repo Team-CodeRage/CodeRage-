@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/gearbitmap.png-411ebf20719376db60d378eb458280fd.res"
+
+[deps]
+
+source_file="res://assets/gearbitmap.png"
+dest_files=[ "res://.import/gearbitmap.png-411ebf20719376db60d378eb458280fd.res" ]
+
+[params]
+
+create_from=0
+threshold=0.5

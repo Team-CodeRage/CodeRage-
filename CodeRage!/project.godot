@@ -16,14 +16,14 @@ _global_script_class_icons={
 [application]
 
 config/name="Code Rage!"
-run/main_scene="res://Intro.tscn"
+run/main_scene="res://scenes/Intro.tscn"
 config/icon="res://icon.png"
 config/version="0.1.0"
 
 [autoload]
 
-LocalStorage="*res://LocalStorage.gd"
-GameMusic="*res://GameMusic.tscn"
+LocalStorage="*res://scripts/LocalStorage.gd"
+GameMusic="*res://scenes/GameMusic.tscn"
 
 [display]
 
