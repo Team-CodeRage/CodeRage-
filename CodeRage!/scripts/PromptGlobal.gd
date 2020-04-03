@@ -2,6 +2,8 @@ extends Node
 
 var instructions
 var output
+var codeBlocks
+var solution
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,4 +17,28 @@ func getInstructions():
 	
 func getOutput():
 	return output
+	pass
+	
+func getSolution():
+	return solution
+	pass
+
+func getCodeBlocks():
+	return codeBlocks
+	pass
+
+func setInstructions(new):
+	instructions = new
+	pass
+	
+func setOutput(new):
+	output = new
+	pass
+	
+func setSolution(new):
+	solution = new
+	pass
+	
+func setCodeBlocks(new):
+	codeBlocks = new
 	pass

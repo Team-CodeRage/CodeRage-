@@ -4,7 +4,6 @@ var scene_path_to_load
 
 func _ready():
 	get_node("TitleVBoxContainer/Control/AnimationPlayer").play("Bounce")
-	LocalStorage.new_settings()
 	for button in $TitleVBoxContainer/Buttons.get_children():
 		button.connect("pressed", self, "_on_Button_pressed", [button.scene_to_load])
 	pass

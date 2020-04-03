@@ -24,6 +24,7 @@ config/version="0.1.0"
 
 LocalStorage="*res://scripts/LocalStorage.gd"
 GameMusic="*res://scenes/GameMusic.tscn"
+PromptData="*res://scripts/PromptData.gd"
 
 [display]
 

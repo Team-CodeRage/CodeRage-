@@ -50,10 +50,56 @@ var _settings = {
 	"font": {
 		"size" : 0
 		},
-	"stars" : {
-		"level1" : 0,
-		"level2" : 0
-	}
+	"Prompts" : {
+		"Prompt1" : {
+			"Title" : "Sum of two numbers",
+			"Difficulty" : 0,
+			"Instructions" : "Write a Python program to prompt the user for two numbers, num1 and num2, and output the sum of these two numbers.",
+			"Output" : "First number: 5 \nSecond number: 3 \nThe sum of 5.0 and 3.0 is 8.0",
+			"CodeBlocks" : ["number1 = ","input(\"First number: \")","number2 =","input(\"\nSecond number: \")","sum = ","float(number1)"," + ","float(number2)","print(","The sum of {0} and {1} is {2}",".format(number1, number2, sum))"],
+			"Solution" : [[0,1],
+						  [2,3],
+						  [4,5],
+						  [6,7,8,9],
+						  [10,11,12]]
+					},
+		"Prompt2" : {
+			"Title" : "Sum of two numbers",
+			"Difficulty" : 0,
+			"Instructions" : "Write a Python program to prompt the user for two numbers, num1 and num2, and output the sum of these two numbers.",
+			"Output" : "First number: 5 \nSecond number: 3 \nThe sum of 5.0 and 3.0 is 8.0",
+			"CodeBlocks" : ["number1 = ","input(\"First number: \")","number2 =","input(\"\nSecond number: \")","sum = ","float(number1)"," + ","float(number2)","print(","The sum of {0} and {1} is {2}",".format(number1, number2, sum))"],
+			"Solution" : [[0,1],
+						  [2,3],
+						  [4,5],
+						  [6,7,8,9],
+						  [10,11,12]]
+					},
+		"Prompt3" : {
+			"Title" : "Sum of two numbers",
+			"Difficulty" : 1,
+			"Instructions" : "Write a Python program to prompt the user for two numbers, num1 and num2, and output the sum of these two numbers.",
+			"Output" : "First number: 5 \nSecond number: 3 \nThe sum of 5.0 and 3.0 is 8.0",
+			"CodeBlocks" : ["number1 = ","input(\"First number: \")","number2 =","input(\"\nSecond number: \")","sum = ","float(number1)"," + ","float(number2)","print(","The sum of {0} and {1} is {2}",".format(number1, number2, sum))"],
+			"Solution" : [[0,1],
+						  [2,3],
+						  [4,5],
+						  [6,7,8,9],
+						  [10,11,12]]
+					},
+		"Prompt4" : {
+			"Title" : "Sum of two numbers",
+			"Difficulty" : 2,
+			"Instructions" : "Write a Python program to prompt the user for two numbers, num1 and num2, and output the sum of these two numbers.",
+			"Output" : "First number: 5 \nSecond number: 3 \nThe sum of 5.0 and 3.0 is 8.0",
+			"CodeBlocks" : ["number1 = ","input(\"First number: \")","number2 =","input(\"\nSecond number: \")","sum = ","float(number1)"," + ","float(number2)","print(","The sum of {0} and {1} is {2}",".format(number1, number2, sum))"],
+			"Solution" : [[0,1],
+						  [2,3],
+						  [4,5],
+						  [6,7,8,9],
+						  [10,11,12]]
+					}
+		}
 }
 
 func _ready():
@@ -62,9 +108,15 @@ func _ready():
 	pass
 
 func save_settings():
+	print("Saved Settings")
 	for section in _settings.keys():
-		for key in _settings[section]:
-			_config_file.set_value(section, key, _settings[section][key])
+		if(section == "Prompts"):
+			for key in _settings[section]:
+				for info in _settings[section][key]:
+					_config_file.set_value(section, key, info, _settings[section][key][info])
+		else:
+			for key in _settings[section]:
+				_config_file.set_value(section, key, _settings[section][key])
 
 	_config_file.save(SAVE_PATH)
 	pass
@@ -72,9 +124,19 @@ func save_settings():
 func new_settings():
 	print("New Game")
 	for section in _settings.keys():
-		for key in _settings[section]:
-			if(section == "stars" or section == "font" or section == "volume"):
-				set_setting(section, key, 0)
+		if(section == "Prompts"):
+			for key in _settings[section]:
+				for info in _settings[section][key]:
+					if(info == "Title" or info == "Instructions" or info == "Output"):
+						set_promptInfo(section,key,info,"none")
+					elif(info == "Difficulty"):
+						set_promptInfo(section,key,info,0)
+					elif(info == "Difficulty"):
+						set_promptInfo(section,key,info,null)
+		else:
+			for key in _settings[section]:
+				if(section == "font" or section == "volume"):
+					set_setting(section, key, 0)
 	pass
 
 func load_settings(): # could pass path as parameter, could create and return a dictionary instead of editing one
@@ -83,10 +145,15 @@ func load_settings(): # could pass path as parameter, could create and return a 
 	if error != OK:
 		print("Failed loading settings file. Error code %s % error")
 		return null
-		
+
 	for section in _settings.keys():
-		for key in _settings[section]:
-			_settings[section][key] = _config_file.get_value(section, key, null)
+		if(section == "Prompts"):
+			for key in _settings[section]:
+				for info in _settings[section][key]:
+					_settings[section][key] = _config_file.get_value(section, key, info, null)
+		else:
+			for key in _settings[section]:
+				_settings[section][key] = _config_file.get_value(section, key, null)
 	pass
 
 func getLevels():
@@ -103,5 +170,11 @@ func setLevels(items):
 func get_setting(category, key):
 	return _settings[category][key]
 
+func get_promptInfo(category, prompt, info):
+	return _settings[category][prompt][info]
+
 func set_setting(category, key, value):
 	_settings[category][key] = value
+
+func set_promptInfo(category, prompt, info, value):
+	_settings[category][prompt][info] = value
