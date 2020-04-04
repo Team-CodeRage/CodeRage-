@@ -15,6 +15,8 @@ func toggledButton(name):
 	for i in get_children():
 		if(i.get_name() != name):
 			i.untoggle()
+		else:
+			get_parent().get_parent().get_parent().get_parent().get_parent().selectedPrompt = name
 	pass # Replace with function body.
 
 func loadPrompts():
@@ -22,6 +24,7 @@ func loadPrompts():
 	for prompt in PromptData.data["Prompts"].keys():
 		print("Prompt: ", prompt)
 		var child = selectionItem.instance()
+		child.promptName = prompt
 		child.setDifficulty(int(PromptData.getPromptData(prompt, "Difficulty")))
 		child.changeDescription(PromptData.getPromptData(prompt, "Title"))
 		child.setStars(int(PromptData.getPromptData(prompt, "Stars")))

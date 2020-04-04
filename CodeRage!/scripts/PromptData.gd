@@ -28,10 +28,10 @@ var default_data = {
 			"Stars" : 3
 					},
 		"Prompt2" : {
-			"Title" : "Sum of two numbers",
+			"Title" : "Prompt 2",
 			"Difficulty" : 0,
-			"Instructions" : "Write a Python program to prompt the user for two numbers, num1 and num2, and output the sum of these two numbers.",
-			"Output" : "First number: 5 \nSecond number: 3 \nThe sum of 5.0 and 3.0 is 8.0",
+			"Instructions" : "Prompt 2",
+			"Output" : "Prompt 2",
 			"CodeBlocks" : ["number1 = ","input(\"First number: \")","number2 =","input(\"\nSecond number: \")","sum = ","float(number1)"," + ","float(number2)","print(","The sum of {0} and {1} is {2}",".format(number1, number2, sum))"],
 			"Solution" : [[0,1],
 						  [2,3],
@@ -41,10 +41,10 @@ var default_data = {
 			"Stars" : 2
 					},
 		"Prompt3" : {
-			"Title" : "Sum of two numbers",
+			"Title" : "Prompt 3",
 			"Difficulty" : 1,
-			"Instructions" : "Write a Python program to prompt the user for two numbers, num1 and num2, and output the sum of these two numbers.",
-			"Output" : "First number: 5 \nSecond number: 3 \nThe sum of 5.0 and 3.0 is 8.0",
+			"Instructions" : "Prompt 3",
+			"Output" : "Prompt 3",
 			"CodeBlocks" : ["number1 = ","input(\"First number: \")","number2 =","input(\"\nSecond number: \")","sum = ","float(number1)"," + ","float(number2)","print(","The sum of {0} and {1} is {2}",".format(number1, number2, sum))"],
 			"Solution" : [[0,1],
 						  [2,3],
@@ -54,10 +54,10 @@ var default_data = {
 			"Stars" : 1
 					},
 		"Prompt4" : {
-			"Title" : "Sum of two numbers",
+			"Title" : "Prompt 4",
 			"Difficulty" : 2,
-			"Instructions" : "Write a Python program to prompt the user for two numbers, num1 and num2, and output the sum of these two numbers.",
-			"Output" : "First number: 5 \nSecond number: 3 \nThe sum of 5.0 and 3.0 is 8.0",
+			"Instructions" : "Prompt 4",
+			"Output" : "Prompt 4",
 			"CodeBlocks" : ["number1 = ","input(\"First number: \")","number2 =","input(\"\nSecond number: \")","sum = ","float(number1)"," + ","float(number2)","print(","The sum of {0} and {1} is {2}",".format(number1, number2, sum))"],
 			"Solution" : [[0,1],
 						  [2,3],
