@@ -40,6 +40,9 @@ func _on_PauseButton_pressed():
 
 func _on_Timer_timeout():
 	var block = get_node("BlockManager/CodeBlock")
-	block.position = gridNode.getGridPosition(5,5)
+	block.setPositionNode(5, 5)
 	block.setGridLength(5)
 	pass # Replace with function body.
+
+func getBlockPos(row, col):
+	return gridNode.getGridPosition(row,col)

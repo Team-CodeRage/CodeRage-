@@ -1,5 +1,10 @@
 extends Node2D
 
+const codeBlock = preload("res://scenes/CodeBlock.tscn")
+
+onready var gridNode = get_parent().get_node("BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer")
+onready var storeNode = get_parent().get_node("BackGUI/StoreMarginContainer/ColorRect")
+
 var sprites = []
 var top_sprite = null
 var dragging = false
@@ -47,3 +52,11 @@ func _top_sprite(): #Get the top sprite
 	for i in sprites: #Set all can_drag to false
 		i.can_drag = false
 	return sprites[0] #Return top sprite
+
+func createSprite(gridLength, text, color):
+	var item = codeBlock.instance()
+	item.setGridLength(gridLength)
+	item.setText(text)
+	item.setColor(color) 
+	add_child(item)
+	pass

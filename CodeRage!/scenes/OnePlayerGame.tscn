@@ -1,12 +1,12 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scripts/GridManager.gd" type="Script" id=1]
 [ext_resource path="res://scripts/OnePlayerGame.gd" type="Script" id=2]
 [ext_resource path="res://assets/gearbitmap.png" type="BitMap" id=3]
 [ext_resource path="res://assets/whitesettingsicon.PNG" type="Texture" id=4]
 [ext_resource path="res://cour.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://assets/buttonbitmap.png" type="BitMap" id=6]
-[ext_resource path="res://assets/buttonbase.PNG" type="Texture" id=7]
+[ext_resource path="res://assets/crsmallerbutton.PNG" type="Texture" id=6]
+[ext_resource path="res://assets/crsmallerbuttonhovered.PNG" type="Texture" id=7]
 [ext_resource path="res://scripts/GridBox.gd" type="Script" id=8]
 [ext_resource path="res://scripts/PopupDialog.gd" type="Script" id=9]
 [ext_resource path="res://scripts/PauseMenu.gd" type="Script" id=10]
@@ -17,8 +17,13 @@
 [ext_resource path="res://assets/Capture1.png" type="Texture" id=15]
 [ext_resource path="res://scenes/BlockManager.gd" type="Script" id=16]
 
+[sub_resource type="DynamicFont" id=2]
+size = 19
+outline_size = 1
+font_data = ExtResource( 5 )
+
 [sub_resource type="DynamicFont" id=1]
-size = 21
+size = 26
 outline_size = 1
 font_data = ExtResource( 5 )
 
@@ -122,12 +127,14 @@ columns = 14
 margin_right = 36.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/0/0"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -138,12 +145,14 @@ margin_left = 40.0
 margin_right = 76.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/0/1"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -154,12 +163,14 @@ margin_left = 80.0
 margin_right = 116.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/0/2"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -170,12 +181,14 @@ margin_left = 120.0
 margin_right = 156.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/0/3"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -186,12 +199,14 @@ margin_left = 160.0
 margin_right = 196.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/0/4"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -202,12 +217,14 @@ margin_left = 200.0
 margin_right = 236.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/0/5"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -218,12 +235,14 @@ margin_left = 240.0
 margin_right = 276.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/0/6"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -234,12 +253,14 @@ margin_left = 280.0
 margin_right = 316.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/0/7"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -250,12 +271,14 @@ margin_left = 320.0
 margin_right = 356.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/0/8"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -266,12 +289,14 @@ margin_left = 360.0
 margin_right = 396.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/0/9"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -282,12 +307,14 @@ margin_left = 400.0
 margin_right = 436.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/0/10"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -298,12 +325,14 @@ margin_left = 440.0
 margin_right = 476.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/0/11"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -314,12 +343,14 @@ margin_left = 480.0
 margin_right = 516.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/0/12"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -330,12 +361,14 @@ margin_left = 520.0
 margin_right = 556.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/0/13"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -353,12 +386,14 @@ columns = 14
 margin_right = 36.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/1/0"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -369,12 +404,14 @@ margin_left = 40.0
 margin_right = 76.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/1/1"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -385,12 +422,14 @@ margin_left = 80.0
 margin_right = 116.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/1/2"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -401,12 +440,14 @@ margin_left = 120.0
 margin_right = 156.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/1/3"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -417,12 +458,14 @@ margin_left = 160.0
 margin_right = 196.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/1/4"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -433,12 +476,14 @@ margin_left = 200.0
 margin_right = 236.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/1/5"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -449,12 +494,14 @@ margin_left = 240.0
 margin_right = 276.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/1/6"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -465,12 +512,14 @@ margin_left = 280.0
 margin_right = 316.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/1/7"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -481,12 +530,14 @@ margin_left = 320.0
 margin_right = 356.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/1/8"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -497,12 +548,14 @@ margin_left = 360.0
 margin_right = 396.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/1/9"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -513,12 +566,14 @@ margin_left = 400.0
 margin_right = 436.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/1/10"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -529,12 +584,14 @@ margin_left = 440.0
 margin_right = 476.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/1/11"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -545,12 +602,14 @@ margin_left = 480.0
 margin_right = 516.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/1/12"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -561,12 +620,14 @@ margin_left = 520.0
 margin_right = 556.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/1/13"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -584,12 +645,14 @@ columns = 14
 margin_right = 36.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/2/0"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -600,12 +663,14 @@ margin_left = 40.0
 margin_right = 76.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/2/1"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -616,12 +681,14 @@ margin_left = 80.0
 margin_right = 116.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/2/2"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -632,12 +699,14 @@ margin_left = 120.0
 margin_right = 156.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/2/3"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -648,12 +717,14 @@ margin_left = 160.0
 margin_right = 196.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/2/4"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -664,12 +735,14 @@ margin_left = 200.0
 margin_right = 236.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/2/5"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -680,12 +753,14 @@ margin_left = 240.0
 margin_right = 276.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/2/6"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -696,12 +771,14 @@ margin_left = 280.0
 margin_right = 316.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/2/7"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -712,12 +789,14 @@ margin_left = 320.0
 margin_right = 356.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/2/8"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -728,12 +807,14 @@ margin_left = 360.0
 margin_right = 396.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/2/9"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -744,12 +825,14 @@ margin_left = 400.0
 margin_right = 436.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/2/10"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -760,12 +843,14 @@ margin_left = 440.0
 margin_right = 476.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/2/11"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -776,12 +861,14 @@ margin_left = 480.0
 margin_right = 516.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/2/12"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -792,12 +879,14 @@ margin_left = 520.0
 margin_right = 556.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/2/13"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -815,12 +904,14 @@ columns = 14
 margin_right = 36.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/3/0"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -831,12 +922,14 @@ margin_left = 40.0
 margin_right = 76.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/3/1"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -847,12 +940,14 @@ margin_left = 80.0
 margin_right = 116.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/3/2"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -863,12 +958,14 @@ margin_left = 120.0
 margin_right = 156.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/3/3"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -879,12 +976,14 @@ margin_left = 160.0
 margin_right = 196.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/3/4"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -895,12 +994,14 @@ margin_left = 200.0
 margin_right = 236.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/3/5"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -911,12 +1012,14 @@ margin_left = 240.0
 margin_right = 276.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/3/6"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -927,12 +1030,14 @@ margin_left = 280.0
 margin_right = 316.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/3/7"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -943,12 +1048,14 @@ margin_left = 320.0
 margin_right = 356.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/3/8"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -959,12 +1066,14 @@ margin_left = 360.0
 margin_right = 396.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/3/9"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -975,12 +1084,14 @@ margin_left = 400.0
 margin_right = 436.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/3/10"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -991,12 +1102,14 @@ margin_left = 440.0
 margin_right = 476.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/3/11"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1007,12 +1120,14 @@ margin_left = 480.0
 margin_right = 516.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/3/12"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1023,12 +1138,14 @@ margin_left = 520.0
 margin_right = 556.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/3/13"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1046,12 +1163,14 @@ columns = 14
 margin_right = 36.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/4/0"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1062,12 +1181,14 @@ margin_left = 40.0
 margin_right = 76.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/4/1"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1078,12 +1199,14 @@ margin_left = 80.0
 margin_right = 116.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/4/2"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1094,12 +1217,14 @@ margin_left = 120.0
 margin_right = 156.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/4/3"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1110,12 +1235,14 @@ margin_left = 160.0
 margin_right = 196.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/4/4"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1126,12 +1253,14 @@ margin_left = 200.0
 margin_right = 236.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/4/5"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1142,12 +1271,14 @@ margin_left = 240.0
 margin_right = 276.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/4/6"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1158,12 +1289,14 @@ margin_left = 280.0
 margin_right = 316.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/4/7"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1174,12 +1307,14 @@ margin_left = 320.0
 margin_right = 356.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/4/8"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1190,12 +1325,14 @@ margin_left = 360.0
 margin_right = 396.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/4/9"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1206,12 +1343,14 @@ margin_left = 400.0
 margin_right = 436.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/4/10"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1222,12 +1361,14 @@ margin_left = 440.0
 margin_right = 476.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/4/11"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1238,12 +1379,14 @@ margin_left = 480.0
 margin_right = 516.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/4/12"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1254,12 +1397,14 @@ margin_left = 520.0
 margin_right = 556.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/4/13"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1277,12 +1422,14 @@ columns = 14
 margin_right = 36.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/5/0"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1293,12 +1440,14 @@ margin_left = 40.0
 margin_right = 76.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/5/1"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1309,12 +1458,14 @@ margin_left = 80.0
 margin_right = 116.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/5/2"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1325,12 +1476,14 @@ margin_left = 120.0
 margin_right = 156.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/5/3"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1341,12 +1494,14 @@ margin_left = 160.0
 margin_right = 196.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/5/4"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1357,12 +1512,14 @@ margin_left = 200.0
 margin_right = 236.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/5/5"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1373,12 +1530,14 @@ margin_left = 240.0
 margin_right = 276.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/5/6"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1389,12 +1548,14 @@ margin_left = 280.0
 margin_right = 316.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/5/7"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1405,12 +1566,14 @@ margin_left = 320.0
 margin_right = 356.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/5/8"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1421,12 +1584,14 @@ margin_left = 360.0
 margin_right = 396.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/5/9"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1437,12 +1602,14 @@ margin_left = 400.0
 margin_right = 436.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/5/10"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1453,12 +1620,14 @@ margin_left = 440.0
 margin_right = 476.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/5/11"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1469,12 +1638,14 @@ margin_left = 480.0
 margin_right = 516.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/5/12"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1485,12 +1656,14 @@ margin_left = 520.0
 margin_right = 556.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/5/13"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1508,12 +1681,14 @@ columns = 14
 margin_right = 36.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/6/0"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1524,12 +1699,14 @@ margin_left = 40.0
 margin_right = 76.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/6/1"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1540,12 +1717,14 @@ margin_left = 80.0
 margin_right = 116.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/6/2"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1556,12 +1735,14 @@ margin_left = 120.0
 margin_right = 156.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/6/3"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1572,12 +1753,14 @@ margin_left = 160.0
 margin_right = 196.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/6/4"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1588,12 +1771,14 @@ margin_left = 200.0
 margin_right = 236.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/6/5"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1604,12 +1789,14 @@ margin_left = 240.0
 margin_right = 276.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/6/6"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1620,12 +1807,14 @@ margin_left = 280.0
 margin_right = 316.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/6/7"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1636,12 +1825,14 @@ margin_left = 320.0
 margin_right = 356.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/6/8"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1652,12 +1843,14 @@ margin_left = 360.0
 margin_right = 396.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/6/9"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1668,12 +1861,14 @@ margin_left = 400.0
 margin_right = 436.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/6/10"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1684,12 +1879,14 @@ margin_left = 440.0
 margin_right = 476.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/6/11"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1700,12 +1897,14 @@ margin_left = 480.0
 margin_right = 516.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/6/12"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1716,12 +1915,14 @@ margin_left = 520.0
 margin_right = 556.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/6/13"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1739,12 +1940,14 @@ columns = 14
 margin_right = 36.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/7/0"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1755,12 +1958,14 @@ margin_left = 40.0
 margin_right = 76.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/7/1"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1771,12 +1976,14 @@ margin_left = 80.0
 margin_right = 116.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/7/2"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1787,12 +1994,14 @@ margin_left = 120.0
 margin_right = 156.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/7/3"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1803,12 +2012,14 @@ margin_left = 160.0
 margin_right = 196.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/7/4"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1819,12 +2030,14 @@ margin_left = 200.0
 margin_right = 236.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/7/5"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1835,12 +2048,14 @@ margin_left = 240.0
 margin_right = 276.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/7/6"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1851,12 +2066,14 @@ margin_left = 280.0
 margin_right = 316.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/7/7"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1867,12 +2084,14 @@ margin_left = 320.0
 margin_right = 356.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/7/8"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1883,12 +2102,14 @@ margin_left = 360.0
 margin_right = 396.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/7/9"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1899,12 +2120,14 @@ margin_left = 400.0
 margin_right = 436.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/7/10"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1915,12 +2138,14 @@ margin_left = 440.0
 margin_right = 476.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/7/11"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1931,12 +2156,14 @@ margin_left = 480.0
 margin_right = 516.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/7/12"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1947,12 +2174,14 @@ margin_left = 520.0
 margin_right = 556.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/7/13"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1970,12 +2199,14 @@ columns = 14
 margin_right = 36.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/8/0"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1986,12 +2217,14 @@ margin_left = 40.0
 margin_right = 76.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/8/1"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2002,12 +2235,14 @@ margin_left = 80.0
 margin_right = 116.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/8/2"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2018,12 +2253,14 @@ margin_left = 120.0
 margin_right = 156.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/8/3"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2034,12 +2271,14 @@ margin_left = 160.0
 margin_right = 196.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/8/4"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2050,12 +2289,14 @@ margin_left = 200.0
 margin_right = 236.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/8/5"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2066,12 +2307,14 @@ margin_left = 240.0
 margin_right = 276.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/8/6"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2082,12 +2325,14 @@ margin_left = 280.0
 margin_right = 316.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/8/7"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2098,12 +2343,14 @@ margin_left = 320.0
 margin_right = 356.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/8/8"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2114,12 +2361,14 @@ margin_left = 360.0
 margin_right = 396.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/8/9"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2130,12 +2379,14 @@ margin_left = 400.0
 margin_right = 436.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/8/10"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2146,12 +2397,14 @@ margin_left = 440.0
 margin_right = 476.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/8/11"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2162,12 +2415,14 @@ margin_left = 480.0
 margin_right = 516.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/8/12"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2178,12 +2433,14 @@ margin_left = 520.0
 margin_right = 556.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/8/13"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2201,12 +2458,14 @@ columns = 14
 margin_right = 36.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/9/0"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2217,12 +2476,14 @@ margin_left = 40.0
 margin_right = 76.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/9/1"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2233,12 +2494,14 @@ margin_left = 80.0
 margin_right = 116.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/9/2"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2249,12 +2512,14 @@ margin_left = 120.0
 margin_right = 156.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/9/3"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2265,12 +2530,14 @@ margin_left = 160.0
 margin_right = 196.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/9/4"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2281,12 +2548,14 @@ margin_left = 200.0
 margin_right = 236.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/9/5"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2297,12 +2566,14 @@ margin_left = 240.0
 margin_right = 276.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/9/6"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2313,12 +2584,14 @@ margin_left = 280.0
 margin_right = 316.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/9/7"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2329,12 +2602,14 @@ margin_left = 320.0
 margin_right = 356.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/9/8"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2345,12 +2620,14 @@ margin_left = 360.0
 margin_right = 396.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/9/9"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2361,12 +2638,14 @@ margin_left = 400.0
 margin_right = 436.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/9/10"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2377,12 +2656,14 @@ margin_left = 440.0
 margin_right = 476.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/9/11"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2393,12 +2674,14 @@ margin_left = 480.0
 margin_right = 516.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/9/12"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2409,12 +2692,14 @@ margin_left = 520.0
 margin_right = 556.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/9/13"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2432,12 +2717,14 @@ columns = 14
 margin_right = 36.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/10/0"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2448,12 +2735,14 @@ margin_left = 40.0
 margin_right = 76.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/10/1"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2464,12 +2753,14 @@ margin_left = 80.0
 margin_right = 116.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/10/2"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2480,12 +2771,14 @@ margin_left = 120.0
 margin_right = 156.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/10/3"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2496,12 +2789,14 @@ margin_left = 160.0
 margin_right = 196.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/10/4"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2512,12 +2807,14 @@ margin_left = 200.0
 margin_right = 236.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/10/5"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2528,12 +2825,14 @@ margin_left = 240.0
 margin_right = 276.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/10/6"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2544,12 +2843,14 @@ margin_left = 280.0
 margin_right = 316.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/10/7"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2560,12 +2861,14 @@ margin_left = 320.0
 margin_right = 356.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/10/8"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2576,12 +2879,14 @@ margin_left = 360.0
 margin_right = 396.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/10/9"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2592,12 +2897,14 @@ margin_left = 400.0
 margin_right = 436.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/10/10"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2608,12 +2915,14 @@ margin_left = 440.0
 margin_right = 476.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/10/11"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2624,12 +2933,14 @@ margin_left = 480.0
 margin_right = 516.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/10/12"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2640,12 +2951,14 @@ margin_left = 520.0
 margin_right = 556.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/10/13"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2663,12 +2976,14 @@ columns = 14
 margin_right = 36.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/11/0"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2679,12 +2994,14 @@ margin_left = 40.0
 margin_right = 76.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/11/1"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2695,12 +3012,14 @@ margin_left = 80.0
 margin_right = 116.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/11/2"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2711,12 +3030,14 @@ margin_left = 120.0
 margin_right = 156.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/11/3"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2727,12 +3048,14 @@ margin_left = 160.0
 margin_right = 196.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/11/4"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2743,12 +3066,14 @@ margin_left = 200.0
 margin_right = 236.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/11/5"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2759,12 +3084,14 @@ margin_left = 240.0
 margin_right = 276.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/11/6"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2775,12 +3102,14 @@ margin_left = 280.0
 margin_right = 316.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/11/7"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2791,12 +3120,14 @@ margin_left = 320.0
 margin_right = 356.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/11/8"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2807,12 +3138,14 @@ margin_left = 360.0
 margin_right = 396.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/11/9"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2823,12 +3156,14 @@ margin_left = 400.0
 margin_right = 436.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/11/10"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2839,13 +3174,14 @@ margin_left = 440.0
 margin_right = 476.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/11/11"]
-margin_top = -0.475647
 margin_right = 30.0
-margin_bottom = 29.5244
+margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2856,12 +3192,14 @@ margin_left = 480.0
 margin_right = 516.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/11/12"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2872,12 +3210,14 @@ margin_left = 520.0
 margin_right = 556.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/11/13"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2895,12 +3235,14 @@ columns = 14
 margin_right = 36.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/12/0"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2911,12 +3253,14 @@ margin_left = 40.0
 margin_right = 76.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/12/1"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2927,12 +3271,14 @@ margin_left = 80.0
 margin_right = 116.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/12/2"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2943,12 +3289,14 @@ margin_left = 120.0
 margin_right = 156.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/12/3"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2959,12 +3307,14 @@ margin_left = 160.0
 margin_right = 196.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/12/4"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2975,12 +3325,14 @@ margin_left = 200.0
 margin_right = 236.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/12/5"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2991,14 +3343,14 @@ margin_left = 240.0
 margin_right = 276.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/12/6"]
-margin_left = 0.475647
-margin_top = -0.475647
-margin_right = 30.4756
-margin_bottom = 29.5244
+margin_right = 30.0
+margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3009,12 +3361,14 @@ margin_left = 280.0
 margin_right = 316.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/12/7"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3025,12 +3379,14 @@ margin_left = 320.0
 margin_right = 356.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/12/8"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3041,12 +3397,14 @@ margin_left = 360.0
 margin_right = 396.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/12/9"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3057,12 +3415,14 @@ margin_left = 400.0
 margin_right = 436.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/12/10"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3073,12 +3433,14 @@ margin_left = 440.0
 margin_right = 476.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/12/11"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3089,12 +3451,14 @@ margin_left = 480.0
 margin_right = 516.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/12/12"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3105,12 +3469,14 @@ margin_left = 520.0
 margin_right = 556.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/12/13"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3128,12 +3494,14 @@ columns = 14
 margin_right = 36.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/13/0"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3144,12 +3512,14 @@ margin_left = 40.0
 margin_right = 76.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/13/1"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3160,12 +3530,14 @@ margin_left = 80.0
 margin_right = 116.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/13/2"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3176,12 +3548,14 @@ margin_left = 120.0
 margin_right = 156.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/13/3"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3192,12 +3566,14 @@ margin_left = 160.0
 margin_right = 196.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/13/4"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3208,12 +3584,14 @@ margin_left = 200.0
 margin_right = 236.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/13/5"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3224,12 +3602,14 @@ margin_left = 240.0
 margin_right = 276.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/13/6"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3240,12 +3620,14 @@ margin_left = 280.0
 margin_right = 316.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/13/7"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3256,12 +3638,14 @@ margin_left = 320.0
 margin_right = 356.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/13/8"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3272,12 +3656,14 @@ margin_left = 360.0
 margin_right = 396.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/13/9"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3288,12 +3674,14 @@ margin_left = 400.0
 margin_right = 436.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/13/10"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3304,12 +3692,14 @@ margin_left = 440.0
 margin_right = 476.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/13/11"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3320,12 +3710,14 @@ margin_left = 480.0
 margin_right = 516.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/13/12"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3336,12 +3728,14 @@ margin_left = 520.0
 margin_right = 556.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/13/13"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3359,12 +3753,14 @@ columns = 14
 margin_right = 36.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/14/0"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3375,12 +3771,14 @@ margin_left = 40.0
 margin_right = 76.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/14/1"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3391,12 +3789,14 @@ margin_left = 80.0
 margin_right = 116.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/14/2"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3407,12 +3807,14 @@ margin_left = 120.0
 margin_right = 156.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/14/3"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3423,12 +3825,14 @@ margin_left = 160.0
 margin_right = 196.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/14/4"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3439,12 +3843,14 @@ margin_left = 200.0
 margin_right = 236.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/14/5"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3455,12 +3861,14 @@ margin_left = 240.0
 margin_right = 276.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/14/6"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3471,12 +3879,14 @@ margin_left = 280.0
 margin_right = 316.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/14/7"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3487,12 +3897,14 @@ margin_left = 320.0
 margin_right = 356.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/14/8"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3503,12 +3915,14 @@ margin_left = 360.0
 margin_right = 396.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/14/9"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3519,12 +3933,14 @@ margin_left = 400.0
 margin_right = 436.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/14/10"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3535,12 +3951,14 @@ margin_left = 440.0
 margin_right = 476.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/14/11"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3551,12 +3969,14 @@ margin_left = 480.0
 margin_right = 516.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/14/12"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3567,12 +3987,14 @@ margin_left = 520.0
 margin_right = 556.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/14/13"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3590,12 +4012,14 @@ columns = 14
 margin_right = 36.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/15/0"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3606,12 +4030,14 @@ margin_left = 40.0
 margin_right = 76.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/15/1"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3622,12 +4048,14 @@ margin_left = 80.0
 margin_right = 116.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/15/2"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3638,12 +4066,14 @@ margin_left = 120.0
 margin_right = 156.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/15/3"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3654,12 +4084,14 @@ margin_left = 160.0
 margin_right = 196.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/15/4"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3670,12 +4102,14 @@ margin_left = 200.0
 margin_right = 236.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/15/5"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3686,12 +4120,14 @@ margin_left = 240.0
 margin_right = 276.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/15/6"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3702,12 +4138,14 @@ margin_left = 280.0
 margin_right = 316.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/15/7"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3718,12 +4156,14 @@ margin_left = 320.0
 margin_right = 356.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/15/8"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3734,12 +4174,14 @@ margin_left = 360.0
 margin_right = 396.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/15/9"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3750,12 +4192,14 @@ margin_left = 400.0
 margin_right = 436.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/15/10"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3766,12 +4210,14 @@ margin_left = 440.0
 margin_right = 476.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/15/11"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3782,12 +4228,14 @@ margin_left = 480.0
 margin_right = 516.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/15/12"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3798,12 +4246,14 @@ margin_left = 520.0
 margin_right = 556.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/15/13"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3821,12 +4271,14 @@ columns = 14
 margin_right = 36.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/16/0"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3837,12 +4289,14 @@ margin_left = 40.0
 margin_right = 76.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/16/1"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3853,12 +4307,14 @@ margin_left = 80.0
 margin_right = 116.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/16/2"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3869,12 +4325,14 @@ margin_left = 120.0
 margin_right = 156.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/16/3"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3885,12 +4343,14 @@ margin_left = 160.0
 margin_right = 196.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/16/4"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3901,12 +4361,14 @@ margin_left = 200.0
 margin_right = 236.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/16/5"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3917,12 +4379,14 @@ margin_left = 240.0
 margin_right = 276.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/16/6"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3933,12 +4397,14 @@ margin_left = 280.0
 margin_right = 316.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/16/7"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3949,12 +4415,14 @@ margin_left = 320.0
 margin_right = 356.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/16/8"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3965,12 +4433,14 @@ margin_left = 360.0
 margin_right = 396.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/16/9"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3981,12 +4451,14 @@ margin_left = 400.0
 margin_right = 436.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/16/10"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3997,12 +4469,14 @@ margin_left = 440.0
 margin_right = 476.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/16/11"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4013,12 +4487,14 @@ margin_left = 480.0
 margin_right = 516.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/16/12"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4029,12 +4505,14 @@ margin_left = 520.0
 margin_right = 556.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/16/13"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4052,12 +4530,14 @@ columns = 14
 margin_right = 36.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/17/0"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4068,12 +4548,14 @@ margin_left = 40.0
 margin_right = 76.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/17/1"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4084,12 +4566,14 @@ margin_left = 80.0
 margin_right = 116.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/17/2"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4100,12 +4584,14 @@ margin_left = 120.0
 margin_right = 156.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/17/3"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4116,12 +4602,14 @@ margin_left = 160.0
 margin_right = 196.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/17/4"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4132,12 +4620,14 @@ margin_left = 200.0
 margin_right = 236.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/17/5"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4148,12 +4638,14 @@ margin_left = 240.0
 margin_right = 276.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/17/6"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4164,12 +4656,14 @@ margin_left = 280.0
 margin_right = 316.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/17/7"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4180,12 +4674,14 @@ margin_left = 320.0
 margin_right = 356.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/17/8"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4196,12 +4692,14 @@ margin_left = 360.0
 margin_right = 396.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/17/9"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4212,12 +4710,14 @@ margin_left = 400.0
 margin_right = 436.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/17/10"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4228,12 +4728,14 @@ margin_left = 440.0
 margin_right = 476.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/17/11"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4244,12 +4746,14 @@ margin_left = 480.0
 margin_right = 516.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/17/12"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4260,12 +4764,14 @@ margin_left = 520.0
 margin_right = 556.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/17/13"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4283,12 +4789,14 @@ columns = 14
 margin_right = 36.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/18/0"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4299,12 +4807,14 @@ margin_left = 40.0
 margin_right = 76.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/18/1"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4315,12 +4825,14 @@ margin_left = 80.0
 margin_right = 116.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/18/2"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4331,12 +4843,14 @@ margin_left = 120.0
 margin_right = 156.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/18/3"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4347,12 +4861,14 @@ margin_left = 160.0
 margin_right = 196.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/18/4"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4363,12 +4879,14 @@ margin_left = 200.0
 margin_right = 236.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/18/5"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4379,12 +4897,14 @@ margin_left = 240.0
 margin_right = 276.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/18/6"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4395,12 +4915,14 @@ margin_left = 280.0
 margin_right = 316.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/18/7"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4411,12 +4933,14 @@ margin_left = 320.0
 margin_right = 356.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/18/8"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4427,12 +4951,14 @@ margin_left = 360.0
 margin_right = 396.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/18/9"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4443,12 +4969,14 @@ margin_left = 400.0
 margin_right = 436.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/18/10"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4459,12 +4987,14 @@ margin_left = 440.0
 margin_right = 476.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/18/11"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4475,12 +5005,14 @@ margin_left = 480.0
 margin_right = 516.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/18/12"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4491,12 +5023,14 @@ margin_left = 520.0
 margin_right = 556.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/18/13"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4514,12 +5048,14 @@ columns = 14
 margin_right = 36.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/19/0"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4530,12 +5066,14 @@ margin_left = 40.0
 margin_right = 76.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/19/1"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4546,12 +5084,14 @@ margin_left = 80.0
 margin_right = 116.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/19/2"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4562,12 +5102,14 @@ margin_left = 120.0
 margin_right = 156.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/19/3"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4578,12 +5120,14 @@ margin_left = 160.0
 margin_right = 196.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/19/4"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4594,12 +5138,14 @@ margin_left = 200.0
 margin_right = 236.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/19/5"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4610,12 +5156,14 @@ margin_left = 240.0
 margin_right = 276.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/19/6"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4626,12 +5174,14 @@ margin_left = 280.0
 margin_right = 316.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/19/7"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4642,12 +5192,14 @@ margin_left = 320.0
 margin_right = 356.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/19/8"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4658,12 +5210,14 @@ margin_left = 360.0
 margin_right = 396.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/19/9"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4674,12 +5228,14 @@ margin_left = 400.0
 margin_right = 436.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/19/10"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4690,12 +5246,14 @@ margin_left = 440.0
 margin_right = 476.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/19/11"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4706,12 +5264,14 @@ margin_left = 480.0
 margin_right = 516.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/19/12"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4722,12 +5282,14 @@ margin_left = 520.0
 margin_right = 556.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 36, 36 )
+mouse_filter = 2
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer/19/13"]
 margin_right = 30.0
 margin_bottom = 30.0
+mouse_filter = 2
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4857,19 +5419,21 @@ __meta__ = {
 }
 
 [node name="InstructionsButton" type="TextureButton" parent="FrontGUI/TextureRect"]
+self_modulate = Color( 0.317647, 0.615686, 0.85098, 1 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 316.31
+margin_left = 317.31
 margin_top = -136.849
-margin_right = 471.31
+margin_right = 472.31
 margin_bottom = -8.84924
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture_normal = ExtResource( 7 )
-texture_click_mask = ExtResource( 6 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 7 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4878,8 +5442,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="FrontGUI/TextureRect/InstructionsButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Instructions"
 align = 1
 valign = 1
@@ -4888,19 +5451,21 @@ __meta__ = {
 }
 
 [node name="OutputButton" type="TextureButton" parent="FrontGUI/TextureRect"]
+self_modulate = Color( 0.317647, 0.615686, 0.85098, 1 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 316.31
+margin_left = 317.31
 margin_top = -4.84924
-margin_right = 471.31
+margin_right = 472.31
 margin_bottom = 123.151
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture_normal = ExtResource( 7 )
-texture_click_mask = ExtResource( 6 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 7 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4910,7 +5475,6 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Example
 Output"
 align = 1
@@ -4920,19 +5484,21 @@ __meta__ = {
 }
 
 [node name="SubmitButton" type="TextureButton" parent="FrontGUI/TextureRect"]
+self_modulate = Color( 0.317647, 0.615686, 0.85098, 1 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 316.31
+margin_left = 317.31
 margin_top = 127.151
-margin_right = 471.31
+margin_right = 472.31
 margin_bottom = 255.151
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture_normal = ExtResource( 7 )
-texture_click_mask = ExtResource( 6 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 7 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4942,7 +5508,6 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Submit"
 align = 1
 valign = 1
@@ -5149,6 +5714,7 @@ __meta__ = {
 }
 
 [node name="BlockManager" type="Node2D" parent="."]
+process_priority = 1
 script = ExtResource( 16 )
 
 [node name="CodeBlock" parent="BlockManager" instance=ExtResource( 13 )]

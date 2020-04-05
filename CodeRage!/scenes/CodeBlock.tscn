@@ -4,9 +4,6 @@
 [ext_resource path="res://scripts/CodeBlock.gd" type="Script" id=2]
 [ext_resource path="res://cour.ttf" type="DynamicFontData" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 50.0288, 50.0001 )
-
 [sub_resource type="DynamicFont" id=2]
 size = 30
 outline_size = 1
@@ -15,19 +12,11 @@ extra_spacing_top = 1
 extra_spacing_bottom = 1
 font_data = ExtResource( 3 )
 
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 50.0288, 50.0001 )
+
 [node name="CodeBlock" type="Node2D"]
 script = ExtResource( 2 )
-
-[node name="Sprite" type="Sprite" parent="."]
-z_as_relative = false
-texture = ExtResource( 1 )
-centered = false
-
-[node name="Area2D" type="Area2D" parent="Sprite"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D"]
-position = Vector2( 50, 50 )
-shape = SubResource( 1 )
 
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
@@ -43,6 +32,18 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite" type="Sprite" parent="."]
+show_behind_parent = true
+z_as_relative = false
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Area2D" type="Area2D" parent="Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D"]
+position = Vector2( 50, 50 )
+shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 [connection signal="mouse_entered" from="Sprite/Area2D" to="." method="_on_Area2D_mouse_entered"]

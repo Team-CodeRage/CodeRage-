@@ -8,8 +8,6 @@ var gridLength
 var mouseIn = false
 
 var can_drag = false
-
-var mouse_in = false
 var dragging = false
 var mouse_to_center_set = false
 var mouse_to_center
@@ -17,8 +15,7 @@ var sprite_pos
 var mouse_pos
 
 func _process(delta):
-	print(dragging)
-	if (mouse_in && Input.is_action_pressed("LeftClick")): #When clicking
+	if (mouseIn && Input.is_action_pressed("LeftClick")): #When clicking
 		#First we set mouse_to_center as a static vector
 		#for preventing the sprite to move its center to the mouse position
 		if not mouse_to_center_set:
@@ -37,19 +34,20 @@ func _process(delta):
 			#mouse position + static mouse_to_center vector
 			var position = sumaVectores(mouse_pos, mouse_to_center)
 			set_position(position)
+			
 	else: #When we release
 		mouse_to_center_set = false #Set this to false so we can set mouse_to_center again
 		dragging = false
-
+		setPosition()
 
 func _on_Area2D_mouse_entered():
 	print("entered")
-	mouse_in = true
+	mouseIn = true
 	get_parent()._add_sprite(self) #Add the sprite to the sprite list
 
 func _on_Area2D_mouse_exited():
 	print("exited")
-	mouse_in = false
+	mouseIn = false
 	get_parent()._remove_sprite(self)  #Remove the sprite from the sprite list
 
 func restaVectores(v1, v2): #vector substraction
@@ -63,6 +61,7 @@ func sumaVectores(v1, v2): #vector sum
 func _ready():
 	spriteNode = get_node("Sprite")
 	labelNode = get_node("Label")
+	setPositionNode(5, 5)
 	pass # Replace with function body.
 
 func setGridLength(numBlocks):
@@ -98,3 +97,7 @@ func getPositionNodeR():
 
 func getPositionNodeC():
 	return positionNodeC
+
+func setPosition():
+	position = get_parent().get_parent().getBlockPos(getPositionNodeR(),getPositionNodeC())
+	pass
