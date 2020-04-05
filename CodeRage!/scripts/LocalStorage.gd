@@ -52,7 +52,7 @@ var _settings = {
 		},
 	"Prompts" : {
 		"Prompt1" : {
-			"Title" : "Sum of two numbers",
+			"Title" : "Hello, World!",
 			"Difficulty" : 0,
 			"Instructions" : "Write a Python program to prompt the user for two numbers, num1 and num2, and output the sum of these two numbers.",
 			"Output" : "First number: 5 \nSecond number: 3 \nThe sum of 5.0 and 3.0 is 8.0",
@@ -76,7 +76,7 @@ var _settings = {
 						  [10,11,12]]
 					},
 		"Prompt3" : {
-			"Title" : "Sum of two numbers",
+			"Title" : "Word Order",
 			"Difficulty" : 1,
 			"Instructions" : "Write a Python program to prompt the user for two numbers, num1 and num2, and output the sum of these two numbers.",
 			"Output" : "First number: 5 \nSecond number: 3 \nThe sum of 5.0 and 3.0 is 8.0",
@@ -88,7 +88,7 @@ var _settings = {
 						  [10,11,12]]
 					},
 		"Prompt4" : {
-			"Title" : "Sum of two numbers",
+			"Title" : "Athlete Sort",
 			"Difficulty" : 2,
 			"Instructions" : "Write a Python program to prompt the user for two numbers, num1 and num2, and output the sum of these two numbers.",
 			"Output" : "First number: 5 \nSecond number: 3 \nThe sum of 5.0 and 3.0 is 8.0",

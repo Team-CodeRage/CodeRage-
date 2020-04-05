@@ -38,8 +38,8 @@ func _on_PauseButton_pressed():
 	get_node("FrontGUI/PauseMenu").show()
 	pass
 
-
 func _on_Timer_timeout():
-	print(gridNode.getGridPosition(0,0))
-	get_node("GameManager/BlockManager/Sprite").position = gridNode.getGridPosition(5,5)
+	var block = get_node("BlockManager/CodeBlock")
+	block.position = gridNode.getGridPosition(5,5)
+	block.setGridLength(5)
 	pass # Replace with function body.

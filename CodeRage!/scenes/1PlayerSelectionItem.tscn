@@ -49,12 +49,12 @@ __meta__ = {
 self_modulate = Color( 0.396078, 0.870588, 0.423529, 1 )
 margin_right = 132.0
 margin_bottom = 100.0
-grow_horizontal = 2
-grow_vertical = 2
+rect_min_size = Vector2( 132, 100 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 4 )
 expand = true
+stretch_mode = 1
 
 [node name="Label" type="Label" parent="HBoxContainer/TextureRect"]
 anchor_left = 0.5
@@ -75,13 +75,13 @@ __meta__ = {
 
 [node name="Description" type="Label" parent="HBoxContainer"]
 margin_left = 142.0
-margin_right = 502.0
+margin_right = 512.0
 margin_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
-rect_min_size = Vector2( 250, 0 )
+rect_min_size = Vector2( 370, 100 )
 size_flags_horizontal = 3
-size_flags_vertical = 7
+size_flags_vertical = 3
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Prompt description"
@@ -89,8 +89,8 @@ align = 1
 valign = 1
 
 [node name="Stars" type="GridContainer" parent="HBoxContainer"]
-margin_left = 512.0
-margin_right = 820.0
+margin_left = 522.0
+margin_right = 830.0
 margin_bottom = 100.0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3

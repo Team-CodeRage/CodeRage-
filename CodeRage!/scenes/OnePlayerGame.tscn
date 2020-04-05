@@ -1,20 +1,21 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://scenes/GridManager.gd" type="Script" id=1]
+[ext_resource path="res://scripts/GridManager.gd" type="Script" id=1]
 [ext_resource path="res://scripts/OnePlayerGame.gd" type="Script" id=2]
 [ext_resource path="res://assets/gearbitmap.png" type="BitMap" id=3]
 [ext_resource path="res://assets/whitesettingsicon.PNG" type="Texture" id=4]
 [ext_resource path="res://cour.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://assets/buttonbitmap.png" type="BitMap" id=6]
 [ext_resource path="res://assets/buttonbase.PNG" type="Texture" id=7]
-[ext_resource path="res://scenes/GridBox.gd" type="Script" id=8]
+[ext_resource path="res://scripts/GridBox.gd" type="Script" id=8]
 [ext_resource path="res://scripts/PopupDialog.gd" type="Script" id=9]
 [ext_resource path="res://scripts/PauseMenu.gd" type="Script" id=10]
 [ext_resource path="res://assets/whitecrbuttonhoverpressed.PNG" type="Texture" id=11]
 [ext_resource path="res://assets/whitecrbutton.PNG" type="Texture" id=12]
-[ext_resource path="res://assets/star.png" type="Texture" id=13]
+[ext_resource path="res://scenes/CodeBlock.tscn" type="PackedScene" id=13]
 [ext_resource path="res://fonts/cour40,1black.tres" type="DynamicFont" id=14]
 [ext_resource path="res://assets/Capture1.png" type="Texture" id=15]
+[ext_resource path="res://scenes/BlockManager.gd" type="Script" id=16]
 
 [sub_resource type="DynamicFont" id=1]
 size = 21
@@ -24,6 +25,7 @@ font_data = ExtResource( 5 )
 [node name="OnePlayerGame" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -76,7 +78,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect2" type="ColorRect" parent="BackGUI/GridMarginContainer"]
+[node name="ColorRect" type="ColorRect" parent="BackGUI/GridMarginContainer"]
 margin_left = 221.0
 margin_top = 155.0
 margin_right = 804.0
@@ -89,6 +91,7 @@ margin_left = 221.0
 margin_top = 155.0
 margin_right = 804.0
 margin_bottom = 564.0
+mouse_filter = 2
 custom_constants/margin_top = 4
 custom_constants/margin_left = 4
 
@@ -97,10 +100,13 @@ margin_left = 4.0
 margin_top = 4.0
 margin_right = 583.0
 margin_bottom = 409.0
+mouse_filter = 2
+mouse_default_cursor_shape = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer"]
 margin_right = 567.0
 margin_bottom = 796.0
+mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 1 )
@@ -108,6 +114,7 @@ script = ExtResource( 1 )
 [node name="0" type="GridContainer" parent="BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer"]
 margin_right = 567.0
 margin_bottom = 36.0
+mouse_filter = 2
 custom_constants/hseparation = 4
 columns = 14
 
@@ -338,6 +345,7 @@ __meta__ = {
 margin_top = 40.0
 margin_right = 567.0
 margin_bottom = 76.0
+mouse_filter = 2
 custom_constants/hseparation = 4
 columns = 14
 
@@ -568,6 +576,7 @@ __meta__ = {
 margin_top = 80.0
 margin_right = 567.0
 margin_bottom = 116.0
+mouse_filter = 2
 custom_constants/hseparation = 4
 columns = 14
 
@@ -798,6 +807,7 @@ __meta__ = {
 margin_top = 120.0
 margin_right = 567.0
 margin_bottom = 156.0
+mouse_filter = 2
 custom_constants/hseparation = 4
 columns = 14
 
@@ -1028,6 +1038,7 @@ __meta__ = {
 margin_top = 160.0
 margin_right = 567.0
 margin_bottom = 196.0
+mouse_filter = 2
 custom_constants/hseparation = 4
 columns = 14
 
@@ -1258,6 +1269,7 @@ __meta__ = {
 margin_top = 200.0
 margin_right = 567.0
 margin_bottom = 236.0
+mouse_filter = 2
 custom_constants/hseparation = 4
 columns = 14
 
@@ -1488,6 +1500,7 @@ __meta__ = {
 margin_top = 240.0
 margin_right = 567.0
 margin_bottom = 276.0
+mouse_filter = 2
 custom_constants/hseparation = 4
 columns = 14
 
@@ -1718,6 +1731,7 @@ __meta__ = {
 margin_top = 280.0
 margin_right = 567.0
 margin_bottom = 316.0
+mouse_filter = 2
 custom_constants/hseparation = 4
 columns = 14
 
@@ -1948,6 +1962,7 @@ __meta__ = {
 margin_top = 320.0
 margin_right = 567.0
 margin_bottom = 356.0
+mouse_filter = 2
 custom_constants/hseparation = 4
 columns = 14
 
@@ -2178,6 +2193,7 @@ __meta__ = {
 margin_top = 360.0
 margin_right = 567.0
 margin_bottom = 396.0
+mouse_filter = 2
 custom_constants/hseparation = 4
 columns = 14
 
@@ -2408,6 +2424,7 @@ __meta__ = {
 margin_top = 400.0
 margin_right = 567.0
 margin_bottom = 436.0
+mouse_filter = 2
 custom_constants/hseparation = 4
 columns = 14
 
@@ -2638,6 +2655,7 @@ __meta__ = {
 margin_top = 440.0
 margin_right = 567.0
 margin_bottom = 476.0
+mouse_filter = 2
 custom_constants/hseparation = 4
 columns = 14
 
@@ -2869,6 +2887,7 @@ __meta__ = {
 margin_top = 480.0
 margin_right = 567.0
 margin_bottom = 516.0
+mouse_filter = 2
 custom_constants/hseparation = 4
 columns = 14
 
@@ -3101,6 +3120,7 @@ __meta__ = {
 margin_top = 520.0
 margin_right = 567.0
 margin_bottom = 556.0
+mouse_filter = 2
 custom_constants/hseparation = 4
 columns = 14
 
@@ -3331,6 +3351,7 @@ __meta__ = {
 margin_top = 560.0
 margin_right = 567.0
 margin_bottom = 596.0
+mouse_filter = 2
 custom_constants/hseparation = 4
 columns = 14
 
@@ -3561,6 +3582,7 @@ __meta__ = {
 margin_top = 600.0
 margin_right = 567.0
 margin_bottom = 636.0
+mouse_filter = 2
 custom_constants/hseparation = 4
 columns = 14
 
@@ -3791,6 +3813,7 @@ __meta__ = {
 margin_top = 640.0
 margin_right = 567.0
 margin_bottom = 676.0
+mouse_filter = 2
 custom_constants/hseparation = 4
 columns = 14
 
@@ -4021,6 +4044,7 @@ __meta__ = {
 margin_top = 680.0
 margin_right = 567.0
 margin_bottom = 716.0
+mouse_filter = 2
 custom_constants/hseparation = 4
 columns = 14
 
@@ -4251,6 +4275,7 @@ __meta__ = {
 margin_top = 720.0
 margin_right = 567.0
 margin_bottom = 756.0
+mouse_filter = 2
 custom_constants/hseparation = 4
 columns = 14
 
@@ -4481,6 +4506,7 @@ __meta__ = {
 margin_top = 760.0
 margin_right = 567.0
 margin_bottom = 796.0
+mouse_filter = 2
 custom_constants/hseparation = 4
 columns = 14
 
@@ -5068,7 +5094,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="PopupDialog" type="PopupDialog" parent="FrontGUI"]
-visible = true
 margin_left = 256.0
 margin_top = 179.0
 margin_right = 768.0
@@ -5123,16 +5148,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GameManager" type="Node2D" parent="."]
+[node name="BlockManager" type="Node2D" parent="."]
+script = ExtResource( 16 )
 
-[node name="BlockManager" type="Node2D" parent="GameManager"]
+[node name="CodeBlock" parent="BlockManager" instance=ExtResource( 13 )]
+position = Vector2( 500, 300 )
 
-[node name="Sprite" type="Sprite" parent="GameManager/BlockManager"]
-z_as_relative = false
-texture = ExtResource( 13 )
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.005
+[node name="BlockUpdate" type="Timer" parent="."]
+wait_time = 10.0
 autostart = true
 [connection signal="pressed" from="FrontGUI/TextureRect/PauseButton" to="." method="_on_PauseButton_pressed"]
 [connection signal="pressed" from="FrontGUI/TextureRect/InstructionsButton" to="." method="_on_InstructionsButton_pressed"]
@@ -5140,4 +5163,4 @@ autostart = true
 [connection signal="pressed" from="FrontGUI/TextureRect/SubmitButton" to="." method="_on_SubmitButton_pressed"]
 [connection signal="pressed" from="FrontGUI/PauseMenu/MarginContainer/VBoxContainer/ResumeMarginContainer/ResumeButton" to="FrontGUI/PauseMenu" method="_on_ResumeButton_pressed"]
 [connection signal="pressed" from="FrontGUI/PauseMenu/MarginContainer/VBoxContainer/BackMarginContainer/BackButton" to="." method="_on_BackButton_pressed"]
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="BlockUpdate" to="." method="_on_Timer_timeout"]
