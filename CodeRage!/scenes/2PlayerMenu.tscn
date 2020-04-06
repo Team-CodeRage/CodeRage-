@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/ChangeSceneButton.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scripts/2PlayerMenu.gd" type="Script" id=2]
+[ext_resource path="res://scenes/HostContainer.gd" type="Script" id=2]
 [ext_resource path="res://assets/crbuttonpressed2.PNG" type="Texture" id=3]
 [ext_resource path="res://assets/crbuttonclicked.PNG" type="Texture" id=4]
 [ext_resource path="res://assets/whitecrbutton.PNG" type="Texture" id=5]
@@ -199,10 +199,12 @@ texture = ExtResource( 8 )
 expand = true
 
 [node name="HostContainer" type="VBoxContainer" parent="PopUpsContainer"]
+visible = false
 margin_right = 620.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource( 2 )
 
 [node name="MarginContainer2" type="MarginContainer" parent="PopUpsContainer/HostContainer"]
 margin_right = 620.0
@@ -582,4 +584,5 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="pressed" from="ButtonsContainer/VBoxContainer/MarginContainer/HostButton" to="PopUpsContainer/HostContainer" method="_on_HostButton_pressed"]
 [connection signal="pressed" from="ButtonsContainer/VBoxContainer/MarginContainer2/JoinButton" to="PopUpsContainer/JoinContainer" method="_on_JoinButton_pressed"]
