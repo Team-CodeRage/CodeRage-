@@ -20,3 +20,7 @@ func _on_HostButton_pressed():
 	get_parent().get_node("JoinContainer").hide()
 	get_parent().get_node("HostContainer").show()	
 	pass # Replace with function body.
+
+
+func _on_ChangeSceneButton_pressed():
+	pass # Replace with function body.
