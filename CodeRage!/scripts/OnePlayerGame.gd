@@ -38,12 +38,12 @@ func _on_PauseButton_pressed():
 	get_node("FrontGUI/PauseMenu").show()
 	pass
 
-func _on_Timer_timeout():
+func getBlockPos(row, col):
+	return gridNode.getGridPosition(row,col)
+
+func _on_BlockUpdate_timeout():
 	var block = get_node("BlockManager/CodeBlock")
-	block.setPositionNode(5, 3)
+	#block.setPositionNode(5, 3)
 	#block.setGridLength(5)
 	block.setText("Block Block")
 	pass # Replace with function body.
-
-func getBlockPos(row, col):
-	return gridNode.getGridPosition(row,col)

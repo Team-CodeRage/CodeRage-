@@ -17,5 +17,4 @@ func _ready():
 
 func getGridPosition(row, col):
 	var grid = get_node(str(row) + "/" + str(col))
-	grid.available = !grid.available
 	return grid.get_global_position()

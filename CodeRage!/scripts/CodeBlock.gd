@@ -9,6 +9,11 @@ var gridLength = 5
 var mouseIn = false
 var purchased = false
 var positionSet = false
+var posToCheckRow
+var posToCheckCol
+var wasSet = false
+var wasPlaced = false
+var spotFilled = false
 
 var can_drag = false
 var dragging = false
@@ -32,6 +37,8 @@ func _process(delta):
 	if (dragging && Input.is_action_pressed("LeftClick")): #While dragging
 		if can_drag:
 			mouse_pos = get_viewport().get_mouse_position()
+			if(spotFilled):
+				freeGrids(positionNodeR, positionNodeC, gridLength)
 			setZPos(1)
 			primaryNode.show()
 			#Set the position of the sprite to
@@ -44,7 +51,14 @@ func _process(delta):
 		primaryNode.hide()
 		mouse_to_center_set = false #Set this to false so we can set mouse_to_center again
 		dragging = false
-		setPosition()
+		if(wasSet):
+			if(tryNewGrid()):
+				setPosition()
+			else:
+				fillGrids(positionNodeR, positionNodeC, gridLength)
+		if(wasPlaced):
+			setPosition()
+			spotFilled = true
 
 func _on_PickUpArea2D_mouse_entered():
 	mouseIn = true
@@ -65,7 +79,6 @@ func _ready():
 	spriteNode = get_node("Sprite")
 	primaryNode = get_node("Sprite/PrimaryColor")
 	labelNode = get_node("Label")
-	setPositionNode(5, 5)
 	pass # Replace with function body.
 
 func setGridLength(numBlocks):
@@ -99,13 +112,14 @@ func getColor():
 func setPositionNode(newPosR, newPosC):
 	positionNodeR = newPosR
 	positionNodeC = newPosC
+	wasPlaced = true
 	pass
 
 func getPositionNodeR():
-	return positionNodeR
+	return positionNodeR.name
 
 func getPositionNodeC():
-	return positionNodeC
+	return positionNodeC.name
 
 func setPosition():
 	position = get_parent().get_parent().getBlockPos(getPositionNodeR(),getPositionNodeC())
@@ -124,14 +138,45 @@ func _on_Label_resized():
 	setGridLength(newScale)
 	pass # Replace with function body.
 
+func checkGrids(row, startCol, numCols):
+	print("row: ", row.name)
+	print("startCol: ", startCol.name)
+	print("numCols: ", numCols)
+	for i in range(int(startCol.name), (numCols + int(startCol.name))):
+		if(row.get_node(str(i)).available == false):
+			print("Check false")
+			return false
+	print("Check true")
+	return true
+
+func fillGrids(row, startCol, numCols):
+	for i in range(int(startCol.name), (numCols + int(startCol.name))):
+		row.get_node(str(i)).available = false;
+	return true
+
+func freeGrids(row, startCol, numCols):
+	for i in range(int(startCol.name), (numCols + int(startCol.name))):
+		row.get_node(str(i)).available = true;
+	return true
+
+func tryNewGrid():
+	if(((int(posToCheckCol.name) + gridLength) <= 14) and posToCheckCol.available == true):#check the next parts as well
+		if(checkGrids(posToCheckRow, posToCheckCol, gridLength) == true):
+			if(wasPlaced):
+				freeGrids(positionNodeR, positionNodeC, gridLength)
+			setPositionNode(posToCheckRow, posToCheckCol)
+			fillGrids(posToCheckRow, posToCheckCol, gridLength)
+			return true
+	return false
+	pass
 
 func _on_PlacerArea2D_area_entered(area):
 	if(area.name == "storeArea2d"):
 		print("want's to sell")
 	elif(area.name == "placementArea2d"):
-		if(((int(area.get_parent().name) + gridLength) <= 14) and area.get_parent().available == true):#check the next parts as well
-			print("want's to place")
-			setPositionNode(area.get_parent().get_parent().name, area.get_parent().name)
+		posToCheckRow = area.get_parent().get_parent()
+		posToCheckCol = area.get_parent()
+		wasSet = true
 	pass # Replace with function body.
 
 func _on_PlacerArea2D_area_exited(area):

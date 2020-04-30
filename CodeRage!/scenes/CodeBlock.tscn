@@ -16,7 +16,7 @@ font_data = ExtResource( 3 )
 extents = Vector2( 50.0288, 50.0001 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 6.14585, 6.79476 )
+extents = Vector2( 2.95473, 2.38497 )
 
 [node name="CodeBlock" type="Node2D"]
 z_as_relative = false

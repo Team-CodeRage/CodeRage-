@@ -7972,4 +7972,4 @@ autostart = true
 [connection signal="pressed" from="FrontGUI/TextureRect/SubmitButton" to="." method="_on_SubmitButton_pressed"]
 [connection signal="pressed" from="FrontGUI/PauseMenu/MarginContainer/VBoxContainer/ResumeMarginContainer/ResumeButton" to="FrontGUI/PauseMenu" method="_on_ResumeButton_pressed"]
 [connection signal="pressed" from="FrontGUI/PauseMenu/MarginContainer/VBoxContainer/BackMarginContainer/BackButton" to="." method="_on_BackButton_pressed"]
-[connection signal="timeout" from="BlockUpdate" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="BlockUpdate" to="." method="_on_BlockUpdate_timeout"]
