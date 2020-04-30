@@ -40,8 +40,9 @@ func _on_PauseButton_pressed():
 
 func _on_Timer_timeout():
 	var block = get_node("BlockManager/CodeBlock")
-	block.setPositionNode(5, 5)
-	block.setGridLength(5)
+	block.setPositionNode(5, 3)
+	#block.setGridLength(5)
+	block.setText("Block Block")
 	pass # Replace with function body.
 
 func getBlockPos(row, col):
