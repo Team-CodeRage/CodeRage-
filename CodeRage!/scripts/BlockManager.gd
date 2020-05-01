@@ -74,11 +74,12 @@ func clearChildren():
 		child.queue_free()
 	pass
 
-func createSprite(text):
+func createSprite(text, num):
 	var child = codeBlock.instance()
 	add_child(child)
 	child.setText(text)
 	child.setColor(colors[randi() % colors.size()]) 
+	child.solutionNum = num
 	child.scale = Vector2(0.5,0.5)
 	child.position = Vector2(40, 100)
 	pass

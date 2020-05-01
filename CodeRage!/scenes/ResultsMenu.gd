@@ -15,9 +15,6 @@ func _ready():
 #func _process(delta):
 #	pass
 
-
-func _on_ResumeButton_pressed():
-	var new_pause_state = not get_tree().paused
-	get_tree().paused = new_pause_state
-	visible = new_pause_state
+func setTime(newTime):
+	get_node("MarginContainer/VBoxContainer/ResultsMarginContainer/VBoxContainer/Time").text = "Time: " + str(newTime)
 	pass

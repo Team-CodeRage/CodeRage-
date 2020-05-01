@@ -19,6 +19,7 @@ var spotFilled = false
 var motion = Vector2()
 var canSell = false
 var pixelLength
+var solutionNum
 
 var can_drag = false
 var dragging = false
@@ -170,12 +171,14 @@ func checkGrids(row, startCol, numCols):
 
 func fillGrids(row, startCol, numCols):
 	for i in range(int(startCol.name), (numCols + int(startCol.name))):
-		row.get_node(str(i)).available = false;
+		row.get_node(str(i)).available = false
+		row.get_node(str(i)).type = solutionNum
 	return true
 
 func freeGrids(row, startCol, numCols):
 	for i in range(int(startCol.name), (numCols + int(startCol.name))):
-		row.get_node(str(i)).available = true;
+		row.get_node(str(i)).available = true
+		row.get_node(str(i)).type = -1
 	return true
 
 func tryNewGrid():
