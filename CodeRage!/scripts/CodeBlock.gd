@@ -1,8 +1,10 @@
-extends Node2D
+extends KinematicBody2D
 
-var spriteNode
-var primaryNode
-var labelNode
+onready var spriteNode = get_node("Node2D/Sprite")
+onready var primaryNode = get_node("Node2D/Sprite/PrimaryColor")
+onready var labelNode = get_node("Node2D/Label")
+onready var animPlayer = get_node("Node2D/AnimationPlayer")
+
 var positionNodeR
 var positionNodeC
 var gridLength = 5
@@ -14,6 +16,9 @@ var posToCheckCol
 var wasSet = false
 var wasPlaced = false
 var spotFilled = false
+var motion = Vector2()
+var canSell = false
+var pixelLength
 
 var can_drag = false
 var dragging = false
@@ -22,10 +27,17 @@ var mouse_to_center
 var sprite_pos
 var mouse_pos
 
+func _physics_process(delta):
+	motion.y += 0.5
+	move_and_slide(motion)
+	pass
+
 func _process(delta):
 	if (mouseIn && Input.is_action_pressed("LeftClick")): #When clicking
 		#First we set mouse_to_center as a static vector
 		#for preventing the sprite to move its center to the mouse position
+		if(purchased == false):
+			buyItem()
 		if not mouse_to_center_set:
 			sprite_pos = self.position
 			mouse_pos = get_viewport().get_mouse_position()
@@ -51,10 +63,14 @@ func _process(delta):
 		primaryNode.hide()
 		mouse_to_center_set = false #Set this to false so we can set mouse_to_center again
 		dragging = false
-		if(wasSet):
+		if(canSell == true and wasPlaced == true):
+			wasPlaced = false
+			wasSet = false
+			animPlayer.play("Fade")
+		elif(wasSet):
 			if(tryNewGrid()):
 				setPosition()
-			else:
+			elif(wasPlaced):
 				fillGrids(positionNodeR, positionNodeC, gridLength)
 		if(wasPlaced):
 			setPosition()
@@ -76,10 +92,14 @@ func sumaVectores(v1, v2): #vector sum
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	spriteNode = get_node("Sprite")
-	primaryNode = get_node("Sprite/PrimaryColor")
-	labelNode = get_node("Label")
 	pass # Replace with function body.
+
+func buyItem():
+	purchased = true
+	scale = Vector2(1, 1)
+	set_physics_process(false)
+	get_node("CollisionShape2D").disabled = true
+	pass
 
 func setGridLength(numBlocks):
 	var newScale = Vector2((numBlocks * .4) - .04, 0.359)
@@ -88,7 +108,6 @@ func setGridLength(numBlocks):
 	spriteNode.set_scale(newScale)
 	var offset = 4
 	primaryNode.set_scale(Vector2(1/newScale.x, 1/newScale.y))
-	print("newScale: ", newScale)
 	primaryNode.get_node("ColorRect").set_size(Vector2(primaryNode.get_node("ColorRect").get_size().x * newScale.x + offset, labelNode.get_size().y + offset))
 	pass
 
@@ -133,20 +152,23 @@ func setZPos(num):
 	pass
 
 func _on_Label_resized():
-	var newScale = labelNode.get_size().x
-	newScale = ceil(newScale / 36)
+	pixelLength = labelNode.get_size().x
+	var newScale = ceil(pixelLength / 36)
 	setGridLength(newScale)
+	var windowSize = 159
+	var labelSize = (newScale * 36)/2
+	var totalSpace = windowSize - (labelSize)
+	var spaceSide = (totalSpace) / 2
+	print("labelSize", labelSize)
+	print("totalSpace",totalSpace)
+	print("spaceSide",spaceSide)
+	position = Vector2(spaceSide + 30, 100)
 	pass # Replace with function body.
 
 func checkGrids(row, startCol, numCols):
-	print("row: ", row.name)
-	print("startCol: ", startCol.name)
-	print("numCols: ", numCols)
 	for i in range(int(startCol.name), (numCols + int(startCol.name))):
 		if(row.get_node(str(i)).available == false):
-			print("Check false")
 			return false
-	print("Check true")
 	return true
 
 func fillGrids(row, startCol, numCols):
@@ -171,8 +193,8 @@ func tryNewGrid():
 	pass
 
 func _on_PlacerArea2D_area_entered(area):
-	if(area.name == "storeArea2d"):
-		print("want's to sell")
+	if(area.name == "StoreArea2D"):
+		canSell = true
 	elif(area.name == "placementArea2d"):
 		posToCheckRow = area.get_parent().get_parent()
 		posToCheckCol = area.get_parent()
@@ -180,4 +202,11 @@ func _on_PlacerArea2D_area_entered(area):
 	pass # Replace with function body.
 
 func _on_PlacerArea2D_area_exited(area):
+	if(area.name == "StoreArea2D"):
+		canSell = false
+	pass # Replace with function body.
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if(anim_name == "Fade"):
+		queue_free()
 	pass # Replace with function body.

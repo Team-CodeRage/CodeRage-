@@ -2,10 +2,12 @@ extends Control
 
 var popUp
 var gridNode
+var blockList
 
 func _ready():
 	popUp = get_node("FrontGUI/PopupDialog")
 	gridNode = get_node("BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer")
+	blockList = PromptGlobal.getCodeBlocks()
 	pass
 
 func _on_Button_pressed(scene_to_load):
@@ -42,8 +44,7 @@ func getBlockPos(row, col):
 	return gridNode.getGridPosition(row,col)
 
 func _on_BlockUpdate_timeout():
-	var block = get_node("BlockManager/CodeBlock")
-	#block.setPositionNode(5, 3)
-	#block.setGridLength(5)
-	block.setText("Block Block")
+	randomize()
+	var block = get_node("BlockManager")
+	block.createSprite(blockList[randi() % blockList.size()])
 	pass # Replace with function body.
