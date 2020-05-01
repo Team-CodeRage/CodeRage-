@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scripts/GridManager.gd" type="Script" id=1]
 [ext_resource path="res://scripts/OnePlayerGame.gd" type="Script" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://scripts/BlockManager.gd" type="Script" id=16]
 [ext_resource path="res://scripts/Clock.gd" type="Script" id=17]
 [ext_resource path="res://scenes/ResultsMenu.gd" type="Script" id=18]
+[ext_resource path="res://assets/crsmallerbuttonpressed2.png" type="Texture" id=19]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 79.098, 211.061 )
@@ -7673,14 +7674,15 @@ wait_time = 0.1
 autostart = true
 
 [node name="PauseButton" type="TextureButton" parent="FrontGUI/TextureRect"]
+self_modulate = Color( 0.937255, 0.278431, 0.435294, 1 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -492.0
-margin_top = -279.0
-margin_right = -442.0
-margin_bottom = -229.0
+margin_left = -482.368
+margin_top = -273.0
+margin_right = -425.368
+margin_bottom = -219.0
 rect_min_size = Vector2( 50, 50 )
 texture_normal = ExtResource( 4 )
 texture_click_mask = ExtResource( 3 )
@@ -7690,7 +7692,7 @@ __meta__ = {
 }
 
 [node name="InstructionsButton" type="TextureButton" parent="FrontGUI/TextureRect"]
-self_modulate = Color( 0.317647, 0.615686, 0.85098, 1 )
+self_modulate = Color( 1, 0.819608, 0.4, 1 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -7703,7 +7705,7 @@ mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 7 )
+texture_pressed = ExtResource( 19 )
 texture_hover = ExtResource( 7 )
 expand = true
 __meta__ = {
@@ -7722,7 +7724,7 @@ __meta__ = {
 }
 
 [node name="OutputButton" type="TextureButton" parent="FrontGUI/TextureRect"]
-self_modulate = Color( 0.317647, 0.615686, 0.85098, 1 )
+self_modulate = Color( 1, 0.819608, 0.4, 1 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -7735,7 +7737,7 @@ mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 7 )
+texture_pressed = ExtResource( 19 )
 texture_hover = ExtResource( 7 )
 expand = true
 __meta__ = {
@@ -7755,7 +7757,7 @@ __meta__ = {
 }
 
 [node name="SubmitButton" type="TextureButton" parent="FrontGUI/TextureRect"]
-self_modulate = Color( 0.317647, 0.615686, 0.85098, 1 )
+self_modulate = Color( 1, 0.819608, 0.4, 1 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -7768,7 +7770,7 @@ mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 7 )
+texture_pressed = ExtResource( 19 )
 texture_hover = ExtResource( 7 )
 expand = true
 __meta__ = {
