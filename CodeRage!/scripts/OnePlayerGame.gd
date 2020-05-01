@@ -3,14 +3,17 @@ extends Control
 var popUp
 var gridNode
 var resultsNode
+var moneyLabel
 var blockList
 var attemptList
 var solution
+var money = 50
 
 func _ready():
 	popUp = get_node("FrontGUI/PopupDialog")
 	gridNode = get_node("BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer")
 	resultsNode = get_node("FrontGUI/ResultsMenu")
+	moneyLabel = get_node("FrontGUI/TextureRect/MoneyLabel")
 	blockList = PromptGlobal.getCodeBlocks()
 	solution = PromptGlobal.getSolution()
 	pass
@@ -60,6 +63,7 @@ func getTime():
 	return get_node("FrontGUI/TextureRect/RichTextLabel").text
 
 func _on_BlockUpdate_timeout():
+	addMoney(2)
 	randomize()
 	var block = get_node("BlockManager")
 	var solutionNum = randi() % blockList.size()
@@ -87,3 +91,11 @@ func checkSolution():
 			return false
 	return true
 	pass
+	
+func subtractMoney(cost):
+	money = money - cost
+	moneyLabel.text = "$" + str(money)
+
+func addMoney(amount):
+	money = money + amount
+	moneyLabel.text = "$" + str(money)

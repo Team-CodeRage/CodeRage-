@@ -91,9 +91,14 @@ shape = SubResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
 anims/Fade = SubResource( 5 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
 [connection signal="resized" from="Node2D/Label" to="." method="_on_Label_resized"]
 [connection signal="area_entered" from="Node2D/PlacerArea2D" to="." method="_on_PlacerArea2D_area_entered"]
 [connection signal="area_exited" from="Node2D/PlacerArea2D" to="." method="_on_PlacerArea2D_area_exited"]
 [connection signal="mouse_entered" from="Node2D/Sprite/PickUpArea2D" to="." method="_on_PickUpArea2D_mouse_entered"]
 [connection signal="mouse_exited" from="Node2D/Sprite/PickUpArea2D" to="." method="_on_PickUpArea2D_mouse_exited"]
 [connection signal="animation_finished" from="Node2D/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

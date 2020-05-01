@@ -20,6 +20,7 @@ var motion = Vector2()
 var canSell = false
 var pixelLength
 var solutionNum
+var price = 10
 
 var can_drag = false
 var dragging = false
@@ -67,7 +68,7 @@ func _process(delta):
 		if(canSell == true and wasPlaced == true):
 			wasPlaced = false
 			wasSet = false
-			animPlayer.play("Fade")
+			sellItem()
 		elif(wasSet):
 			if(tryNewGrid()):
 				setPosition()
@@ -96,10 +97,18 @@ func _ready():
 	pass # Replace with function body.
 
 func buyItem():
+	get_node("Timer").stop()
+	get_parent().buyBlock(price)
 	purchased = true
 	scale = Vector2(1, 1)
 	set_physics_process(false)
 	get_node("CollisionShape2D").disabled = true
+	pass
+
+func sellItem():
+	get_node("Timer").stop()
+	get_parent().sellBlock(price)
+	animPlayer.play("Fade")
 	pass
 
 func setGridLength(numBlocks):
@@ -209,4 +218,12 @@ func _on_PlacerArea2D_area_exited(area):
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if(anim_name == "Fade"):
 		queue_free()
+	pass # Replace with function body.
+
+
+func _on_Timer_timeout():
+	price = price - 1
+	if(price <= 0):
+		get_node("Timer").stop()
+		animPlayer.play("Fade")
 	pass # Replace with function body.

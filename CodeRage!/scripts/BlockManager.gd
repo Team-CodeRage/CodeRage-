@@ -83,3 +83,11 @@ func createSprite(text, num):
 	child.scale = Vector2(0.5,0.5)
 	child.position = Vector2(40, 100)
 	pass
+	
+func buyBlock(cost):
+	get_parent().subtractMoney(cost)
+	pass
+
+func sellBlock(price):
+	get_parent().addMoney(price)
+	pass
