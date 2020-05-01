@@ -36,8 +36,6 @@ func _process(delta):
 	if (mouseIn && Input.is_action_pressed("LeftClick")): #When clicking
 		#First we set mouse_to_center as a static vector
 		#for preventing the sprite to move its center to the mouse position
-		if(purchased == false):
-			buyItem()
 		if not mouse_to_center_set:
 			sprite_pos = self.position
 			mouse_pos = get_viewport().get_mouse_position()
@@ -49,6 +47,8 @@ func _process(delta):
 	if (dragging && Input.is_action_pressed("LeftClick")): #While dragging
 		if can_drag:
 			mouse_pos = get_viewport().get_mouse_position()
+			if(purchased == false):
+				buyItem()
 			if(spotFilled):
 				freeGrids(positionNodeR, positionNodeC, gridLength)
 			setZPos(1)
@@ -159,9 +159,6 @@ func _on_Label_resized():
 	var labelSize = (newScale * 36)/2
 	var totalSpace = windowSize - (labelSize)
 	var spaceSide = (totalSpace) / 2
-	print("labelSize", labelSize)
-	print("totalSpace",totalSpace)
-	print("spaceSide",spaceSide)
 	position = Vector2(spaceSide + 30, 100)
 	pass # Replace with function body.
 
