@@ -1,7 +1,9 @@
 extends VBoxContainer
 
-onready var selectionItem = load("res://scenes/1PlayerSelectionItem.tscn")
-
+onready var selectionItem = load("res://scenes/2PlayerSelectionItem.tscn")
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,7 +15,7 @@ func toggledButton(buttonName):
 		if(i.get_name() != buttonName):
 			i.untoggle()
 		else:
-			get_parent().get_parent().get_parent().get_parent().get_parent().selectedPrompt = buttonName
+			get_parent().get_parent().get_parent().get_parent().get_parent().get_parent().selectedPrompt = buttonName
 	pass # Replace with function body.
 
 func loadPrompts():
@@ -24,7 +26,6 @@ func loadPrompts():
 		child.promptName = prompt
 		child.setDifficulty(int(PromptData.getPromptData(prompt, "Difficulty")))
 		child.changeDescription(PromptData.getPromptData(prompt, "Title"))
-		child.setStars(int(PromptData.getPromptData(prompt, "Stars")))
 		add_child(child)
 	pass
 

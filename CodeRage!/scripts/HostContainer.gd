@@ -1,10 +1,11 @@
 extends Control
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
+onready var prompts = get_node("PromptsContainer")
+onready var buttons = get_node("ButtonsMarginContainer")
+onready var lobby = get_node("LobbyContainer")
+onready var lobbyButtons = get_node("LobbyButtonsContainer")
+onready var playerList = lobby.get_node("ScrollContainer/2PlayerGameInfo")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,12 +16,26 @@ func _ready():
 #func _process(delta):
 #	pass
 
+func showLobby():
+	prompts.hide()
+	buttons.hide()
+	lobby.show()
+	lobbyButtons.show()
+	pass
 
-func _on_HostButton_pressed():
-	get_parent().get_node("JoinContainer").hide()
-	get_parent().get_node("HostContainer").show()	
-	pass # Replace with function body.
+func loadPlayers():
+	playerList.clearPlayers()
+	for player in Globals.playerIDs:
+		playerList.addPlayer(str(player))
+	pass
 
+func showPrompts():
+	lobby.hide()
+	lobbyButtons.hide()
+	prompts.show()
+	buttons.show()
+	pass
 
-func _on_ChangeSceneButton_pressed():
-	pass # Replace with function body.
+func setThePrompt(newText):
+	get_node("LobbyContainer/ScrollContainer/2PlayerGameInfo").setPrompt(newText)
+	pass

@@ -31,7 +31,7 @@ var default_data = {
 			"Stars" : 3
 					},
 		"Prompt2" : {
-			"Title" : "Hello World!",
+			"Title" : "Sum of Two Numbers",
 			"Difficulty" : 0,
 			"Instructions" : "Write a Python program to prompt the user for two numbers, num1 and num2, and output the sum of these two numbers.",
 			"Output" : "First number: 5 \nSecond number: 3 \nThe sum of 5.0 and 3.0 is 8.0",
@@ -47,7 +47,7 @@ var default_data = {
 			"Stars" : 2
 					},
 		"Prompt3" : {
-			"Title" : "Hello World!",
+			"Title" : "Athlete Sort",
 			"Difficulty" : 1,
 			"Instructions" : "Write a Python program to prompt the user for two numbers, num1 and num2, and output the sum of these two numbers.",
 			"Output" : "First number: 5 \nSecond number: 3 \nThe sum of 5.0 and 3.0 is 8.0",
@@ -63,7 +63,7 @@ var default_data = {
 			"Stars" : 1
 					},
 		"Prompt4" : {
-			"Title" : "Hello World!",
+			"Title" : "Word Order",
 			"Difficulty" : 2,
 			"Instructions" : "Write a Python program to prompt the user for two numbers, num1 and num2, and output the sum of these two numbers.",
 			"Output" : "First number: 5 \nSecond number: 3 \nThe sum of 5.0 and 3.0 is 8.0",

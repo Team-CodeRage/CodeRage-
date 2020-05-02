@@ -17,7 +17,7 @@
 [ext_resource path="res://assets/Capture1.png" type="Texture" id=15]
 [ext_resource path="res://scripts/BlockManager.gd" type="Script" id=16]
 [ext_resource path="res://scripts/Clock.gd" type="Script" id=17]
-[ext_resource path="res://scenes/ResultsMenu.gd" type="Script" id=18]
+[ext_resource path="res://scripts/ResultsMenu.gd" type="Script" id=18]
 [ext_resource path="res://assets/crsmallerbuttonpressed2.png" type="Texture" id=19]
 
 [sub_resource type="RectangleShape2D" id=1]

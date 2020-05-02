@@ -1,6 +1,6 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://scenes/ChangeSceneButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/JoinLobbyVBox.gd" type="Script" id=1]
 [ext_resource path="res://scripts/HostContainer.gd" type="Script" id=2]
 [ext_resource path="res://assets/crbuttonpressed2.PNG" type="Texture" id=3]
 [ext_resource path="res://assets/crbuttonclicked.PNG" type="Texture" id=4]
@@ -10,12 +10,14 @@
 [ext_resource path="res://assets/popupbase.PNG" type="Texture" id=8]
 [ext_resource path="res://assets/crbuttonpressed3.PNG" type="Texture" id=9]
 [ext_resource path="res://fonts/cour30white.tres" type="DynamicFont" id=10]
-[ext_resource path="res://fonts/cour75,3.tres" type="DynamicFont" id=11]
 [ext_resource path="res://scripts/JoinContainer.gd" type="Script" id=12]
-[ext_resource path="res://assets/crsmallerbutton.PNG" type="Texture" id=13]
-[ext_resource path="res://assets/codeblockbase.PNG" type="Texture" id=14]
-[ext_resource path="res://fonts/berlin32,1.tres" type="DynamicFont" id=15]
+[ext_resource path="res://scenes/2PlayerSelectionItem.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scripts/2PlayerPromptSelection.gd" type="Script" id=14]
+[ext_resource path="res://fonts/courblack28.tres" type="DynamicFont" id=15]
 [ext_resource path="res://scripts/2PlayerMenu.gd" type="Script" id=16]
+[ext_resource path="res://scripts/PlayerNameVBox.gd" type="Script" id=17]
+[ext_resource path="res://scenes/PlayerName.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scripts/2PlayerGameInfo.gd" type="Script" id=19]
 
 [node name="2PlayerMenu" type="Control"]
 anchor_right = 1.0
@@ -25,29 +27,38 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ButtonsContainer" type="MarginContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 397.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ButtonsContainer"]
-margin_right = 397.0
+[node name="ButtonsContainer" type="MarginContainer" parent="HBoxContainer"]
+margin_right = 388.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ButtonsContainer"]
+margin_right = 388.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Control" type="Control" parent="ButtonsContainer/VBoxContainer"]
-margin_right = 397.0
+[node name="Spacer" type="Control" parent="HBoxContainer/ButtonsContainer/VBoxContainer"]
+margin_right = 388.0
 margin_bottom = 110.0
 rect_min_size = Vector2( 0, 110 )
 
-[node name="MarginContainer" type="MarginContainer" parent="ButtonsContainer/VBoxContainer"]
+[node name="HostMarginContainer" type="MarginContainer" parent="HBoxContainer/ButtonsContainer/VBoxContainer"]
 margin_top = 114.0
-margin_right = 397.0
+margin_right = 388.0
 margin_bottom = 235.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -56,18 +67,18 @@ custom_constants/margin_top = 10
 custom_constants/margin_left = 20
 custom_constants/margin_bottom = 10
 
-[node name="HostButton" type="TextureButton" parent="ButtonsContainer/VBoxContainer/MarginContainer"]
+[node name="HostButton" type="TextureButton" parent="HBoxContainer/ButtonsContainer/VBoxContainer/HostMarginContainer"]
 self_modulate = Color( 0.976471, 0.878431, 0.498039, 1 )
 margin_left = 20.0
 margin_top = 10.0
-margin_right = 362.0
+margin_right = 353.0
 margin_bottom = 111.0
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 6 )
 expand = true
 
-[node name="Label" type="Label" parent="ButtonsContainer/VBoxContainer/MarginContainer/HostButton"]
+[node name="Label" type="Label" parent="HBoxContainer/ButtonsContainer/VBoxContainer/HostMarginContainer/HostButton"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -84,9 +95,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer2" type="MarginContainer" parent="ButtonsContainer/VBoxContainer"]
+[node name="JoinMarginContainer" type="MarginContainer" parent="HBoxContainer/ButtonsContainer/VBoxContainer"]
 margin_top = 239.0
-margin_right = 397.0
+margin_right = 388.0
 margin_bottom = 360.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -95,18 +106,18 @@ custom_constants/margin_top = 10
 custom_constants/margin_left = 20
 custom_constants/margin_bottom = 10
 
-[node name="JoinButton" type="TextureButton" parent="ButtonsContainer/VBoxContainer/MarginContainer2"]
+[node name="JoinButton" type="TextureButton" parent="HBoxContainer/ButtonsContainer/VBoxContainer/JoinMarginContainer"]
 self_modulate = Color( 0.976471, 0.878431, 0.498039, 1 )
 margin_left = 20.0
 margin_top = 10.0
-margin_right = 362.0
+margin_right = 353.0
 margin_bottom = 111.0
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 6 )
 expand = true
 
-[node name="Label2" type="Label" parent="ButtonsContainer/VBoxContainer/MarginContainer2/JoinButton"]
+[node name="Label2" type="Label" parent="HBoxContainer/ButtonsContainer/VBoxContainer/JoinMarginContainer/JoinButton"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -123,9 +134,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer3" type="MarginContainer" parent="ButtonsContainer/VBoxContainer"]
+[node name="BackMarginContainer" type="MarginContainer" parent="HBoxContainer/ButtonsContainer/VBoxContainer"]
 margin_top = 364.0
-margin_right = 397.0
+margin_right = 388.0
 margin_bottom = 485.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -134,20 +145,23 @@ custom_constants/margin_top = 10
 custom_constants/margin_left = 20
 custom_constants/margin_bottom = 10
 
-[node name="ChangeSceneButton" parent="ButtonsContainer/VBoxContainer/MarginContainer3" instance=ExtResource( 1 )]
+[node name="ChangeSceneButton" type="TextureButton" parent="HBoxContainer/ButtonsContainer/VBoxContainer/BackMarginContainer"]
 self_modulate = Color( 0.858824, 0, 0.219608, 1 )
 margin_left = 20.0
 margin_top = 10.0
-margin_right = 362.0
+margin_right = 353.0
 margin_bottom = 111.0
+mouse_default_cursor_shape = 2
 button_mask = 7
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 4 )
 texture_hover = ExtResource( 6 )
 expand = true
-scene_to_load = "res://scenes/TitleScene.tscn"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label3" type="Label" parent="ButtonsContainer/VBoxContainer/MarginContainer3/ChangeSceneButton"]
+[node name="Label3" type="Label" parent="HBoxContainer/ButtonsContainer/VBoxContainer/BackMarginContainer/ChangeSceneButton"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -164,49 +178,48 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control2" type="Control" parent="ButtonsContainer/VBoxContainer"]
+[node name="Spacer2" type="Control" parent="HBoxContainer/ButtonsContainer/VBoxContainer"]
 margin_top = 489.0
-margin_right = 397.0
+margin_right = 388.0
 margin_bottom = 599.0
 rect_min_size = Vector2( 0, 110 )
 
-[node name="PopUpsContainer" type="MarginContainer" parent="."]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -620.0
+[node name="PopUpsContainer" type="MarginContainer" parent="HBoxContainer"]
+margin_left = 392.0
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 632, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="PopUpsContainer"]
-margin_right = 620.0
+[node name="PanelMarginContainer" type="MarginContainer" parent="HBoxContainer/PopUpsContainer"]
+margin_right = 632.0
 margin_bottom = 600.0
 custom_constants/margin_right = 20
 custom_constants/margin_top = 50
 custom_constants/margin_left = 20
 custom_constants/margin_bottom = 50
 
-[node name="TextureRect" type="TextureRect" parent="PopUpsContainer/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/PopUpsContainer/PanelMarginContainer"]
 margin_left = 20.0
 margin_top = 50.0
-margin_right = 600.0
+margin_right = 612.0
 margin_bottom = 550.0
 texture = ExtResource( 8 )
 expand = true
 
-[node name="HostContainer" type="VBoxContainer" parent="PopUpsContainer"]
-visible = false
-margin_right = 620.0
+[node name="HostContainer" type="VBoxContainer" parent="HBoxContainer/PopUpsContainer"]
+margin_right = 632.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 2 )
 
-[node name="MarginContainer2" type="MarginContainer" parent="PopUpsContainer/HostContainer"]
-margin_right = 620.0
+[node name="PromptsContainer" type="MarginContainer" parent="HBoxContainer/PopUpsContainer/HostContainer"]
+margin_right = 632.0
 margin_bottom = 400.0
 rect_min_size = Vector2( 0, 400 )
 size_flags_horizontal = 3
@@ -216,10 +229,10 @@ custom_constants/margin_top = 90
 custom_constants/margin_left = 50
 custom_constants/margin_bottom = 10
 
-[node name="ColorRect" type="ColorRect" parent="PopUpsContainer/HostContainer/MarginContainer2"]
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/PopUpsContainer/HostContainer/PromptsContainer"]
 margin_left = 50.0
 margin_top = 90.0
-margin_right = 570.0
+margin_right = 582.0
 margin_bottom = 390.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -228,11 +241,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ScrollContainer" type="ScrollContainer" parent="PopUpsContainer/HostContainer/MarginContainer2"]
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/PopUpsContainer/HostContainer/PromptsContainer"]
 margin_left = 50.0
 margin_top = 90.0
-margin_right = 570.0
+margin_right = 582.0
 margin_bottom = 390.0
+rect_min_size = Vector2( 520, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
@@ -240,145 +254,62 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="PopUpsContainer/HostContainer/MarginContainer2/ScrollContainer"]
+[node name="2PlayerPromptSelection" type="VBoxContainer" parent="HBoxContainer/PopUpsContainer/HostContainer/PromptsContainer/ScrollContainer"]
 margin_right = 520.0
-margin_bottom = 300.0
+margin_bottom = 412.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource( 14 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PopUpsContainer/HostContainer/MarginContainer2/ScrollContainer/MarginContainer"]
-margin_right = 520.0
-margin_bottom = 300.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="1PlayerSelectionItem" parent="HBoxContainer/PopUpsContainer/HostContainer/PromptsContainer/ScrollContainer/2PlayerPromptSelection" instance=ExtResource( 13 )]
 
-[node name="Control" type="Control" parent="PopUpsContainer/HostContainer/MarginContainer2/ScrollContainer/MarginContainer/VBoxContainer"]
-margin_right = 520.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 0, 100 )
-size_flags_horizontal = 3
+[node name="1PlayerSelectionItem2" parent="HBoxContainer/PopUpsContainer/HostContainer/PromptsContainer/ScrollContainer/2PlayerPromptSelection" instance=ExtResource( 13 )]
+margin_top = 104.0
+margin_bottom = 204.0
 
-[node name="ColorRect" type="ColorRect" parent="PopUpsContainer/HostContainer/MarginContainer2/ScrollContainer/MarginContainer/VBoxContainer/Control"]
-margin_right = 520.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 520, 100 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="1PlayerSelectionItem3" parent="HBoxContainer/PopUpsContainer/HostContainer/PromptsContainer/ScrollContainer/2PlayerPromptSelection" instance=ExtResource( 13 )]
+margin_top = 208.0
+margin_bottom = 308.0
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="PopUpsContainer/HostContainer/MarginContainer2/ScrollContainer/MarginContainer/VBoxContainer/Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="1PlayerSelectionItem4" parent="HBoxContainer/PopUpsContainer/HostContainer/PromptsContainer/ScrollContainer/2PlayerPromptSelection" instance=ExtResource( 13 )]
+margin_top = 312.0
+margin_bottom = 412.0
 
-[node name="TextureRect" type="TextureRect" parent="PopUpsContainer/HostContainer/MarginContainer2/ScrollContainer/MarginContainer/VBoxContainer/Control/HBoxContainer2"]
-self_modulate = Color( 0.396078, 0.870588, 0.423529, 1 )
-margin_right = 156.0
-margin_bottom = 100.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource( 13 )
-expand = true
-
-[node name="Label" type="Label" parent="PopUpsContainer/HostContainer/MarginContainer2/ScrollContainer/MarginContainer/VBoxContainer/Control/HBoxContainer2/TextureRect"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -37.5
-margin_top = -19.5
-margin_right = 37.5
-margin_bottom = 19.5
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 15 )
-text = "Easy"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Description" type="Label" parent="PopUpsContainer/HostContainer/MarginContainer2/ScrollContainer/MarginContainer/VBoxContainer/Control/HBoxContainer2"]
-margin_left = 160.0
-margin_right = 520.0
-margin_bottom = 100.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 7
-custom_fonts/font = ExtResource( 10 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Prompt description"
-align = 1
-valign = 1
-
-[node name="TextureButton" type="TextureButton" parent="PopUpsContainer/HostContainer/MarginContainer2/ScrollContainer/MarginContainer/VBoxContainer/Control"]
-self_modulate = Color( 0.462745, 0.462745, 0.462745, 0.462745 )
-margin_top = 4.0
-margin_right = 520.0
-margin_bottom = 4.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-toggle_mode = true
-texture_pressed = ExtResource( 14 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="1PlayerSelectionItem" type="Control" parent="PopUpsContainer/HostContainer/MarginContainer2/ScrollContainer/MarginContainer/VBoxContainer"]
-visible = false
-margin_top = 4.0
-margin_right = 820.0
-margin_bottom = 104.0
-grow_horizontal = 2
-grow_vertical = 2
-rect_min_size = Vector2( 820, 100 )
-mouse_filter = 1
-mouse_default_cursor_shape = 2
-size_flags_horizontal = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="PopUpsContainer/HostContainer"]
+[node name="ButtonsMarginContainer" type="MarginContainer" parent="HBoxContainer/PopUpsContainer/HostContainer"]
 margin_top = 404.0
-margin_right = 620.0
+margin_right = 632.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="PopUpsContainer/HostContainer/HBoxContainer2"]
-margin_right = 308.0
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/PopUpsContainer/HostContainer/ButtonsMarginContainer"]
+margin_right = 632.0
+margin_bottom = 196.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PopUpsContainer/HostContainer/ButtonsMarginContainer/HBoxContainer2"]
+margin_right = 314.0
 margin_bottom = 196.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_right = 0
-custom_constants/margin_top = 20
-custom_constants/margin_left = 45
-custom_constants/margin_bottom = 80
+custom_constants/margin_left = 40
+custom_constants/margin_bottom = 70
 
-[node name="TextureButton" type="TextureButton" parent="PopUpsContainer/HostContainer/HBoxContainer2/MarginContainer"]
+[node name="HostPrivateButton" type="TextureButton" parent="HBoxContainer/PopUpsContainer/HostContainer/ButtonsMarginContainer/HBoxContainer2/MarginContainer"]
 self_modulate = Color( 0.317647, 0.615686, 0.85098, 1 )
-margin_left = 45.0
-margin_top = 20.0
-margin_right = 308.0
-margin_bottom = 116.0
+margin_left = 40.0
+margin_right = 314.0
+margin_bottom = 126.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 6 )
 expand = true
 
-[node name="Label" type="Label" parent="PopUpsContainer/HostContainer/HBoxContainer2/MarginContainer/TextureButton"]
+[node name="Label" type="Label" parent="HBoxContainer/PopUpsContainer/HostContainer/ButtonsMarginContainer/HBoxContainer2/MarginContainer/HostPrivateButton"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -388,35 +319,35 @@ margin_top = -39.5
 margin_right = 90.0
 margin_bottom = 39.5
 custom_fonts/font = ExtResource( 10 )
-text = "Host 
-Private"
+text = "Create
+Game"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer2" type="MarginContainer" parent="PopUpsContainer/HostContainer/HBoxContainer2"]
-margin_left = 312.0
-margin_right = 620.0
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/PopUpsContainer/HostContainer/ButtonsMarginContainer/HBoxContainer2"]
+margin_left = 318.0
+margin_right = 632.0
 margin_bottom = 196.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/margin_right = 45
-custom_constants/margin_top = 20
-custom_constants/margin_bottom = 80
+custom_constants/margin_right = 40
+custom_constants/margin_bottom = 70
 
-[node name="TextureButton2" type="TextureButton" parent="PopUpsContainer/HostContainer/HBoxContainer2/MarginContainer2"]
+[node name="HostPublicButton" type="TextureButton" parent="HBoxContainer/PopUpsContainer/HostContainer/ButtonsMarginContainer/HBoxContainer2/MarginContainer2"]
 self_modulate = Color( 0.317647, 0.615686, 0.85098, 1 )
-margin_top = 20.0
-margin_right = 263.0
-margin_bottom = 116.0
+margin_right = 274.0
+margin_bottom = 126.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 6 )
 expand = true
 
-[node name="Label2" type="Label" parent="PopUpsContainer/HostContainer/HBoxContainer2/MarginContainer2/TextureButton2"]
+[node name="Label2" type="Label" parent="HBoxContainer/PopUpsContainer/HostContainer/ButtonsMarginContainer/HBoxContainer2/MarginContainer2/HostPublicButton"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -426,109 +357,337 @@ margin_top = -39.5
 margin_right = 100.0
 margin_bottom = 39.5
 custom_fonts/font = ExtResource( 10 )
-text = "Host
-Public"
+text = "Create
+Game"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="JoinContainer" type="VBoxContainer" parent="PopUpsContainer"]
+[node name="LobbyContainer" type="MarginContainer" parent="HBoxContainer/PopUpsContainer/HostContainer"]
 visible = false
-margin_right = 620.0
-margin_bottom = 600.0
+margin_right = 632.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 0, 400 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 12 )
+custom_constants/margin_right = 50
+custom_constants/margin_top = 90
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 10
 
-[node name="Control" type="Control" parent="PopUpsContainer/JoinContainer"]
-margin_right = 620.0
-margin_bottom = 298.0
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/PopUpsContainer/HostContainer/LobbyContainer"]
+margin_left = 50.0
+margin_top = 90.0
+margin_right = 582.0
+margin_bottom = 390.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+color = Color( 0.976471, 0.878431, 0.498039, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="LineEdit" type="LineEdit" parent="PopUpsContainer/JoinContainer/Control"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -250.0
-margin_top = -25.0
-margin_right = 250.0
-margin_bottom = 25.0
-rect_min_size = Vector2( 500, 50 )
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/PopUpsContainer/HostContainer/LobbyContainer"]
+margin_left = 50.0
+margin_top = 90.0
+margin_right = 582.0
+margin_bottom = 390.0
+rect_min_size = Vector2( 520, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2PlayerGameInfo" type="VBoxContainer" parent="HBoxContainer/PopUpsContainer/HostContainer/LobbyContainer/ScrollContainer"]
+margin_right = 532.0
+margin_bottom = 428.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 19 )
+
+[node name="Title" type="Control" parent="HBoxContainer/PopUpsContainer/HostContainer/LobbyContainer/ScrollContainer/2PlayerGameInfo"]
+margin_right = 520.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/PopUpsContainer/HostContainer/LobbyContainer/ScrollContainer/2PlayerGameInfo/Title"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 15 )
+text = "Hosting Game"
 align = 1
-max_length = 15
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="PopUpsContainer/JoinContainer/Control"]
-margin_left = 77.0
-margin_top = 220.0
-margin_right = 557.0
-margin_bottom = 312.0
-custom_fonts/font = ExtResource( 11 )
-text = "Code Rage!"
+[node name="GamePrompt" type="Control" parent="HBoxContainer/PopUpsContainer/HostContainer/LobbyContainer/ScrollContainer/2PlayerGameInfo"]
+margin_top = 54.0
+margin_right = 520.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/PopUpsContainer/HostContainer/LobbyContainer/ScrollContainer/2PlayerGameInfo/GamePrompt"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 15 )
+text = " PROMPT:"
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="PopUpsContainer/JoinContainer/Control"]
-margin_left = 41.0
-margin_top = 215.0
-margin_right = 98.0
-margin_bottom = 307.0
-custom_fonts/font = ExtResource( 11 )
-custom_colors/font_color = Color( 0.945098, 0.478431, 0.494118, 1 )
-text = "{"
+[node name="PlayerListTitle" type="Control" parent="HBoxContainer/PopUpsContainer/HostContainer/LobbyContainer/ScrollContainer/2PlayerGameInfo"]
+margin_top = 108.0
+margin_right = 520.0
+margin_bottom = 158.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/PopUpsContainer/HostContainer/LobbyContainer/ScrollContainer/2PlayerGameInfo/PlayerListTitle"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 15 )
+text = " Players:"
+valign = 1
+uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label3" type="Label" parent="PopUpsContainer/JoinContainer/Control"]
-margin_left = 521.0
+[node name="PlayerNameVBox" type="VBoxContainer" parent="HBoxContainer/PopUpsContainer/HostContainer/LobbyContainer/ScrollContainer/2PlayerGameInfo"]
+margin_top = 162.0
+margin_right = 520.0
+margin_bottom = 428.0
+size_flags_horizontal = 3
+script = ExtResource( 17 )
+
+[node name="PlayerName" parent="HBoxContainer/PopUpsContainer/HostContainer/LobbyContainer/ScrollContainer/2PlayerGameInfo/PlayerNameVBox" instance=ExtResource( 18 )]
+margin_right = 520.0
+
+[node name="PlayerName2" parent="HBoxContainer/PopUpsContainer/HostContainer/LobbyContainer/ScrollContainer/2PlayerGameInfo/PlayerNameVBox" instance=ExtResource( 18 )]
+margin_top = 54.0
+margin_right = 520.0
+margin_bottom = 104.0
+
+[node name="PlayerName3" parent="HBoxContainer/PopUpsContainer/HostContainer/LobbyContainer/ScrollContainer/2PlayerGameInfo/PlayerNameVBox" instance=ExtResource( 18 )]
+margin_top = 108.0
+margin_right = 520.0
+margin_bottom = 158.0
+
+[node name="PlayerName4" parent="HBoxContainer/PopUpsContainer/HostContainer/LobbyContainer/ScrollContainer/2PlayerGameInfo/PlayerNameVBox" instance=ExtResource( 18 )]
+margin_top = 162.0
+margin_right = 520.0
+margin_bottom = 212.0
+
+[node name="PlayerName5" parent="HBoxContainer/PopUpsContainer/HostContainer/LobbyContainer/ScrollContainer/2PlayerGameInfo/PlayerNameVBox" instance=ExtResource( 18 )]
 margin_top = 216.0
-margin_right = 591.0
-margin_bottom = 308.0
-custom_fonts/font = ExtResource( 11 )
-custom_colors/font_color = Color( 0.945098, 0.478431, 0.494118, 1 )
-text = "}"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_right = 520.0
+margin_bottom = 266.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PopUpsContainer/JoinContainer"]
-margin_top = 302.0
-margin_right = 620.0
+[node name="LobbyButtonsContainer" type="MarginContainer" parent="HBoxContainer/PopUpsContainer/HostContainer"]
+visible = false
+margin_right = 632.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="PopUpsContainer/JoinContainer/HBoxContainer"]
-margin_right = 308.0
-margin_bottom = 298.0
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/PopUpsContainer/HostContainer/LobbyButtonsContainer"]
+margin_right = 632.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PopUpsContainer/HostContainer/LobbyButtonsContainer/HBoxContainer2"]
+margin_right = 314.0
+margin_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_right = 0
-custom_constants/margin_top = 40
-custom_constants/margin_left = 45
-custom_constants/margin_bottom = 80
+custom_constants/margin_left = 40
+custom_constants/margin_bottom = 70
 
-[node name="TextureButton" type="TextureButton" parent="PopUpsContainer/JoinContainer/HBoxContainer/MarginContainer"]
+[node name="CancelHostButton" type="TextureButton" parent="HBoxContainer/PopUpsContainer/HostContainer/LobbyButtonsContainer/HBoxContainer2/MarginContainer"]
 self_modulate = Color( 0.317647, 0.615686, 0.85098, 1 )
-margin_left = 45.0
-margin_top = 40.0
-margin_right = 308.0
-margin_bottom = 218.0
+margin_left = 40.0
+margin_right = 314.0
+margin_bottom = 530.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 6 )
 expand = true
 
-[node name="Label" type="Label" parent="PopUpsContainer/JoinContainer/HBoxContainer/MarginContainer/TextureButton"]
+[node name="Label" type="Label" parent="HBoxContainer/PopUpsContainer/HostContainer/LobbyButtonsContainer/HBoxContainer2/MarginContainer/CancelHostButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -90.0
+margin_top = -39.5
+margin_right = 90.0
+margin_bottom = 39.5
+custom_fonts/font = ExtResource( 10 )
+text = "Cancel"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/PopUpsContainer/HostContainer/LobbyButtonsContainer/HBoxContainer2"]
+margin_left = 318.0
+margin_right = 632.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 40
+custom_constants/margin_bottom = 70
+
+[node name="StartButton" type="TextureButton" parent="HBoxContainer/PopUpsContainer/HostContainer/LobbyButtonsContainer/HBoxContainer2/MarginContainer2"]
+self_modulate = Color( 0.317647, 0.615686, 0.85098, 1 )
+margin_right = 274.0
+margin_bottom = 530.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 6 )
+expand = true
+
+[node name="Label2" type="Label" parent="HBoxContainer/PopUpsContainer/HostContainer/LobbyButtonsContainer/HBoxContainer2/MarginContainer2/StartButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -39.5
+margin_right = 100.0
+margin_bottom = 39.5
+custom_fonts/font = ExtResource( 10 )
+text = "Start
+Game"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JoinContainer" type="MarginContainer" parent="HBoxContainer/PopUpsContainer"]
+visible = false
+margin_right = 632.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 30
+custom_constants/margin_top = 70
+custom_constants/margin_left = 30
+custom_constants/margin_bottom = 70
+
+[node name="JoinMenuVBox" type="VBoxContainer" parent="HBoxContainer/PopUpsContainer/JoinContainer"]
+margin_left = 30.0
+margin_top = 70.0
+margin_right = 602.0
+margin_bottom = 530.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 12 )
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinMenuVBox"]
+margin_right = 572.0
+margin_bottom = 228.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 30
+custom_constants/margin_top = 20
+custom_constants/margin_left = 30
+custom_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinMenuVBox/MarginContainer"]
+margin_left = 30.0
+margin_top = 20.0
+margin_right = 542.0
+margin_bottom = 218.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 27
+
+[node name="Title" type="Label" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinMenuVBox/MarginContainer/VBoxContainer"]
+margin_right = 512.0
+margin_bottom = 69.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Join a Match!"
+align = 1
+valign = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinMenuVBox/MarginContainer/VBoxContainer"]
+margin_top = 96.0
+margin_right = 512.0
+margin_bottom = 134.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Enter an IP address:"
+align = 1
+valign = 1
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinMenuVBox/MarginContainer/VBoxContainer"]
+margin_top = 161.0
+margin_right = 512.0
+margin_bottom = 198.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+align = 1
+max_length = 30
+caret_blink = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinMenuVBox"]
+margin_top = 232.0
+margin_right = 572.0
+margin_bottom = 460.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 10
+custom_constants/margin_top = 100
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinMenuVBox/MarginContainer2"]
+margin_left = 10.0
+margin_top = 100.0
+margin_right = 562.0
+margin_bottom = 228.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinMenuVBox/MarginContainer2/HBoxContainer"]
+margin_right = 274.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="JoinGameButton" type="TextureButton" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinMenuVBox/MarginContainer2/HBoxContainer/MarginContainer"]
+self_modulate = Color( 0.317647, 0.615686, 0.85098, 1 )
+margin_right = 274.0
+margin_bottom = 128.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 6 )
+expand = true
+
+[node name="Label" type="Label" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinMenuVBox/MarginContainer2/HBoxContainer/MarginContainer/JoinGameButton"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -539,34 +698,30 @@ margin_right = 110.0
 margin_bottom = 39.5
 custom_fonts/font = ExtResource( 10 )
 text = "Join 
-Random"
+Game"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer2" type="MarginContainer" parent="PopUpsContainer/JoinContainer/HBoxContainer"]
-margin_left = 312.0
-margin_right = 620.0
-margin_bottom = 298.0
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinMenuVBox/MarginContainer2/HBoxContainer"]
+margin_left = 278.0
+margin_right = 552.0
+margin_bottom = 128.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/margin_right = 45
-custom_constants/margin_top = 40
-custom_constants/margin_bottom = 80
 
-[node name="TextureButton2" type="TextureButton" parent="PopUpsContainer/JoinContainer/HBoxContainer/MarginContainer2"]
+[node name="JoinGameButton" type="TextureButton" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinMenuVBox/MarginContainer2/HBoxContainer/MarginContainer2"]
 self_modulate = Color( 0.317647, 0.615686, 0.85098, 1 )
-margin_top = 40.0
-margin_right = 263.0
-margin_bottom = 218.0
+margin_right = 274.0
+margin_bottom = 128.0
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 6 )
 expand = true
 
-[node name="Label2" type="Label" parent="PopUpsContainer/JoinContainer/HBoxContainer/MarginContainer2/TextureButton2"]
+[node name="Label2" type="Label" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinMenuVBox/MarginContainer2/HBoxContainer/MarginContainer2/JoinGameButton"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -576,13 +731,237 @@ margin_top = -39.5
 margin_right = 100.0
 margin_bottom = 39.5
 custom_fonts/font = ExtResource( 10 )
-text = "Join By
-IP Address"
+text = "Join
+Game"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="ButtonsContainer/VBoxContainer/MarginContainer/HostButton" to="PopUpsContainer/HostContainer" method="_on_HostButton_pressed"]
-[connection signal="pressed" from="ButtonsContainer/VBoxContainer/MarginContainer2/JoinButton" to="PopUpsContainer/JoinContainer" method="_on_JoinButton_pressed"]
-[connection signal="pressed" from="ButtonsContainer/VBoxContainer/MarginContainer3/ChangeSceneButton" to="." method="_on_ChangeSceneButton_pressed"]
+
+[node name="JoinLobbyVBox" type="VBoxContainer" parent="HBoxContainer/PopUpsContainer/JoinContainer"]
+visible = false
+margin_left = 30.0
+margin_top = 70.0
+margin_right = 602.0
+margin_bottom = 530.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinLobbyVBox"]
+margin_right = 572.0
+margin_bottom = 330.0
+rect_min_size = Vector2( 0, 330 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinLobbyVBox/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 552.0
+margin_bottom = 330.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.976471, 0.878431, 0.498039, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinLobbyVBox/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 552.0
+margin_bottom = 330.0
+rect_min_size = Vector2( 520, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JoinGameInfo" type="VBoxContainer" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinLobbyVBox/MarginContainer/ScrollContainer"]
+margin_right = 532.0
+margin_bottom = 428.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 19 )
+
+[node name="Title" type="Control" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinLobbyVBox/MarginContainer/ScrollContainer/JoinGameInfo"]
+margin_right = 520.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinLobbyVBox/MarginContainer/ScrollContainer/JoinGameInfo/Title"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 15 )
+text = "Joining Game"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GamePrompt" type="Control" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinLobbyVBox/MarginContainer/ScrollContainer/JoinGameInfo"]
+margin_top = 54.0
+margin_right = 520.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinLobbyVBox/MarginContainer/ScrollContainer/JoinGameInfo/GamePrompt"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 15 )
+text = " PROMPT:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerListTitle" type="Control" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinLobbyVBox/MarginContainer/ScrollContainer/JoinGameInfo"]
+margin_top = 108.0
+margin_right = 520.0
+margin_bottom = 158.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinLobbyVBox/MarginContainer/ScrollContainer/JoinGameInfo/PlayerListTitle"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 15 )
+text = " Players:"
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerNameVBox" type="VBoxContainer" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinLobbyVBox/MarginContainer/ScrollContainer/JoinGameInfo"]
+margin_top = 162.0
+margin_right = 520.0
+margin_bottom = 428.0
+size_flags_horizontal = 3
+script = ExtResource( 17 )
+
+[node name="PlayerName" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinLobbyVBox/MarginContainer/ScrollContainer/JoinGameInfo/PlayerNameVBox" instance=ExtResource( 18 )]
+margin_right = 520.0
+
+[node name="PlayerName2" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinLobbyVBox/MarginContainer/ScrollContainer/JoinGameInfo/PlayerNameVBox" instance=ExtResource( 18 )]
+margin_top = 54.0
+margin_right = 520.0
+margin_bottom = 104.0
+
+[node name="PlayerName3" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinLobbyVBox/MarginContainer/ScrollContainer/JoinGameInfo/PlayerNameVBox" instance=ExtResource( 18 )]
+margin_top = 108.0
+margin_right = 520.0
+margin_bottom = 158.0
+
+[node name="PlayerName4" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinLobbyVBox/MarginContainer/ScrollContainer/JoinGameInfo/PlayerNameVBox" instance=ExtResource( 18 )]
+margin_top = 162.0
+margin_right = 520.0
+margin_bottom = 212.0
+
+[node name="PlayerName5" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinLobbyVBox/MarginContainer/ScrollContainer/JoinGameInfo/PlayerNameVBox" instance=ExtResource( 18 )]
+margin_top = 216.0
+margin_right = 520.0
+margin_bottom = 266.0
+
+[node name="MarginContainer3" type="MarginContainer" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinLobbyVBox"]
+margin_top = 334.0
+margin_right = 572.0
+margin_bottom = 460.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 10
+custom_constants/margin_left = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinLobbyVBox/MarginContainer3"]
+margin_left = 10.0
+margin_right = 562.0
+margin_bottom = 126.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinLobbyVBox/MarginContainer3/HBoxContainer"]
+margin_right = 274.0
+margin_bottom = 126.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LeaveGameButton" type="TextureButton" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinLobbyVBox/MarginContainer3/HBoxContainer/MarginContainer"]
+self_modulate = Color( 0.317647, 0.615686, 0.85098, 1 )
+margin_right = 274.0
+margin_bottom = 126.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 6 )
+expand = true
+
+[node name="Label" type="Label" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinLobbyVBox/MarginContainer3/HBoxContainer/MarginContainer/LeaveGameButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -110.0
+margin_top = -39.5
+margin_right = 110.0
+margin_bottom = 39.5
+custom_fonts/font = ExtResource( 10 )
+text = "Leave
+Game"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinLobbyVBox/MarginContainer3/HBoxContainer"]
+margin_left = 278.0
+margin_right = 552.0
+margin_bottom = 126.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ReadyUpButton" type="TextureButton" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinLobbyVBox/MarginContainer3/HBoxContainer/MarginContainer2"]
+self_modulate = Color( 0.317647, 0.615686, 0.85098, 1 )
+margin_right = 274.0
+margin_bottom = 126.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 6 )
+expand = true
+
+[node name="Label2" type="Label" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinLobbyVBox/MarginContainer3/HBoxContainer/MarginContainer2/ReadyUpButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -39.5
+margin_right = 100.0
+margin_bottom = 39.5
+custom_fonts/font = ExtResource( 10 )
+text = "Ready Up"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_up" from="HBoxContainer/ButtonsContainer/VBoxContainer/HostMarginContainer/HostButton" to="." method="_on_HostButton_button_up"]
+[connection signal="button_up" from="HBoxContainer/ButtonsContainer/VBoxContainer/JoinMarginContainer/JoinButton" to="." method="_on_JoinButton_button_up"]
+[connection signal="button_up" from="HBoxContainer/ButtonsContainer/VBoxContainer/BackMarginContainer/ChangeSceneButton" to="." method="_on_ChangeSceneButton_button_up"]
+[connection signal="button_up" from="HBoxContainer/PopUpsContainer/HostContainer/ButtonsMarginContainer/HBoxContainer2/MarginContainer/HostPrivateButton" to="." method="_on_HostPrivateButton_button_up"]
+[connection signal="button_up" from="HBoxContainer/PopUpsContainer/HostContainer/ButtonsMarginContainer/HBoxContainer2/MarginContainer2/HostPublicButton" to="." method="_on_HostPublicButton_button_up"]
+[connection signal="button_up" from="HBoxContainer/PopUpsContainer/HostContainer/LobbyButtonsContainer/HBoxContainer2/MarginContainer/CancelHostButton" to="." method="_on_CancelHostButton_button_up"]
+[connection signal="button_up" from="HBoxContainer/PopUpsContainer/HostContainer/LobbyButtonsContainer/HBoxContainer2/MarginContainer2/StartButton" to="." method="_on_StartButton_button_up"]
+[connection signal="button_up" from="HBoxContainer/PopUpsContainer/JoinContainer/JoinMenuVBox/MarginContainer2/HBoxContainer/MarginContainer/JoinGameButton" to="." method="_on_JoinGameButton_button_up"]
+[connection signal="button_up" from="HBoxContainer/PopUpsContainer/JoinContainer/JoinMenuVBox/MarginContainer2/HBoxContainer/MarginContainer2/JoinGameButton" to="." method="_on_JoinGameButton_button_up"]
+[connection signal="button_up" from="HBoxContainer/PopUpsContainer/JoinContainer/JoinLobbyVBox/MarginContainer3/HBoxContainer/MarginContainer/LeaveGameButton" to="." method="_on_LeaveGameButton_button_up"]
+[connection signal="pressed" from="HBoxContainer/PopUpsContainer/JoinContainer/JoinLobbyVBox/MarginContainer3/HBoxContainer/MarginContainer2/ReadyUpButton" to="." method="_on_ReadyUpButton_pressed"]

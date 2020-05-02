@@ -26,6 +26,7 @@ LocalStorage="*res://scripts/LocalStorage.gd"
 GameMusic="*res://scenes/GameMusic.tscn"
 PromptData="*res://scripts/PromptData.gd"
 PromptGlobal="*res://scripts/PromptGlobal.gd"
+Globals="*res://scripts/Globals.gd"
 
 [display]
 

@@ -23,6 +23,4 @@ func _on_PlayButton_pressed():
 		PromptGlobal.setSolution(PromptData.getPromptData(promptToLoad, "Solution"))
 		PromptGlobal.setCodeBlocks(PromptData.getPromptData(promptToLoad, "CodeBlocks"))
 		_on_Button_pressed("res://scenes/OnePlayerGame.tscn")
-	else:
-		pass
 	pass # Replace with function body.
