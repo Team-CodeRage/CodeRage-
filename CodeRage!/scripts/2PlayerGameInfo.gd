@@ -9,7 +9,7 @@ func _ready():
 	pass # Replace with function body.
 
 func setPrompt(newText):
-	gamePromptLabel.text = " PROMPT: " + newText
+	gamePromptLabel.text = " PROMPT: " + str(newText)
 	pass
 
 func addPlayer(playerName):

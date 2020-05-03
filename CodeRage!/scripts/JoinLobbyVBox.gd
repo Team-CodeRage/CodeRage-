@@ -13,5 +13,5 @@ func loadPlayers():
 	pass
 
 func setThePrompt(newText):
-	get_node("LobbyContainer/ScrollContainer/JoinGameInfo").setPrompt(newText)
+	get_node("MarginContainer/ScrollContainer/JoinGameInfo").setPrompt(newText)
 	pass

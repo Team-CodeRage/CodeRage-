@@ -5,15 +5,16 @@ onready var hostContainer = get_node("HBoxContainer/PopUpsContainer/HostContaine
 onready var joinLobbyVBox = get_node("HBoxContainer/PopUpsContainer/JoinContainer/JoinLobbyVBox")
 onready var joinMenuVBox = get_node("HBoxContainer/PopUpsContainer/JoinContainer/JoinMenuVBox")
 
-const PORT        = 1234
+const PORT = 1234
 const MAX_PLAYERS = 2
-var scene_path_to_load
+
 var selectedPrompt
 var promptToLoad
 var promptNode
 var myID 
 var hostingServer = false
 var joiningServer = false
+var addedServerName = false
 
 func _ready():
 	get_tree().connect("network_peer_connected", self, "_client_connected")
@@ -26,9 +27,9 @@ func _ready():
 func _client_connected(id):
 	print("Player ", id, " connected to the server!")
 	Globals.playerIDs.append(id)
-	if(get_tree().is_network_server()):
-		rpc_id(id, "register_player", Globals.playerIDs, selectedPrompt)
 	updatePlayerList()
+	if(get_tree().is_network_server()):
+		rpc_id(id, "register_player", Globals.playerIDs, promptToLoad)
 	pass
 
 func _client_disconnected(id):
@@ -47,7 +48,6 @@ func _connected_fail():
 	pass # Could not even connect to server; abort.
 
 func updatePlayerList():
-	#Globals.playerIDs = get_tree().get_network_connected_peers()
 	if(hostingServer == true):
 		hostContainer.loadPlayers()
 	elif(joiningServer == true):
@@ -55,22 +55,29 @@ func updatePlayerList():
 	pass
 
 remote func register_player(info, prompt):
-	# Get the id of the RPC sender.
-#	var id = get_tree().get_rpc_sender_id()
-	# Store the info
 	Globals.playerIDs = info
-	selectedPrompt = prompt
+	promptToLoad = prompt
+	joinLobbyVBox.setThePrompt(PromptData.getPromptData(promptToLoad, "Title"))
+	updatePlayerList()
+	PromptGlobal.setInstructions(PromptData.getPromptData(promptToLoad, "Instructions"))
+	PromptGlobal.setOutput(PromptData.getPromptData(promptToLoad, "Output"))
+	PromptGlobal.setSolution(PromptData.getPromptData(promptToLoad, "Solution"))
+	PromptGlobal.setCodeBlocks(PromptData.getPromptData(promptToLoad, "CodeBlocks"))
+	print("promptToLoad: ", promptToLoad)
+	pass
 
 func _close_server():
 	if(hostingServer):
 		print("closed server")
 		#kick players
-		for i in Globals.playersIDs:
+		for i in Globals.playerIDs:
+			if(i == null):
+				break
 			if i != 1:
 				print(i)
 				rpc_id(i,"kicked", "Server Closed")
 				get_tree().network_peer.disconnect_peer(i)
-		Globals.playersIDs.clear()
+		Globals.playerIDs.clear()
 		#Terminate server
 		get_tree().network_peer.close_connection(100)
 		get_tree().set_network_peer(null)
@@ -83,7 +90,7 @@ remote func kicked(reason):
 	print("You have been kicked from the server, reason: ", reason)
 
 func createServer():
-	if(insertPrompt()):
+	if(insertPrompt() == true):
 		hostContainer.showLobby()
 		hostServer()
 	pass
@@ -96,15 +103,17 @@ func hostServer():
 		print("Error creating server")
 		return
 	get_tree().set_network_peer(host)
+	Globals.playerIDs.append(get_tree().get_network_unique_id())
 	hostingServer = true
+	updatePlayerList()
 	pass
 
 func joinServer():
 	print("joining network")
+	joiningServer = true
 	var peer = NetworkedMultiplayerENet.new()
 	peer.create_client(joinMenuVBox.getIP(), PORT)
 	get_tree().set_network_peer(peer)
-	joiningServer = true
 	pass
 
 func insertPrompt():
@@ -129,7 +138,12 @@ func _on_HostPublicButton_button_up():
 	pass # Replace with function body.
 
 func _on_StartButton_button_up():
+	rpc("startGame")
 	pass # Replace with function body.
+
+remotesync func startGame():
+	get_tree().change_scene("res://scenes/TwoPlayerGame.tscn")
+	pass
 
 func _on_CancelHostButton_button_up():
 	hostContainer.showPrompts()
