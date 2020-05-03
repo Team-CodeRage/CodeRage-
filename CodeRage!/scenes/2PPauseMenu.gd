@@ -4,7 +4,7 @@ extends Control
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var yourTime
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,7 +14,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-func setTime(newTime):
-	yourTime = newTime
-	get_node("MarginContainer/VBoxContainer/ResultsMarginContainer/VBoxContainer/Time").text = "Time:  " + str(newTime)
+
+
+func _on_ResumeButton_pressed():
+	#var new_pause_state = not get_tree().paused
+	#get_tree().paused = new_pause_state
+	visible = false
 	pass

@@ -212,6 +212,7 @@ texture = ExtResource( 8 )
 expand = true
 
 [node name="HostContainer" type="VBoxContainer" parent="HBoxContainer/PopUpsContainer"]
+visible = false
 margin_right = 632.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
@@ -255,7 +256,7 @@ __meta__ = {
 }
 
 [node name="2PlayerPromptSelection" type="VBoxContainer" parent="HBoxContainer/PopUpsContainer/HostContainer/PromptsContainer/ScrollContainer"]
-margin_right = 520.0
+margin_right = 532.0
 margin_bottom = 412.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -337,6 +338,7 @@ custom_constants/margin_right = 40
 custom_constants/margin_bottom = 70
 
 [node name="HostPublicButton" type="TextureButton" parent="HBoxContainer/PopUpsContainer/HostContainer/ButtonsMarginContainer/HBoxContainer2/MarginContainer2"]
+visible = false
 self_modulate = Color( 0.317647, 0.615686, 0.85098, 1 )
 margin_right = 274.0
 margin_bottom = 126.0
@@ -581,7 +583,6 @@ __meta__ = {
 }
 
 [node name="JoinContainer" type="MarginContainer" parent="HBoxContainer/PopUpsContainer"]
-visible = false
 margin_right = 632.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
@@ -714,6 +715,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="JoinGameButton" type="TextureButton" parent="HBoxContainer/PopUpsContainer/JoinContainer/JoinMenuVBox/MarginContainer2/HBoxContainer/MarginContainer2"]
+visible = false
 self_modulate = Color( 0.317647, 0.615686, 0.85098, 1 )
 margin_right = 274.0
 margin_bottom = 128.0

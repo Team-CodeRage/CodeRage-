@@ -421,7 +421,7 @@ __meta__ = {
 
 [node name="Spacer" type="Control" parent="SettingsVBoxContainer"]
 margin_right = 1024.0
-margin_bottom = 120.0
+margin_bottom = 147.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 0, 120 )
@@ -472,9 +472,9 @@ __meta__ = {
 }
 
 [node name="Title" type="Control" parent="SettingsVBoxContainer"]
-margin_top = 124.0
+margin_top = 151.0
 margin_right = 1024.0
-margin_bottom = 238.0
+margin_bottom = 298.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -503,9 +503,9 @@ __meta__ = {
 }
 
 [node name="SFXVolume" type="Control" parent="SettingsVBoxContainer"]
-margin_top = 242.0
+margin_top = 302.0
 margin_right = 1024.0
-margin_bottom = 356.0
+margin_bottom = 449.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -560,6 +560,7 @@ __meta__ = {
 }
 
 [node name="Font" type="Control" parent="SettingsVBoxContainer"]
+visible = false
 margin_top = 360.0
 margin_right = 1024.0
 margin_bottom = 474.0
@@ -688,9 +689,9 @@ __meta__ = {
 }
 
 [node name="Spacer2" type="Control" parent="SettingsVBoxContainer"]
-margin_top = 478.0
+margin_top = 453.0
 margin_right = 1024.0
-margin_bottom = 598.0
+margin_bottom = 600.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 0, 120 )

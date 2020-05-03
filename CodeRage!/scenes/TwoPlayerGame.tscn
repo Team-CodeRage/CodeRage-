@@ -9,7 +9,7 @@
 [ext_resource path="res://assets/crsmallerbuttonhovered.PNG" type="Texture" id=7]
 [ext_resource path="res://scripts/GridBox.gd" type="Script" id=8]
 [ext_resource path="res://scripts/PopupDialog.gd" type="Script" id=9]
-[ext_resource path="res://scripts/PauseMenu.gd" type="Script" id=10]
+[ext_resource path="res://scenes/2PPauseMenu.gd" type="Script" id=10]
 [ext_resource path="res://assets/whitecrbuttonhoverpressed.PNG" type="Texture" id=11]
 [ext_resource path="res://assets/whitecrbutton.PNG" type="Texture" id=12]
 [ext_resource path="res://scenes/2PCodeBlock.tscn" type="PackedScene" id=13]
@@ -17,7 +17,7 @@
 [ext_resource path="res://assets/Capture1.png" type="Texture" id=15]
 [ext_resource path="res://scripts/2PBlockManager.gd" type="Script" id=16]
 [ext_resource path="res://scripts/Clock.gd" type="Script" id=17]
-[ext_resource path="res://scripts/ResultsMenu.gd" type="Script" id=18]
+[ext_resource path="res://scenes/2PResultsMenu.gd" type="Script" id=18]
 [ext_resource path="res://assets/crsmallerbuttonpressed2.png" type="Texture" id=19]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -7788,7 +7788,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PauseMenu" type="Control" parent="FrontGUI"]
+[node name="2PPauseMenu" type="Control" parent="FrontGUI"]
 pause_mode = 2
 visible = false
 self_modulate = Color( 0, 0, 0, 1 )
@@ -7802,7 +7802,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="FrontGUI/PauseMenu"]
+[node name="ColorRect" type="ColorRect" parent="FrontGUI/2PPauseMenu"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 1024, 600 )
@@ -7812,7 +7812,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="FrontGUI/PauseMenu"]
+[node name="MarginContainer" type="MarginContainer" parent="FrontGUI/2PPauseMenu"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 1024, 600 )
@@ -7821,19 +7821,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="FrontGUI/PauseMenu/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="FrontGUI/2PPauseMenu/MarginContainer"]
 margin_right = 1024.0
 margin_bottom = 600.0
 mouse_filter = 2
 
-[node name="Spacer" type="Control" parent="FrontGUI/PauseMenu/MarginContainer/VBoxContainer"]
+[node name="Spacer" type="Control" parent="FrontGUI/2PPauseMenu/MarginContainer/VBoxContainer"]
 margin_right = 1024.0
 margin_bottom = 116.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TitleMarginContainer" type="MarginContainer" parent="FrontGUI/PauseMenu/MarginContainer/VBoxContainer"]
+[node name="TitleMarginContainer" type="MarginContainer" parent="FrontGUI/2PPauseMenu/MarginContainer/VBoxContainer"]
 margin_top = 120.0
 margin_right = 1024.0
 margin_bottom = 236.0
@@ -7845,17 +7845,17 @@ custom_constants/margin_top = 80
 custom_constants/margin_left = 300
 custom_constants/margin_bottom = 20
 
-[node name="Label" type="Label" parent="FrontGUI/PauseMenu/MarginContainer/VBoxContainer/TitleMarginContainer"]
+[node name="Label" type="Label" parent="FrontGUI/2PPauseMenu/MarginContainer/VBoxContainer/TitleMarginContainer"]
 margin_left = 300.0
 margin_top = 81.0
 margin_right = 724.0
 margin_bottom = 95.0
-text = "Paused"
+text = "Do you want to forfeit the match?"
 align = 1
 valign = 1
 uppercase = true
 
-[node name="ResumeMarginContainer" type="MarginContainer" parent="FrontGUI/PauseMenu/MarginContainer/VBoxContainer"]
+[node name="ResumeMarginContainer" type="MarginContainer" parent="FrontGUI/2PPauseMenu/MarginContainer/VBoxContainer"]
 margin_top = 240.0
 margin_right = 1024.0
 margin_bottom = 356.0
@@ -7867,7 +7867,7 @@ custom_constants/margin_top = 30
 custom_constants/margin_left = 350
 custom_constants/margin_bottom = 0
 
-[node name="ResumeButton" type="TextureButton" parent="FrontGUI/PauseMenu/MarginContainer/VBoxContainer/ResumeMarginContainer"]
+[node name="ResumeButton" type="TextureButton" parent="FrontGUI/2PPauseMenu/MarginContainer/VBoxContainer/ResumeMarginContainer"]
 self_modulate = Color( 0.133333, 0.321569, 0.301961, 1 )
 margin_left = 350.0
 margin_top = 30.0
@@ -7879,17 +7879,17 @@ texture_pressed = ExtResource( 11 )
 texture_hover = ExtResource( 11 )
 expand = true
 
-[node name="Label" type="Label" parent="FrontGUI/PauseMenu/MarginContainer/VBoxContainer/ResumeMarginContainer/ResumeButton"]
+[node name="Label" type="Label" parent="FrontGUI/2PPauseMenu/MarginContainer/VBoxContainer/ResumeMarginContainer/ResumeButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-text = "Resume"
+text = "I find the idea undesirable"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BackMarginContainer" type="MarginContainer" parent="FrontGUI/PauseMenu/MarginContainer/VBoxContainer"]
+[node name="BackMarginContainer" type="MarginContainer" parent="FrontGUI/2PPauseMenu/MarginContainer/VBoxContainer"]
 margin_top = 360.0
 margin_right = 1024.0
 margin_bottom = 476.0
@@ -7901,7 +7901,7 @@ custom_constants/margin_top = 10
 custom_constants/margin_left = 350
 custom_constants/margin_bottom = 20
 
-[node name="BackButton" type="TextureButton" parent="FrontGUI/PauseMenu/MarginContainer/VBoxContainer/BackMarginContainer"]
+[node name="BackButton" type="TextureButton" parent="FrontGUI/2PPauseMenu/MarginContainer/VBoxContainer/BackMarginContainer"]
 self_modulate = Color( 0.133333, 0.321569, 0.301961, 1 )
 margin_left = 350.0
 margin_top = 10.0
@@ -7913,17 +7913,18 @@ texture_pressed = ExtResource( 11 )
 texture_hover = ExtResource( 11 )
 expand = true
 
-[node name="Label" type="Label" parent="FrontGUI/PauseMenu/MarginContainer/VBoxContainer/BackMarginContainer/BackButton"]
+[node name="Label" type="Label" parent="FrontGUI/2PPauseMenu/MarginContainer/VBoxContainer/BackMarginContainer/BackButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-text = "Back To Menu"
+text = "Yes...
+Mission Failed, we'll get'em next time"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Spacer2" type="Control" parent="FrontGUI/PauseMenu/MarginContainer/VBoxContainer"]
+[node name="Spacer2" type="Control" parent="FrontGUI/2PPauseMenu/MarginContainer/VBoxContainer"]
 margin_top = 480.0
 margin_right = 1024.0
 margin_bottom = 600.0
@@ -7931,7 +7932,7 @@ mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ResultsMenu" type="Control" parent="FrontGUI"]
+[node name="2PResultsMenu" type="Control" parent="FrontGUI"]
 pause_mode = 2
 visible = false
 self_modulate = Color( 0, 0, 0, 1 )
@@ -7945,7 +7946,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="FrontGUI/ResultsMenu"]
+[node name="ColorRect" type="ColorRect" parent="FrontGUI/2PResultsMenu"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 1024, 600 )
@@ -7955,7 +7956,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="FrontGUI/ResultsMenu"]
+[node name="MarginContainer" type="MarginContainer" parent="FrontGUI/2PResultsMenu"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 1024, 600 )
@@ -7964,19 +7965,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="FrontGUI/ResultsMenu/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="FrontGUI/2PResultsMenu/MarginContainer"]
 margin_right = 1024.0
 margin_bottom = 600.0
 mouse_filter = 2
 
-[node name="Spacer" type="Control" parent="FrontGUI/ResultsMenu/MarginContainer/VBoxContainer"]
+[node name="Spacer" type="Control" parent="FrontGUI/2PResultsMenu/MarginContainer/VBoxContainer"]
 margin_right = 1024.0
 margin_bottom = 116.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TitleMarginContainer" type="MarginContainer" parent="FrontGUI/ResultsMenu/MarginContainer/VBoxContainer"]
+[node name="TitleMarginContainer" type="MarginContainer" parent="FrontGUI/2PResultsMenu/MarginContainer/VBoxContainer"]
 margin_top = 120.0
 margin_right = 1024.0
 margin_bottom = 236.0
@@ -7988,7 +7989,7 @@ custom_constants/margin_top = 80
 custom_constants/margin_left = 300
 custom_constants/margin_bottom = 20
 
-[node name="Label" type="Label" parent="FrontGUI/ResultsMenu/MarginContainer/VBoxContainer/TitleMarginContainer"]
+[node name="Label" type="Label" parent="FrontGUI/2PResultsMenu/MarginContainer/VBoxContainer/TitleMarginContainer"]
 margin_left = 300.0
 margin_top = 81.0
 margin_right = 724.0
@@ -7998,7 +7999,7 @@ align = 1
 valign = 1
 uppercase = true
 
-[node name="ResultsMarginContainer" type="MarginContainer" parent="FrontGUI/ResultsMenu/MarginContainer/VBoxContainer"]
+[node name="ResultsMarginContainer" type="MarginContainer" parent="FrontGUI/2PResultsMenu/MarginContainer/VBoxContainer"]
 margin_top = 240.0
 margin_right = 1024.0
 margin_bottom = 356.0
@@ -8010,20 +8011,20 @@ custom_constants/margin_top = 30
 custom_constants/margin_left = 350
 custom_constants/margin_bottom = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="FrontGUI/ResultsMenu/MarginContainer/VBoxContainer/ResultsMarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="FrontGUI/2PResultsMenu/MarginContainer/VBoxContainer/ResultsMarginContainer"]
 margin_left = 350.0
 margin_top = 30.0
 margin_right = 674.0
 margin_bottom = 116.0
 
-[node name="Label" type="Label" parent="FrontGUI/ResultsMenu/MarginContainer/VBoxContainer/ResultsMarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="FrontGUI/2PResultsMenu/MarginContainer/VBoxContainer/ResultsMarginContainer/VBoxContainer"]
 margin_right = 324.0
 margin_bottom = 14.0
 text = "Results"
 align = 1
 valign = 1
 
-[node name="Control" type="Control" parent="FrontGUI/ResultsMenu/MarginContainer/VBoxContainer/ResultsMarginContainer/VBoxContainer"]
+[node name="Control" type="Control" parent="FrontGUI/2PResultsMenu/MarginContainer/VBoxContainer/ResultsMarginContainer/VBoxContainer"]
 margin_top = 18.0
 margin_right = 324.0
 margin_bottom = 38.0
@@ -8032,15 +8033,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Time" type="Label" parent="FrontGUI/ResultsMenu/MarginContainer/VBoxContainer/ResultsMarginContainer/VBoxContainer"]
+[node name="Time" type="Label" parent="FrontGUI/2PResultsMenu/MarginContainer/VBoxContainer/ResultsMarginContainer/VBoxContainer"]
 margin_top = 42.0
 margin_right = 324.0
 margin_bottom = 56.0
-text = "Time: "
+text = "Your Time:  "
 align = 1
 valign = 1
 
-[node name="BackMarginContainer" type="MarginContainer" parent="FrontGUI/ResultsMenu/MarginContainer/VBoxContainer"]
+[node name="Time2" type="Label" parent="FrontGUI/2PResultsMenu/MarginContainer/VBoxContainer/ResultsMarginContainer/VBoxContainer"]
+margin_top = 60.0
+margin_right = 324.0
+margin_bottom = 74.0
+text = "Other Player's Time:  not good enough"
+align = 1
+valign = 1
+
+[node name="BackMarginContainer" type="MarginContainer" parent="FrontGUI/2PResultsMenu/MarginContainer/VBoxContainer"]
 margin_top = 360.0
 margin_right = 1024.0
 margin_bottom = 476.0
@@ -8052,7 +8061,7 @@ custom_constants/margin_top = 10
 custom_constants/margin_left = 350
 custom_constants/margin_bottom = 20
 
-[node name="BackButton" type="TextureButton" parent="FrontGUI/ResultsMenu/MarginContainer/VBoxContainer/BackMarginContainer"]
+[node name="BackButton" type="TextureButton" parent="FrontGUI/2PResultsMenu/MarginContainer/VBoxContainer/BackMarginContainer"]
 self_modulate = Color( 0.133333, 0.321569, 0.301961, 1 )
 margin_left = 350.0
 margin_top = 10.0
@@ -8064,7 +8073,7 @@ texture_pressed = ExtResource( 11 )
 texture_hover = ExtResource( 11 )
 expand = true
 
-[node name="Label" type="Label" parent="FrontGUI/ResultsMenu/MarginContainer/VBoxContainer/BackMarginContainer/BackButton"]
+[node name="Label" type="Label" parent="FrontGUI/2PResultsMenu/MarginContainer/VBoxContainer/BackMarginContainer/BackButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 text = "Back To Menu"
@@ -8074,7 +8083,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Spacer2" type="Control" parent="FrontGUI/ResultsMenu/MarginContainer/VBoxContainer"]
+[node name="Spacer2" type="Control" parent="FrontGUI/2PResultsMenu/MarginContainer/VBoxContainer"]
 margin_top = 480.0
 margin_right = 1024.0
 margin_bottom = 600.0
@@ -8151,7 +8160,7 @@ autostart = true
 [connection signal="pressed" from="FrontGUI/TextureRect/InstructionsButton" to="." method="_on_InstructionsButton_pressed"]
 [connection signal="pressed" from="FrontGUI/TextureRect/OutputButton" to="." method="_on_OutputButton_pressed"]
 [connection signal="pressed" from="FrontGUI/TextureRect/SubmitButton" to="." method="_on_SubmitButton_pressed"]
-[connection signal="pressed" from="FrontGUI/PauseMenu/MarginContainer/VBoxContainer/ResumeMarginContainer/ResumeButton" to="FrontGUI/PauseMenu" method="_on_ResumeButton_pressed"]
-[connection signal="pressed" from="FrontGUI/PauseMenu/MarginContainer/VBoxContainer/BackMarginContainer/BackButton" to="." method="_on_BackButton_pressed"]
-[connection signal="pressed" from="FrontGUI/ResultsMenu/MarginContainer/VBoxContainer/BackMarginContainer/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="FrontGUI/2PPauseMenu/MarginContainer/VBoxContainer/ResumeMarginContainer/ResumeButton" to="FrontGUI/2PPauseMenu" method="_on_ResumeButton_pressed"]
+[connection signal="pressed" from="FrontGUI/2PPauseMenu/MarginContainer/VBoxContainer/BackMarginContainer/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="FrontGUI/2PResultsMenu/MarginContainer/VBoxContainer/BackMarginContainer/BackButton" to="." method="_on_BackButton_pressed"]
 [connection signal="timeout" from="BlockUpdate" to="." method="_on_BlockUpdate_timeout"]

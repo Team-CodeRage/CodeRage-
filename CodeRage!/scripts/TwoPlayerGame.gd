@@ -13,7 +13,7 @@ var colors = [Color("#ef476f"), Color("#ffd166"), Color("#06d6a0"), Color("#118a
 func _ready():
 	popUp = get_node("FrontGUI/PopupDialog")
 	gridNode = get_node("BackGUI/GridMarginContainer/ScrollMarginContainer/ScrollContainer/VBoxContainer")
-	resultsNode = get_node("FrontGUI/ResultsMenu")
+	resultsNode = get_node("FrontGUI/2PResultsMenu")
 	moneyLabel = get_node("FrontGUI/TextureRect/MoneyLabel")
 	blockList = PromptGlobal.getCodeBlocks()
 	print("blockList: ", blockList)
@@ -48,14 +48,15 @@ func _on_SubmitButton_pressed():
 	pass # Replace with function body.
 
 func _on_BackButton_pressed():
-	get_tree().paused = not get_tree().paused
+	get_tree().paused = false
+	get_tree().network_peer.close_connection(100)
 	_on_Button_pressed("res://scenes/TitleScene.tscn")
 	pass # Replace with function body.
 
 func _on_PauseButton_pressed():
-	var new_pause_state = not get_tree().paused
-	get_tree().paused = not get_tree().paused
-	get_node("FrontGUI/PauseMenu").show()
+	#var new_pause_state = not get_tree().paused
+	#get_tree().paused = not get_tree().paused
+	get_node("FrontGUI/2PPauseMenu").show()
 	pass
 
 func getBlockPos(row, col):
